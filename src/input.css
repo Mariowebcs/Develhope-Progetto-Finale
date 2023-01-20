@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        font-family: 'Quicksand', sans-serif;
+    }
+}
+
+@layer components {
+    .menu-item {
+        @apply relative h-full p-4 py-8 text-pink-200 cursor-pointer hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out;
+    }
+
+    .gradient-bg{
+        @apply bg-gradient-to-l from-blue-500 to-pink-500;
+    }
+
+    .bg-none{
+        background: none;
+    }
+}

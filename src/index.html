@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script type="text/javascript">
+      window.onload = () => {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.addEventListener("click", () => {
+          if (mobileMenu.classList.contains("open")) {
+            mobileMenu.classList.remove("open");
+          } else {
+            mobileMenu.classList.add("open");
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav class="sticky top-0 flex items-center gradient-bg py-1">
+          <div class="flex items-center">
+            <a href="index.html">
+              <img
+                class="p-2 bg-white rounded-full mx-4"
+                width="70"
+                src="assets/images/eveny-logo.svg"
+                alt="logo about users"
+              />
+            </a>
+            <div class="flex text-2xl font-bold">
+              <span class="text-white">Eveny</span>
+            </div>
+          </div>
+          <div class="block md:hidden ml-auto pr-6 my-auto cursor-pointer">
+            <div id="mobile-menu" class="group peer">
+              <div
+                class="top-0 w-8 h-1 rounded-full bg-white group-open:rotate-45 transition-all group-open:top-2 relative"
+              ></div>
+              <div
+                class="w-8 h-1 rounded-full bg-white mt-1 opacity-100 group-open:opacity-0 transition-all relative"
+              ></div>
+              <div
+                class="top-0 w-8 h-1 rounded-full bg-white mt-1 group-open:-rotate-45 transition-all group-open:-top-2 relative"
+              ></div>
+            </div>
+            <div
+              class="absolute left-0 top-[68px] w-full hidden gradient-bg peer-open:block z-10"
+            >
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-white hover:bg-white/10 transition-colors ease-in-out"
+              >
+                <span>Home</span>
+              </div>
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-white hover:bg-white/10 transition-colors ease-in-out"
+              >
+                <span>Support</span>
+              </div>
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-white hover:bg-white/10 transition-colors ease-in-out"
+              >
+                <span>Account</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mr-6 md:flex hidden flex-1 items-center justify-end gap-4"
+          >
+            <div class="menu-item">
+              <i class="fa-solid fa-home font-bold text-2xl text-white"></i>
+              <span class="ml-2">Home</span>
+            </div>
+            <div class="menu-item">
+              <i class="fa-solid fa-user font-bold text-2xl text-white"></i>
+              <span class="ml-2">Account</span>
+            </div>
+            <div class="menu-item">
+              <i class="fa-solid fa-support font-bold text-2xl text-white rounded-full bg-pink-500"></i>
+              <span class="ml-2">Support</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div
+        class="bg-cover bg-center flex flex-col justify-center items-center h-full min-h-[86vh] overflow-hidden"
+        style="background-image: url('assets/images/home-hero-image.jpg')"
+      >
+        <div
+          id="bg-none"
+          class="rounded-xl bg-white/40 backdrop-blur-sm text-center py-2 px-4 min-w-[400px] min-h-[400px] flex flex-col justify-center items-center"
+        >
+          <div class="flex items-center justify-center">
+            <img src="assets/images/eveny-logo.svg" width="100" alt="" />
+          </div>
+          <div
+            class="flex items-center justify-center font-bold text-sky-900 text-xl my-4"
+          >
+            <span>Trova Adesso nuovi amici</span>
+          </div>
+          <div
+            class="flex items-center justify-center font-bold text-pink-600 text-xl"
+          >
+            <span>E organizza le tue serate!</span>
+          </div>
+          <div class="my-6">
+            <a
+              class="inline-block rounded-md py-3 px-6 text-white bg-pink-500 hover:bg-sky-900 transition-colors ease-in-out"
+              href=""
+              >Crea ora il tuo account</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
