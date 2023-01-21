@@ -6,6 +6,8 @@
     <link href="../dist/output.css" rel="stylesheet" />
     <script defer src="./assets/fontawesome/js/solid.min.js"></script>
     <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script defer src="./assets/fontawesome/js/regular.min.js"></script>
+    <script defer src="./assets/fontawesome/js/regular.js"></script>
     <script type="text/javascript">
       window.onload = () => {
         const mobileMenu = document.getElementById("mobile-menu");
@@ -22,11 +24,11 @@
   <body>
     <main>
       <header>
-        <nav class="sticky top-0 flex items-center gradient-bg py-1">
+        <nav class="gradient-bg sticky top-0 flex items-center py-1">
           <div class="flex items-center">
             <a href="index.html">
               <img
-                class="p-2 bg-white rounded-full mx-4"
+                class="mx-4 rounded-full bg-white p-2"
                 width="70"
                 src="assets/images/eveny-logo.svg"
                 alt="logo about users"
@@ -36,83 +38,203 @@
               <span class="text-white">Eveny</span>
             </div>
           </div>
-          <div class="block md:hidden ml-auto pr-6 my-auto cursor-pointer">
+          <div class="my-auto ml-auto block cursor-pointer pr-6 md:hidden">
             <div id="mobile-menu" class="group peer">
               <div
-                class="top-0 w-8 h-1 rounded-full bg-white group-open:rotate-45 transition-all group-open:top-2 relative"
+                class="relative top-0 h-1 w-8 rounded-full bg-white transition-all group-open:top-2 group-open:rotate-45"
               ></div>
               <div
-                class="w-8 h-1 rounded-full bg-white mt-1 opacity-100 group-open:opacity-0 transition-all relative"
+                class="relative mt-1 h-1 w-8 rounded-full bg-white opacity-100 transition-all group-open:opacity-0"
               ></div>
               <div
-                class="top-0 w-8 h-1 rounded-full bg-white mt-1 group-open:-rotate-45 transition-all group-open:-top-2 relative"
+                class="relative top-0 mt-1 h-1 w-8 rounded-full bg-white transition-all group-open:-top-2 group-open:-rotate-45"
               ></div>
             </div>
             <div
-              class="absolute left-0 top-[68px] w-full hidden gradient-bg peer-open:block z-10"
+              class="gradient-bg absolute left-0 top-[73px] z-10 hidden w-full peer-open:block"
             >
               <div
-                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-white hover:bg-white/10 transition-colors ease-in-out"
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
               >
                 <span>Home</span>
               </div>
               <div
-                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-white hover:bg-white/10 transition-colors ease-in-out"
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
               >
                 <span>Support</span>
               </div>
               <div
-                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-white hover:bg-white/10 transition-colors ease-in-out"
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
               >
                 <span>Account</span>
               </div>
             </div>
           </div>
           <div
-            class="mr-6 md:flex hidden flex-1 items-center justify-end gap-4"
+            class="mr-6 hidden flex-1 items-center justify-end gap-4 md:flex"
           >
             <div class="menu-item">
-              <i class="fa-solid fa-home font-bold text-2xl text-white"></i>
+              <i class="fa-solid fa-home text-2xl font-bold text-white"></i>
               <span class="ml-2">Home</span>
             </div>
             <div class="menu-item">
-              <i class="fa-solid fa-user font-bold text-2xl text-white"></i>
+              <i class="fa-solid fa-user text-2xl font-bold text-white"></i>
               <span class="ml-2">Account</span>
             </div>
             <div class="menu-item">
-              <i class="fa-solid fa-support font-bold text-2xl text-white rounded-full bg-pink-500"></i>
+              <i
+                class="fa-solid fa-support rounded-full bg-pink-500 text-2xl font-bold text-white"
+              ></i>
               <span class="ml-2">Support</span>
             </div>
           </div>
         </nav>
       </header>
       <div
-        class="bg-cover bg-center flex flex-col justify-center items-center h-full min-h-[86vh] overflow-hidden"
+        class="flex h-[650px] flex-col items-center justify-center overflow-hidden bg-cover bg-center object-cover"
         style="background-image: url('assets/images/home-hero-image.jpg')"
       >
         <div
           id="bg-none"
-          class="rounded-xl bg-white/40 backdrop-blur-sm text-center py-2 px-4 min-w-[400px] min-h-[400px] flex flex-col justify-center items-center"
+          class="relative top-28 flex min-h-[360px] min-w-[400px] flex-col items-center justify-center rounded-xl bg-white/40 py-2 px-4 text-center backdrop-blur-sm"
         >
           <div class="flex items-center justify-center">
             <img src="assets/images/eveny-logo.svg" width="100" alt="" />
           </div>
           <div
-            class="flex items-center justify-center font-bold text-sky-900 text-xl my-4"
+            class="my-4 flex items-center justify-center text-xl font-bold text-sky-900"
           >
             <span>Trova Adesso nuovi amici</span>
           </div>
           <div
-            class="flex items-center justify-center font-bold text-pink-600 text-xl"
+            class="flex items-center justify-center text-xl font-bold text-pink-600"
           >
             <span>E organizza le tue serate!</span>
           </div>
           <div class="my-6">
             <a
-              class="inline-block rounded-md py-3 px-6 text-white bg-pink-500 hover:bg-sky-900 transition-colors ease-in-out"
+              class="inline-block rounded-md bg-pink-500 py-3 px-6 text-white transition-colors ease-in-out hover:bg-sky-900"
               href=""
               >Crea ora il tuo account</a
             >
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD PER EVENTI DA MOSTRARE -->
+      <div
+        class="grid grid-cols-1 gap-5 p-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      >
+        <!--Card 1-->
+
+        <div class="overflow-hidden rounded shadow-lg">
+          <div class="relative">
+            <img
+              class="max-h-[150px] w-full"
+              src="assets/images/login-background.jpg"
+              alt="Mountain"
+            />
+            <i class="fa-regular fa-heart text-2xl font-bold text-white absolute top-2 right-2 hover:text-pink-600 cursor-pointer"></i>
+            <i class="fa-regular fa-message text-2xl font-bold text-white absolute top-2 right-14 hover:text-pink-600 cursor-pointer"></i>
+          </div>
+
+          <div class="px-6 py-4">
+            <div class="mb-2 text-xl font-bold">Serata al cinema</div>
+            <p class="text-base text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div>
+            <a class="btn-b my-4 ml-6" href="">Call to action</a>
+            <a class="btn-p my-4 ml-3" href="">Call to action</a>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span class="card-hashtag">#Cinema</span>
+            <span class="card-hashtag">#Avatar</span>
+            <span class="card-hashtag">#Friends</span>
+            <span class="card-hashtag-shop">@CinemaAndromeda</span>
+          </div>
+        </div>
+
+        <!--Card 2-->
+        <div class="overflow-hidden rounded shadow-lg">
+          <img
+            class="max-h-[150px] w-full"
+            src="assets/images/login-background.jpg"
+            alt="River"
+          />
+          <div class="px-6 py-4">
+            <div class="mb-2 text-xl font-bold">Event Name</div>
+            <p class="text-base text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div>
+            <a class="btn-b my-4 ml-6" href="">Call to action</a>
+            <a class="btn-p my-4 ml-3" href="">Call to action</a>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span class="card-hashtag">#Provola di agerola</span>
+            <span class="card-hashtag">#Napoletana</span>
+            <span class="card-hashtag">#Pizza</span>
+            <span class="card-hashtag-shop">@Pizzeria Del Corso</span>
+          </div>
+        </div>
+
+        <!--Card 3-->
+        <div class="overflow-hidden rounded shadow-lg">
+          <img
+            class="max-h-[150px] w-full"
+            src="assets/images/login-background.jpg"
+            alt="Forest"
+          />
+          <div class="px-6 py-4">
+            <div class="mb-2 text-xl font-bold">Event Name</div>
+            <p class="text-base text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div>
+            <a class="btn-b my-4 ml-6" href="">Call to action</a>
+            <a class="btn-p my-4 ml-3" href="">Call to action</a>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span class="card-hashtag">#serata </span>
+            <span class="card-hashtag">#Birreria</span>
+            <span class="card-hashtag">#Birra Love</span>
+            <span class="card-hashtag-shop">@Birreria Al fusto</span>
+          </div>
+        </div>
+        <!-- CARD4 -->
+        <div class="overflow-hidden rounded shadow-lg">
+          <img
+            class="max-h-[150px] w-full"
+            src="assets/images/login-background.jpg"
+            alt="River"
+          />
+          <div class="px-6 py-4">
+            <div class="mb-2 text-xl font-bold">Event Name</div>
+            <p class="text-base text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div>
+            <a class="btn-b my-4 ml-6" href="">Call to action</a>
+            <a class="btn-p my-4 ml-3" href="">Call to action</a>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span class="card-hashtag">#Provola di agerola</span>
+            <span class="card-hashtag">#Napoletana</span>
+            <span class="card-hashtag">#Pizza</span>
+            <span class="card-hashtag-shop">@Pizzeria Del Corso</span>
           </div>
         </div>
       </div>
