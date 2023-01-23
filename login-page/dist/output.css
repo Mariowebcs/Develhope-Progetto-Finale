@@ -609,16 +609,16 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
 
 .mt-10 {
   margin-top: 2.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .box-border {
@@ -657,16 +657,12 @@ video {
   width: 100%;
 }
 
-.w-5\/6 {
-  width: 83.333333%;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .flex-1 {
@@ -679,10 +675,6 @@ video {
 
 .grow {
   flex-grow: 1;
-}
-
-.basis-4 {
-  flex-basis: 1rem;
 }
 
 .rotate-180 {
@@ -723,24 +715,12 @@ video {
   gap: 2rem;
 }
 
-.gap-1 {
-  gap: 0.25rem;
-}
-
 .gap-6 {
   gap: 1.5rem;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
-.rounded-2xl {
-  border-radius: 1rem;
-}
-
-.rounded-xl {
-  border-radius: 0.75rem;
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .border-2 {
@@ -755,19 +735,9 @@ video {
   border-style: none;
 }
 
-.border-red-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(127 29 29 / var(--tw-border-opacity));
-}
-
 .border-slate-300 {
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -815,15 +785,6 @@ video {
   padding-left: 1rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -832,6 +793,11 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
@@ -879,12 +845,6 @@ video {
       }
 } */
 
-@media (min-width: 640px) {
-  .sm\:hidden {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .md\:inline {
     display: inline;
@@ -920,16 +880,12 @@ video {
     width: 50%;
   }
 
-  .lg\:rounded-none {
-    border-radius: 0px;
+  .lg\:rounded-lg {
+    border-radius: 0.5rem;
   }
 
   .lg\:rounded-2xl {
     border-radius: 1rem;
-  }
-
-  .lg\:rounded-lg {
-    border-radius: 0.5rem;
   }
 
   .lg\:border-2 {
@@ -941,18 +897,8 @@ video {
     border-color: rgb(147 51 234 / var(--tw-border-opacity));
   }
 
-  .lg\:bg-neutral-300 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(212 212 212 / var(--tw-bg-opacity));
-  }
-
   .lg\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-
-  .lg\:bg-slate-50 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(248 250 252 / var(--tw-bg-opacity));
   }
 }
