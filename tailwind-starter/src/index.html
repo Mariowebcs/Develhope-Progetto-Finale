@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script defer src="./assets/fontawesome/js/brands.js"></script>
+    <script defer src="./assets/fontawesome/js/brands.min.js"></script>
+  </head>
+  <body class="box-border p-0 m-0 h-screen">
+
+    <!--background-->
+    <div class="w-full h-full flex bg-gradient-to-l from-blue-500 to-pink-500 items-center justify-center">
+
+      <!--main container-->
+      <div class="bg-white flex items-center justify-center w-11/12 h-5/6 lg:rounded-lg">
+        <!--left side continer-->
+        <div class="flex justify-center gap-2 lg:w-1/2 md:w-1/2 w-5/6"> 
+          <!--form container-->
+          <div class="flex flex-col justify-center ">
+            <!--header-->
+            <div class="lg:flex md:flex flex-col hidden gap-4">
+              <h1 class="text-3xl font-bold">Welcome to Our Application</h1>
+              <p class="text-lg">Please login to use the platform</p>
+            </div>
+            <h2 class="lg:hidden md:hidden text-2xl mb-10 flex justify-center font-bold">LOGIN</h2>
+            <!--form body-->
+            <form action="" class="flex flex-col gap-4">
+              <label for="" class="lg:flex md:flex hidden">Enter Email</label>
+              <input type="text" class="bg-neutral-300 pl-4 p-2 lg:rounded-2xl lg:bg-white lg:border-2 lg:border-purple-600" placeholder="Email">
+              <label for="" class="lg:flex md:flex hidden">Enter Password</label>
+              <input type="email" class="bg-neutral-300 pl-4 p-2 lg:rounded-2xl lg:bg-white  lg:border-2 lg:border-purple-600" placeholder="Password">
+              <div>
+                <input type="checkbox">
+                <label for="">Remember me</label>
+              </div>
+              <button type="submit" class="bg-purple-600 lg:rounded-lg p-2 mb-4">
+                <p class="lg:hidden md:hidden text-white">LOGIN</p>
+                <p class="lg:inline md:inline hidden text-white">SIGN IN</p>
+              </button>
+            </form>
+            <!--footer-->
+            <div class="flex items-center flex-col gap-8 mb-10">
+              <p class="mt-4 lg:hidden">Or log with</p>
+              <div class="logo flex gap-6">
+                <div class="border-2 border-slate-300 lg:rounded-2xl">
+                  <a href="" class="p-4"><i class="fa-brands fa-square-facebook"></i> Facebook</a>
+                </div>
+                <div class="border-2 border-slate-300 lg:rounded-2xl">
+                  <a href="" class="p-4"><i class="fa-brands fa-google"></i> Google</a>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center gap-1 mt-10 lg:hidden">
+              <span>Not a member?</span><a href="#" class="underline">Sign up now</a>
+            </div>
+          </div>
+        </div>
+      <!--desktop-layout-image-->
+      <div class="flex-1 lg:flex hidden"><img src=".\assets\images\home-hero-image.jpg" alt=""></div>
+      </div>
+      
+    </div>
+
+  </body>
+</html>
