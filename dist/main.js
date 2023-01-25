@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const names = \"mario\";\n\nfunction printName(names) {\n  console.log(names);\n}\n\n\n//# sourceURL=webpack://tailwind-starter/./src/index.js?");
+eval("\n\n//# sourceURL=webpack://tailwind-starter/./src/index.js?");
 
 /***/ })
 
