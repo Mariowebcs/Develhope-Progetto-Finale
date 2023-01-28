@@ -690,6 +690,10 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -703,8 +707,8 @@ html {
   position: sticky;
 }
 
-.top-32{
-  top: 8rem;
+.top-2{
+  top: 0.5rem;
 }
 
 .right-0{
@@ -727,10 +731,6 @@ html {
   top: 7rem;
 }
 
-.top-2{
-  top: 0.5rem;
-}
-
 .right-\[5\.2rem\]{
   right: 5.2rem;
 }
@@ -747,12 +747,28 @@ html {
   left: 0.5rem;
 }
 
+.top-32{
+  top: 8rem;
+}
+
+.top-8{
+  top: 2rem;
+}
+
+.top-24{
+  top: 6rem;
+}
+
 .z-50{
   z-index: 50;
 }
 
 .z-10{
   z-index: 10;
+}
+
+.z-40{
+  z-index: 40;
 }
 
 .mx-4{
