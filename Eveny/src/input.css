@@ -7,7 +7,85 @@
 @layer base {
     html {
         font-family: 'Quicksand', sans-serif;
-    }   
+    }  
+
+    body{
+        background: #000;
+        color: #fff;
+    }
+    
+    .video-bg{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 3rem;
+        left: 0;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 0;
+    }
+
+    .section{
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .title{
+        text-align: center;
+        max-width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform : scale(1);
+        transition : all 1s cubic-bezier(.215, .61, .355, 1);
+        opacity: 0;
+        margin-left: 25%;
+    }
+
+    .section.in-page .title{
+        transform: scale(1.2);
+        opacity : 1;
+    }
+
+    .panel{
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        position: relative;
+        z-index: 2;
+    }
+
+    .panel .card{        
+        transition : all 2s cubic-bezier(.215, .61, .355, 1);   
+        position: relative;    
+        opacity: 0;
+    }
+
+    .panel  .card.in-page{        
+        opacity: 1;
+    }
+    .lh{
+        line-height: 1.5;
+    }
+
+    .section .cta-blur{
+        position: relative;
+        opacity: 0;
+        transition : all 1s cubic-bezier(.215, .61, .355, 1);
+    }
+
+    .section .cta-blur.in-page{
+        opacity: 1;
+    }
 }
 
 @layer components {
@@ -31,10 +109,10 @@
        @apply hover:relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
     }
     .btn-p{
-       @apply inline-block  py-2 px-4 text-white bg-sky-900 hover:bg-pink-500 transition-colors ease-in-out;
+       @apply inline-block  py-2 px-4 text-white bg-sky-900 hover:bg-pink-500 ;
     }
 
     .btn-b{
-        @apply inline-block  py-2 px-4 text-sky-900 bg-white hover:bg-pink-500  ease-in-out transition-colors border border-sky-900 hover:text-white hover:border-white;
+        @apply inline-block  py-2 px-4 text-sky-900 bg-white hover:bg-pink-500  border border-sky-900 hover:text-white hover:border-white;
     }   
 }

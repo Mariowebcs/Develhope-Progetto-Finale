@@ -31,9 +31,9 @@
     </script>
   </head>
   <body class="">
-    <main class="bg-zinc-100 dark:bg-zinc-900 dark:text-white">
+    <main class="dark:bg-zinc-900 dark:text-white">
       <header>
-        <div class="container-toggle">
+        <!-- <div class="container-toggle">
           <div
             id="dark-mode-Toggle"
             class="fixed top-32 right-0 z-50 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-white dark:bg-zinc-200 dark:text-zinc-900"
@@ -41,10 +41,10 @@
             <i class="fa-solid fa-sun z-50 dark:hidden"></i>
             <i class="fa-solid fa-moon z-50 hidden dark:inline"></i>
           </div>
-        </div>
+        </div> -->
         <nav
           id="nav"
-          class="gradient-bg fixed top-0 flex items-center justify-between py-1 w-full z-40"
+          class="gradient-bg fixed top-0 z-50 flex w-full items-center justify-between py-1"
         >
           <div class="flex items-center">
             <a href="index.html">
@@ -95,29 +95,55 @@
             class="mr-6 hidden flex-1 items-center justify-end gap-4 md:flex"
           >
             <div class="menu-item">
-              <i class="fa-solid fa-home text-2xl font-bold text-white"></i>
+              <i class="fa-solid fa-home text-xl font-bold text-white"></i>
               <span class="ml-2">Home</span>
             </div>
             <div class="menu-item">
-              <i class="fa-solid fa-user text-2xl font-bold text-white"></i>
+              <i class="fa-solid fa-user text-xl font-bold text-white"></i>
               <span class="ml-2">Account</span>
             </div>
             <div class="menu-item">
               <i
-                class="fa-solid fa-support rounded-full bg-pink-500 text-2xl font-bold text-white"
+                class="fa-solid fa-support rounded-full bg-pink-500 text-xl font-bold text-white"
               ></i>
               <span class="ml-2">Support</span>
             </div>
           </div>
         </nav>
       </header>
+
+      <video
+        class="video-bg"
+        src="./assets/images/video-bg-final.mp4"
+        muted
+        loop
+        autoplay
+      ></video>
+
+      <div class="section watch">
+        <h1 class="title text-3xl sm:text-2xl">
+          Vuoi conoscere gente nuova nella tua città? 
+        </h1>
+      </div>
+      <div class="section watch">
+        <h2 class="title text-2xl">
+          Entra a far parte di Eveny ed organizza le tue fantastiche serate!
+        </h2>
+      </div>
+      <div class="section watch">
+        <h2 class="title text-2xl">
+          Cosa aspetti ? Conosci nuovi amici e vivi ora nuove esperienze!
+        </h2>
+      </div>
+
+      <!--HERO SECTION -->
       <div
-        class="flex h-[650px] flex-col items-center justify-center overflow-hidden bg-cover bg-center object-cover"
+        class="section z-20 flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden bg-cover bg-center"
         style="background-image: url('assets/images/home-hero-image.jpg')"
       >
         <div
           id="bg-none"
-          class="relative top-28 flex min-h-[360px] min-w-[400px] flex-col items-center justify-center rounded-xl bg-white/40 py-2 px-4 text-center backdrop-blur-sm"
+          class="watch cta-blur relative top-24 flex min-h-[360px] min-w-[400px] flex-col items-center justify-center rounded-xl bg-white/40 py-2 px-4 text-center backdrop-blur-sm"
         >
           <div class="flex items-center justify-center">
             <img
@@ -146,194 +172,63 @@
           </div>
         </div>
       </div>
+      
+      <div class="bg-white text-sky-900 z-20 relative text-center p-8 flex justify-center items-center">
+        <h2 class="bg-white text-sky-900 z-20 max-w-[50%] text-3xl">Scegli o crea un evento nella tua città e rendi uniche le tue serate!</h2>
+      </div>
+      <div class="panel">
+        <div class="card watch bg-white p-10 dark:bg-zinc-900 dark:text-white">
+          <div class="rounded shadow-lg my-0 mx-auto w-[300px]">
+            <div class="relative">
+              <img
+                class="max-h-[100px] w-full"
+                src="assets/images/login-background.jpg"
+                alt=""
+              />
+              <i
+                id="icon"
+                class="fa-regular fa-heart absolute top-2 right-[5.2rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
+              ></i>
+              <i
+                id="icon"
+                class="fa-regular fa-comment-dots absolute top-2 right-[2.8rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
+              ></i>
+              <i
+                id="icon"
+                class="fa-solid fa-arrow-up-right-from-square absolute top-2 right-2 cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
+              ></i>
+              <div
+                class="absolute left-2 top-2 mb-3 cursor-pointer text-center"
+              >
+                <i class="fa-regular fa-user text-2xl text-white"></i
+                ><span class="ml-1 text-lg text-white">5</span>
+              </div>
+            </div>
+
+            <div class="px-6 py-4">
+              <div class="mb-2 text-xl text-sky-900 font-bold">Serata al cinema</div>
+              <p class="text-base text-gray-700 dark:text-white">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptatibus quia, Nonea! Maiores et perferendis eaque,
+                exercitationem praesentium nihil.
+              </p>
+            </div>
+            <div>
+              <span class="btn-b my-4 ml-6 cursor-pointer" href="">Scopri di più</span>
+              <span class="btn-p my-4 ml-3 cursor-pointer" href="">Partecipa ora</span>
+            </div>
+            <div class="mt-4 bg-zinc-100 px-6 pt-4 pb-2">
+              <span class="card-hashtag">#Cinema</span>
+              <span class="card-hashtag">#Avatar</span>
+              <span class="card-hashtag">#Friends</span>
+              <span class="card-hashtag-shop">@CinemaAndromeda</span>
+            </div>
+          </div>
+        </div>      
+      </div>
 
       <!-- CARD PER EVENTI DA MOSTRARE -->
-      <div
-        class="grid grid-cols-1 gap-5 bg-white p-10 dark:bg-zinc-900 dark:text-white sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-      >
-        <!--Card 1-->
-
-        <div class="my-4 overflow-hidden rounded shadow-lg">
-          <div class="relative">
-            <img
-              class="max-h-[100px] w-full"
-              src="assets/images/login-background.jpg"
-              alt=""
-            />
-            <i
-              id="icon"
-              class="fa-regular fa-heart absolute top-2 right-[5.2rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-regular fa-comment-dots absolute top-2 right-[2.8rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-solid fa-arrow-up-right-from-square absolute top-2 right-2 cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <div class="absolute left-2 top-2 mb-3 cursor-pointer text-center">
-              <i class="fa-regular fa-user text-2xl text-white"></i
-              ><span class="ml-1 text-lg text-white">5</span>
-            </div>
-          </div>
-
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Serata al cinema</div>
-            <p class="text-base text-gray-700 dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div>
-            <a class="btn-b my-4 ml-6" href="">Scopri di più</a>
-            <a class="btn-p my-4 ml-3" href="">Partecipa ora</a>
-          </div>
-          <div class="mt-4 border border-black/20 bg-zinc-100 px-6 pt-4 pb-2">
-            <span class="card-hashtag">#Cinema</span>
-            <span class="card-hashtag">#Avatar</span>
-            <span class="card-hashtag">#Friends</span>
-            <span class="card-hashtag-shop">@CinemaAndromeda</span>
-          </div>
-        </div>
-
-        <!--Card 2-->
-        <div class="my-4 overflow-hidden rounded shadow-lg">
-          <div class="relative">
-            <img
-              class="max-h-[100px] w-full"
-              src="assets/images/login-background.jpg"
-              alt=""
-            />
-            <i
-              id="icon"
-              class="fa-regular fa-heart absolute top-2 right-[5.2rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-regular fa-comment-dots absolute top-2 right-[2.8rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-solid fa-arrow-up-right-from-square absolute top-2 right-2 cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <div class="absolute left-2 top-2 mb-3 cursor-pointer text-center">
-              <i class="fa-regular fa-user c text-2xl text-white"></i
-              ><span class="ml-1 text-lg text-white">8</span>
-            </div>
-          </div>
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Event Name</div>
-
-            <p class="text-base text-gray-700 dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div>
-            <a class="btn-b my-4 ml-6" href="">Scopri di più</a>
-            <a class="btn-p my-4 ml-3" href="">Partecipa ora</a>
-          </div>
-          <div class="mt-4 border border-black/20 bg-zinc-100 px-6 pt-4 pb-2">
-            <span class="card-hashtag">#Provola di agerola</span>
-            <span class="card-hashtag">#Napoletana</span>
-            <span class="card-hashtag">#Pizza</span>
-            <span class="card-hashtag-shop">@Pizzeria Del Corso</span>
-          </div>
-        </div>
-
-        <!--Card 3-->
-        <div class="my-4 overflow-hidden rounded shadow-lg">
-          <div class="relative">
-            <img
-              class="max-h-[100px] w-full"
-              src="assets/images/login-background.jpg"
-              alt=""
-            />
-            <i
-              id="icon"
-              class="fa-regular fa-heart absolute top-2 right-[5.2rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-regular fa-comment-dots absolute top-2 right-[2.8rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-solid fa-arrow-up-right-from-square absolute top-2 right-2 cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <div class="absolute left-2 top-2 mb-3 cursor-pointer text-center">
-              <i class="fa-regular fa-user text-2xl text-white"></i
-              ><span class="ml-1 text-lg text-white">4</span>
-            </div>
-          </div>
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Event Name</div>
-
-            <p class="text-base text-gray-700 dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div>
-            <a class="btn-b my-4 ml-6" href="">Scopri di più</a>
-            <a class="btn-p my-4 ml-3" href="">Partecipa ora</a>
-          </div>
-          <div class="mt-4 border border-black/20 bg-zinc-100 px-6 pt-4 pb-2">
-            <span class="card-hashtag">#serata </span>
-            <span class="card-hashtag">#Birreria</span>
-            <span class="card-hashtag">#Birra Love</span>
-            <span class="card-hashtag-shop">@Birreria Al fusto</span>
-          </div>
-        </div>
-        <!-- CARD4 -->
-        <div class="my-4 overflow-hidden rounded shadow-lg">
-          <div class="relative">
-            <img
-              class="max-h-[100px] w-full"
-              src="assets/images/login-background.jpg"
-              alt=""
-            />
-            <i
-              id="icon"
-              class="fa-regular fa-heart absolute top-2 right-[5.2rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-regular fa-comment-dots absolute top-2 right-[2.8rem] cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <i
-              id="icon"
-              class="fa-solid fa-arrow-up-right-from-square absolute top-2 right-2 cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
-            ></i>
-            <div class="absolute left-2 top-2 mb-3 cursor-pointer text-center">
-              <i class="fa-regular fa-user text-2xl text-white"></i
-              ><span class="ml-1 text-lg text-white">6</span>
-            </div>
-          </div>
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Event Name</div>
-            <p class="text-base text-gray-700 dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, Nonea! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div>
-            <a class="btn-b my-4 ml-6" href="">Scopri di più</a>
-            <a class="btn-p my-4 ml-3" href="">Partecipa ora</a>
-          </div>
-          <div class="mt-4 border border-black/20 bg-zinc-100 px-6 pt-4 pb-2">
-            <span class="card-hashtag">#Provola di agerola</span>
-            <span class="card-hashtag">#Napoletana</span>
-            <span class="card-hashtag">#Pizza</span>
-            <span class="card-hashtag-shop">@Pizzeria Del Corso</span>
-          </div>
-        </div>
-      </div>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
