@@ -768,11 +768,6 @@ body{
   position: relative;
 }
 
-.sticky{
-  position: -webkit-sticky;
-  position: sticky;
-}
-
 .top-32{
   top: 8rem;
 }
@@ -793,8 +788,8 @@ body{
   top: 78px;
 }
 
-.top-28{
-  top: 7rem;
+.top-24{
+  top: 6rem;
 }
 
 .top-2{
@@ -817,16 +812,8 @@ body{
   left: 0.5rem;
 }
 
-.top-24{
-  top: 6rem;
-}
-
 .z-50{
   z-index: 50;
-}
-
-.z-40{
-  z-index: 40;
 }
 
 .z-10{
@@ -1073,12 +1060,12 @@ body{
   padding: 1rem;
 }
 
-.p-10{
-  padding: 2.5rem;
-}
-
 .p-8{
   padding: 2rem;
+}
+
+.p-10{
+  padding: 2.5rem;
 }
 
 .py-1{
@@ -1181,11 +1168,6 @@ body{
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-zinc-900{
-  --tw-text-opacity: 1;
-  color: rgb(24 24 27 / var(--tw-text-opacity));
-}
-
 .opacity-100{
   opacity: 1;
 }
@@ -1212,14 +1194,6 @@ body{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition{
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1315,5 +1289,11 @@ body{
 
   .md\:hidden{
     display: none;
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:w-\[600px\]{
+    width: 600px;
   }
 }
