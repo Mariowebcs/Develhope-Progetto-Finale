@@ -44,7 +44,7 @@
         </div> -->
         <nav
           id="nav"
-          class="gradient-bg fixed top-0 z-50 flex w-full items-center justify-between py-1"
+          class="gradient-bg fixed top-0 z-50 flex w-full items-center justify-between  py-1"
         >
           <div class="flex items-center">
             <a href="index.html">
@@ -72,22 +72,27 @@
               ></div>
             </div>
             <div
-              class="gradient-bg absolute left-0 top-[78px] z-10 hidden w-full peer-open:block"
+              class="gradient-bg absolute left-0 top-[76px] z-10 hidden w-full peer-open:block"
             >
-              <div
-                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
-              >
-                <span>Home</span>
-              </div>
-              <div
-                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
-              >
-                <span>Support</span>
-              </div>
-              <div
-                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
-              >
-                <span>Account</span>
+              <div class="flex items-center justify-evenly">
+                <div
+                  class="group relative gap-2 flex flex-col h-full cursor-pointer items-center justify-center p-4 font-bold text-sky-900 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
+                >
+                  <span>Home</span>
+                  <i class="fa-solid fa-home text-xl text-sky-900 group-hover:text-white font-bold"></i>
+                </div>
+                <div
+                  class="group relative gap-2 flex flex-col h-full cursor-pointer items-center justify-center p-4 font-bold text-sky-900 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
+                >
+                  <span>Support</span>
+                  <i class="fa-solid fa-question-circle  text-xl font-bold text-sky-900 group-hover:text-white"></i>
+                </div>
+                <div
+                  class="group relative gap-2 flex flex-col h-full cursor-pointer items-center justify-center p-4 font-bold text-sky-900 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
+                >                  
+                  <span>Account</span>
+                  <i class="fa-solid fa-user-circle text-xl text-sky-900 font-bold group-hover:text-white"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -112,26 +117,28 @@
         </nav>
       </header>
 
-      <video
-        class="video-bg"
-        src="./assets/images/video-bg-final.mp4"
-        muted
-        loop
-        autoplay
-      ></video>
-
+      <div class="fixed w-full h-[100vh]">
+        <video
+          class="video-bg"
+          src="./assets/images/video-bg-final.mp4"
+          muted
+          loop
+          autoplay
+          playsinline
+        ></video>
+      </div>
       <div class="section watch">
-        <h1 class="title text-3xl sm:text-2xl">
+        <h1 class="title  text-2xl lg:text-4xl sm:text-2xl">
           Anche TU hai voglia di conoscere gente nuova nella tua città?
         </h1>
       </div>
       <div class="section watch">
-        <h2 class="title text-2xl">
+        <h2 class="title text-2xl lg:text-4xl">
           Entra a far parte di Eveny ed organizza le tue fantastiche serate!
         </h2>
       </div>
       <div class="section watch">
-        <h2 class="title text-2xl">
+        <h2 class="title text-2xl lg:text-4xl">
           Cosa aspetti ? Conosci nuovi amici e vivi ora nuove esperienze!
         </h2>
       </div>
@@ -172,20 +179,19 @@
           </div>
         </div>
       </div>
-
       <div
-        class="relative z-20 flex items-center justify-center bg-white p-8 text-center text-sky-900"
+        class="relative z-20 flex items-center justify-center bg-white px-6 py-4 text-center text-sky-900"
       >
-        <h2 class="z-20 max-w-[50%] bg-white text-3xl text-sky-900">
+        <h2 class="z-20 lg:max-w-[50%] bg-white text-3xl text-sky-900">
           Scegli o crea un evento nella tua città e rendi uniche le tue serate!
         </h2>
       </div>
-      <div class="panel">
+      <div class="panel relative">
         <div class="card watch bg-white p-10 dark:bg-zinc-900 dark:text-white">
           <div class="my-0 mx-auto w-[300px] rounded shadow-lg xl:w-[600px]">
             <div class="relative">
               <img
-                class="max-h-[100px] w-full"
+                class="max-h-[100px] w-full rounded-sm"
                 src="assets/images/login-background.jpg"
                 alt=""
               />
@@ -202,10 +208,13 @@
                 class="fa-solid fa-arrow-up-right-from-square absolute top-2 right-2 cursor-pointer text-2xl font-bold text-white hover:text-pink-600"
               ></i>
               <div
-                class="absolute left-2 top-2 mb-3 cursor-pointer text-center"
+                class="absolute right-[7.2rem] top-2 mb-3 cursor-pointer text-center"
               >
                 <i class="fa-regular fa-user text-2xl text-white"></i
                 ><span class="ml-1 text-lg text-white">5</span>
+              </div>
+              <div class="absolute left-2 top-1 text-white">
+                <img class="rounded-full hover:w-[50px] cursor-pointer transition" width="40px" src="./assets/images/mario-dandrea.jpg" alt="user profile image">
               </div>
             </div>
 
@@ -223,15 +232,15 @@
               <span class="btn-b my-4 ml-6 cursor-pointer" href=""
                 >Scopri di più</span
               >
-              <span class="btn-p my-4 ml-3 cursor-pointer" href=""
+              <span class="btn-p my-4 ml-1 mr-2 cursor-pointer" href=""
                 >Partecipa ora</span
               >
             </div>
             <div class="mt-4 bg-zinc-100 px-6 pt-4 pb-2">
-              <span class="card-hashtag">#Cinema</span>
-              <span class="card-hashtag">#Avatar</span>
-              <span class="card-hashtag">#Friends</span>
-              <span class="card-hashtag-shop">@CinemaAndromeda</span>
+              <span class="card-hashtag shadow-lg">#Cinema</span>
+              <span class="card-hashtag shadow-lg">#Avatar</span>
+              <span class="card-hashtag shadow-lg">#Friends</span>
+              <span class="card-hashtag-shop shadow-lg">@CinemaAndromeda</span>
             </div>
           </div>
         </div>
