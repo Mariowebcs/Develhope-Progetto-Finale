@@ -44,7 +44,7 @@
         </div> -->
         <nav
           id="nav"
-          class="gradient-bg fixed top-0 z-50 flex w-full items-center justify-between  py-1"
+          class="gradient-bg fixed top-0 z-50 flex w-full items-center py-1 opacity-70"
         >
           <div class="flex items-center">
             <a href="index.html">
@@ -72,26 +72,32 @@
               ></div>
             </div>
             <div
-              class="gradient-bg absolute left-0 top-[76px] z-10 hidden w-full peer-open:block"
+              class="gradient-bg absolute left-0 top-[74px] z-10 hidden w-full peer-open:block"
             >
               <div class="flex items-center justify-evenly">
                 <div
-                  class="group relative gap-2 flex flex-col h-full cursor-pointer items-center justify-center p-4 font-bold text-sky-900 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
+                  class="group relative flex h-full cursor-pointer flex-col items-center justify-center gap-2 p-4 font-bold text-white transition-colors ease-in-out hover:bg-white/10 hover:text-sky-900"
                 >
                   <span>Home</span>
-                  <i class="fa-solid fa-home text-xl text-sky-900 group-hover:text-white font-bold"></i>
+                  <i
+                    class="fa-solid fa-home text-xl font-bold text-white group-hover:text-sky-900"
+                  ></i>
                 </div>
                 <div
-                  class="group relative gap-2 flex flex-col h-full cursor-pointer items-center justify-center p-4 font-bold text-sky-900 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
+                  class="group relative flex h-full cursor-pointer flex-col items-center justify-center gap-2 p-4 font-bold text-white transition-colors ease-in-out hover:bg-white/10 hover:text-sky-900"
                 >
                   <span>Support</span>
-                  <i class="fa-solid fa-question-circle  text-xl font-bold text-sky-900 group-hover:text-white"></i>
+                  <i
+                    class="fa-solid fa-question-circle text-xl font-bold text-white group-hover:text-sky-900"
+                  ></i>
                 </div>
                 <div
-                  class="group relative gap-2 flex flex-col h-full cursor-pointer items-center justify-center p-4 font-bold text-sky-900 transition-colors ease-in-out hover:bg-white/10 hover:text-white"
-                >                  
+                  class="group relative flex h-full cursor-pointer flex-col items-center justify-center gap-2 p-4 font-bold text-white transition-colors ease-in-out hover:bg-white/10 hover:text-sky-900"
+                >
                   <span>Account</span>
-                  <i class="fa-solid fa-user-circle text-xl text-sky-900 font-bold group-hover:text-white"></i>
+                  <i
+                    class="fa-solid fa-user-circle text-xl font-bold text-white group-hover:text-sky-900"
+                  ></i>
                 </div>
               </div>
             </div>
@@ -109,7 +115,7 @@
             </div>
             <div class="menu-item">
               <i
-                class="fa-solid fa-support rounded-full bg-pink-500 text-xl font-bold text-white"
+                class="fa-solid fa-support rounded-full bg-[#ff0066] text-xl font-bold text-white"
               ></i>
               <span class="ml-2">Support</span>
             </div>
@@ -117,7 +123,7 @@
         </nav>
       </header>
 
-      <div class="fixed w-full h-[100vh]">
+      <div class="fixed h-[100vh] w-full">
         <video
           class="video-bg"
           src="./assets/images/video-bg-final.mp4"
@@ -128,8 +134,8 @@
         ></video>
       </div>
       <div class="section watch">
-        <h1 class="title  text-2xl lg:text-4xl sm:text-2xl">
-          Anche TU hai voglia di conoscere gente nuova nella tua città?
+        <h1 class="title text-2xl max-w-[100%] lg:max-w[50%] sm:text-2xl lg:text-4xl ml-[15%] lg:ml-[25%]">
+          <span class="auto-type"></span>
         </h1>
       </div>
       <div class="section watch">
@@ -139,7 +145,7 @@
       </div>
       <div class="section watch">
         <h2 class="title text-2xl lg:text-4xl">
-          Cosa aspetti ? Conosci nuovi amici e vivi ora nuove esperienze!
+          Cosa aspetti ? Conosci nuovi amici e vivi ora fantastiche esperienze!
         </h2>
       </div>
 
@@ -166,13 +172,13 @@
             <span>Trova Adesso nuovi amici</span>
           </div>
           <div
-            class="flex items-center justify-center text-xl font-bold text-pink-600"
+            class="flex items-center justify-center text-xl font-bold text-[#ff0066]"
           >
             <span>E organizza le tue serate!</span>
           </div>
           <div class="my-6">
             <a
-              class="inline-block rounded-md bg-pink-500 py-3 px-6 text-white transition-colors ease-in-out hover:bg-sky-900"
+              class="inline-block rounded-md bg-[#ff0066] py-3 px-6 text-white transition-colors ease-in-out hover:bg-sky-900"
               href=""
               >Crea ora il tuo account</a
             >
@@ -180,14 +186,14 @@
         </div>
       </div>
       <div
-        class="relative z-20 flex items-center justify-center bg-white px-6 py-4 text-center text-sky-900"
+        class="relative z-20 flex items-center justify-center bg-white px-6 py-4  text-center text-sky-900"
       >
-        <h2 class="z-20 lg:max-w-[50%] bg-white text-3xl text-sky-900">
+        <h2 class="z-20 bg-white text-3xl text-sky-900 lg:max-w-[50%] pt-10">
           Scegli o crea un evento nella tua città e rendi uniche le tue serate!
         </h2>
       </div>
       <div class="panel relative">
-        <div class="card watch bg-white p-10 dark:bg-zinc-900 dark:text-white">
+        <div class="card watch bg-white p-10 dark:bg-zinc-900 dark:text-white z-50">
           <div class="my-0 mx-auto w-[300px] rounded shadow-lg xl:w-[600px]">
             <div class="relative">
               <img
@@ -214,7 +220,12 @@
                 ><span class="ml-1 text-lg text-white">5</span>
               </div>
               <div class="absolute left-2 top-1 text-white">
-                <img class="rounded-full hover:w-[50px] cursor-pointer transition" width="40px" src="./assets/images/mario-dandrea.jpg" alt="user profile image">
+                <img
+                  class="cursor-pointer rounded-full transition hover:w-[50px]"
+                  width="40px"
+                  src="./assets/images/mario-dandrea.jpg"
+                  alt="user profile image"
+                />
               </div>
             </div>
 
@@ -229,7 +240,7 @@
               </p>
             </div>
             <div>
-              <span class="btn-b my-4 ml-6 cursor-pointer" href=""
+              <span class="btn-b my-4 ml-4 cursor-pointer" href=""
                 >Scopri di più</span
               >
               <span class="btn-p my-4 ml-1 mr-2 cursor-pointer" href=""
@@ -249,5 +260,21 @@
       <!-- CARD PER EVENTI DA MOSTRARE -->
     </main>
     <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="text/javascript">
+      let typed = new Typed(".auto-type", {
+        strings: [
+          "Stanco delle solite serate?",
+          "Stanco delle solite serate?",
+          "Vuoi fare qualcosa di nuovo",
+          "Ma non sai cosa?",
+          "Ho la risposta per te!",
+          "Scrolla ora e scopri di più!",
+        ],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: false,
+      });
+    </script>
   </body>
 </html>

@@ -60,11 +60,15 @@
         margin-left: 25%;
     }
 
+ 
+
     .section.in-page .title{
         transform: scale(1.2);
         opacity : 1;
     }
 
+    
+  
     .panel{
         width: 100%;
         height: 100vh;
@@ -74,7 +78,7 @@
     }
 
     .panel .card{        
-        transition : all 1s cubic-bezier(.215, .61, .355, 1);   
+        transition : linear  1s;   
         position: relative;    
         opacity: 0;
     }
@@ -104,7 +108,7 @@
     }
 
     .gradient-bg{
-        @apply bg-gradient-to-l from-blue-500 to-pink-500 md:opacity-70 lg:opacity-70;
+        @apply bg-gradient-to-l from-blue-500 to-[#FF0066] md:opacity-70 lg:opacity-70;
     }
 
     .bg-none{
@@ -112,17 +116,17 @@
     }
 
     .card-hashtag{
-        @apply hover:relative hover:-top-1 inline-block bg-pink-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+        @apply hover:relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
     }
 
     .card-hashtag-shop{
        @apply hover:relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
     }
     .btn-p{
-       @apply inline-block  py-2 px-4 text-white bg-sky-900 hover:bg-pink-500 ;
+       @apply inline-block  py-2 px-4 text-white bg-sky-900 hover:bg-[#FF0066] ;
     }
 
     .btn-b{
-        @apply inline-block  py-2 px-4 text-sky-900 bg-white hover:bg-pink-500  border border-sky-900 hover:text-white hover:border-white;
+        @apply inline-block  py-2 px-4 text-sky-900 bg-white hover:bg-[#FF0066]  border border-sky-900 hover:text-white hover:border-white;
     }   
 }
