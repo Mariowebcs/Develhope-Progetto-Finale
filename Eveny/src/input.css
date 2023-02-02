@@ -12,29 +12,29 @@
         -ms-user-select: none;
         user-select: none;
     }
-       
+
     html {
         font-family: 'Quicksand', sans-serif;
-    }  
+    }
 
-    body{
+    body {
         background: #000;
         color: #fff;
     }
 
-    #nav{
+    #nav {
         transition: 0.5s;
     }
-    
-    .video-bg{
+
+    .video-bg {
         width: 100%;
-        height: 100vh;        
+        height: 100vh;
         object-fit: cover;
         opacity: 0.5;
         z-index: 0;
     }
 
-    .section{
+    .section {
         color: #fff;
         z-index: 1;
         position: relative;
@@ -43,7 +43,7 @@
         text-align: center;
     }
 
-    .title{
+    .title {
         text-align: center;
         max-width: 50%;
         height: 100vh;
@@ -54,22 +54,22 @@
         position: fixed;
         top: 0;
         left: 0;
-        transform : scale(1);
-        transition : all 1s cubic-bezier(.215, .61, .355, 1);
+        transform: scale(1);
+        transition: all 1s cubic-bezier(.215, .61, .355, 1);
         opacity: 0;
         margin-left: 25%;
     }
 
- 
 
-    .section.in-page .title{
+
+    .section.in-page .title {
         transform: scale(1.2);
-        opacity : 1;
+        opacity: 1;
     }
 
-    
-  
-    .panel{
+
+
+    .panel {
         width: 100%;
         height: 100vh;
         background: #fff;
@@ -77,56 +77,69 @@
         z-index: 2;
     }
 
-    .panel .card{        
-        transition : linear  1s;   
-        position: relative;    
+    .panel .card {
+        transition: linear 1s;
+        position: relative;
         opacity: 0;
     }
 
-    .panel  .card.in-page{        
+    .panel .card.in-page {
         opacity: 1;
     }
-    .lh{
+
+    .lh {
         line-height: 1.5;
     }
 
-    .section .cta-blur{
+    .section .cta-blur {
         position: relative;
         opacity: 0;
-        transition : all 1s cubic-bezier(.215, .61, .355, 1);
+        transition: all 1s cubic-bezier(.215, .61, .355, 1);
     }
 
-    .section .cta-blur.in-page{
+    .section .cta-blur.in-page {
         opacity: 1;
         bottom: 0;
     }
+
+    .ft {
+        background: #fff;
+        position: relative;
+    }
+
+    .ft > * {
+        z-index: 9999;
+    }
 }
+
+
 
 @layer components {
     .menu-item {
-        @apply relative h-full p-4 py-8 text-pink-200 cursor-pointer hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out;
+        @apply relative h-full p-4 py-8 text-pink-200 cursor-pointer hover:text-white  hover:bg-white/10 transition-colors ease-out;
     }
 
-    .gradient-bg{
+    .gradient-bg {
         @apply bg-gradient-to-l from-blue-500 to-[#FF0066] md:opacity-70 lg:opacity-70;
     }
 
-    .bg-none{
+    .bg-none {
         background: none;
     }
 
-    .card-hashtag{
-        @apply hover:relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    .card-hashtag {
+        @apply relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
     }
 
-    .card-hashtag-shop{
-       @apply hover:relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
-    }
-    .btn-p{
-       @apply inline-block  py-2 px-4 text-white bg-sky-900 hover:bg-[#FF0066] ;
+    .card-hashtag-shop {
+        @apply relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
     }
 
-    .btn-b{
-        @apply inline-block  py-2 px-4 text-sky-900 bg-white hover:bg-[#FF0066]  border border-sky-900 hover:text-white hover:border-white;
-    }   
+    .btn-p {
+        @apply inline-block py-2 px-4 text-white bg-sky-900 hover:bg-[#FF0066];
+    }
+
+    .btn-b {
+        @apply inline-block py-2 px-4 text-sky-900 bg-white hover:bg-[#FF0066] border border-sky-900 hover:text-white hover:border-white;
+    }
 }
