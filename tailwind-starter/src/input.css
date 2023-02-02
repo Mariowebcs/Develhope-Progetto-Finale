@@ -21,6 +21,6 @@
 
 @layer components {
     .gradient-bg{
-        @apply bg-gradient-to-l from-blue-500 to-pink-500;
+        @apply bg-gradient-to-t from-blue-600 to-pink-800;
     }
 }
