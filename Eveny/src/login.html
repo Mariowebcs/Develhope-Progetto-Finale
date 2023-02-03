@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script defer src="../fontawesome/js/solid.min.js"></script>
+    <script defer src="../fontawesome/js/fontawesome.min.js"></script>
+    <script defer src="../fontawesome/js/brands.js"></script>
+    <script defer src="../fontawesome/js/brands.min.js"></script>
+  </head>
+  <body class="m-0 box-border h-screen p-0 text-black">
+    <!--background-->
+    <div
+      class="flex h-full w-full items-center justify-center bg-gradient-to-b from-purple-800 to-pink-600"
+    >
+      <!--main container-->
+      <div
+        class="flex h-5/6 w-10/12 items-center justify-center rounded-lg bg-white shadow-2xl shadow-black lg:max-w-screen-xl lg:flex-1"
+      >
+        <!--left side continer-->
+        <div class="flex w-5/6 justify-center gap-2 lg:w-5/12">
+          <!--form container-->
+          <div class="flex w-3/4 flex-col justify-center">
+            <!--header-->
+            <div class="hidden flex-col gap-4 pb-6 md:flex lg:flex">
+              <img
+                class="mx-4 place-self-center rounded-full bg-[#1c1d33] p-2"
+                src="./assets/images/eveny-logo-new.svg"
+                width="80"
+                alt=""
+              />
+
+              <h1 class="text-3xl font-bold">Welcome to Eveny</h1>
+              <p class="text-lg">Please login to use the platform</p>
+            </div>
+            <img
+              class="mx-4 mb-4 place-self-center rounded-full bg-[#1c1d33] p-2 md:hidden"
+              src="./assets/images/eveny-logo-new.svg"
+              width="70"
+              alt=""
+            />
+            <!-- <h2 class="lg:hidden md:hidden text-2xl mb-10 flex justify-center font-bold italic">EVENY</h2> -->
+            <!--form body-->
+            <form action="" class="relative flex flex-1 flex-col gap-4">
+              <label
+                for=""
+                class="absolute left-6 -top-3 hidden bg-white pl-2 pr-2 lg:flex"
+                >Enter Email</label
+              >
+              <input
+                type="email"
+                class="rounded-2xl border-2 border-purple-600 bg-white p-2 pl-4 sm:placeholder:text-gray-400 lg:placeholder:text-white"
+                placeholder="Email"
+              />
+              <label
+                for=""
+                class="absolute top-12 left-6 hidden bg-white pl-2 pr-2 lg:flex"
+                >Enter Password</label
+              >
+              <input
+                type="password"
+                class="rounded-2xl border-2 border-purple-600 bg-white p-2 pl-4 invalid:border-red-500 sm:placeholder:text-gray-400 lg:placeholder:text-white"
+                placeholder="Password"
+              />
+              <div>
+                <input id="rememberMe" type="checkbox" />
+                <label for="rememberMe">Remember me</label>
+              </div>
+              <button
+                type="submit"
+                class="mb-4 rounded-lg bg-gradient-to-b from-purple-600 to-pink-500 p-2"
+              >
+                <p class="text-white md:hidden lg:hidden">LOGIN</p>
+                <p class="hidden text-white md:inline lg:inline">SIGN IN</p>
+              </button>
+            </form>
+            <!--footer-->
+            <div class="mb-4 flex flex-col items-center gap-8">
+              <p class="mt-4 lg:hidden">Or log in with</p>
+              <div class="logo flex flex-wrap justify-center gap-4">
+                <div class="rounded-2xl border-2 border-slate-300">
+                  <a href="" class="p-4"
+                    ><i class="fa-brands fa-square-facebook text-blue-800"></i>
+                    Facebook</a
+                  >
+                </div>
+                <div class="rounded-2xl border-2 border-slate-300">
+                  <a href="" class="p-4"
+                    ><i class="fa-brands fa-google"></i> Google</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 flex flex-wrap justify-center gap-1 lg:hidden">
+              <span>Not a member?</span
+              ><a href="#" class="underline">Sign up now</a>
+            </div>
+            <div class="text-center">
+              <a class="cursor-pointer hover:underline" href="index.html"
+                >Back to home</a
+              >
+            </div>
+          </div>
+        </div>
+        <!--desktop-layout-image-->
+        <div class="hidden max-h-full lg:flex">
+          <img
+            class="rounded-tr-lg rounded-br-lg bg-center bg-cover"
+            src=".\assets\images\people-neon2.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
