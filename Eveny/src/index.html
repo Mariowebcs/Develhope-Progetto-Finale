@@ -429,12 +429,12 @@
         </div>
       </div>
       <div
-        class="gradient-bg px-4 py-6 text-white opacity-70 dark:bg-gray-700 md:flex md:items-center md:justify-between"
+        class="gradient-bg px-4 py-6 text-white opacity-70 dark:bg-gray-700 md:flex md:items-center md:justify-between z-50 ftb"
       >
         <span class="text-sm text-white dark:text-gray-300 sm:text-center"
           >© 2023 <a href="index.html"> Eveny™ </a> All Rights Reserved.
         </span>
-        <div class="mt-4 flex space-x-6 sm:justify-center md:mt-0">
+        <div class="mt-4 flex space-x-6 sm:justify-center md:mt-0 z-50">
           <a
             href="#"
             class="text-white hover:text-gray-900 dark:hover:text-white"
@@ -529,10 +529,9 @@
 
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script type="text/javascript">
-      //MOBILE MENU SCRIPT
+    <script>
       window.onload = () => {
-        const mobileMenu = document.getElementById("mobile-menu");
+        let mobileMenu = document.getElementById("mobile-menu");
         mobileMenu.addEventListener("click", () => {
           if (mobileMenu.classList.contains("open")) {
             mobileMenu.classList.remove("open");
@@ -550,6 +549,20 @@
           }
         });
       };
+      let previousScroll;
+      const mobileMenu = document.getElementById("mobile-menu");
+      let navbar = document.getElementById("nav");
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > previousScroll) {
+          navbar.style.top = "-100px";
+          mobileMenu.classList.remove("open");
+        } else {
+          navbar.style.top = "0";
+        }
+        previousScroll = scrollTop;
+      });
       //AUTOTYPE SCRIPT
       let typed = new Typed(".auto-type", {
         strings: [

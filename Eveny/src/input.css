@@ -107,7 +107,15 @@
         position: relative;
     }
 
+    .ftb{
+        position : relative;
+    }
+
     .ft > * {
+        z-index: 9999;
+    }
+
+    .ftb > *{
         z-index: 9999;
     }
 }

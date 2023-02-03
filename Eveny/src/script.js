@@ -1,3 +1,4 @@
+
 //Observer script
 let elementsToWatch = document.querySelectorAll('.watch');
 let callback = function (items) {
@@ -14,15 +15,8 @@ elementsToWatch.forEach((element) => {
     observer.observe(element);
 });
 
-//Scroll check for navbar
-let previousScroll;
-let navbar = document.getElementById("nav");
-window.addEventListener("scroll", function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > previousScroll) {
-        navbar.style.top = "-100px";
-    } else {
-        navbar.style.top = "0";
-    }
-    previousScroll = scrollTop;
-});
+
+
+
+
+
