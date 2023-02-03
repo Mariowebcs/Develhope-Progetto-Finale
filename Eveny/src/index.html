@@ -244,7 +244,9 @@
         </div>
       </div> -->
 
-      <div class="panel relative flex items-center justify-center">
+      <div
+        class="panel relative flex items-center justify-center  md:pb-32 lg:pb-32"
+      >
         <div
           class="card watch w-[90%] rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 lg:max-w-md"
         >
@@ -341,7 +343,152 @@
           </div>
         </div>
       </div>
-      <!-- CARD PER EVENTI DA MOSTRARE -->
+      <!-- EXAMPLE OF JAVASCRIPT CREATE CARD -->
+      <div
+        class="panel relative flex flex-col items-center justify-center gap-4 pt-[500px] pb-80 md:flex-row md:pt-0 lg:flex-row lg:pt-0"
+      >
+        <div
+          class="card watch w-[90%] rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 lg:max-w-md"
+        >
+          <div class="flex flex-col items-center pt-6 pb-10 text-black">
+            <h3>Crea il tuo evento</h3>
+            <div class="px-6 pt-8 text-center text-black">
+              <form action="">
+                <label class="block" for="input-title"
+                  >Titolo dell'evento :
+                </label>
+                <input
+                  class="m-4 border border-black"
+                  type="text"
+                  name="title"
+                  id="input-title"
+                  required
+                  minlength="5"
+                  maxlength="25"
+                />
+                <label class="block" for="input-description"
+                  >Descrizione dell'evento :
+                </label>
+                <textarea
+                  class="m-2 border border-black"
+                  name="description"
+                  id="input-description"
+                  cols="20"
+                  rows="5"
+                  required
+                ></textarea>
+                <button
+                  id="create-event"
+                  type="submit"
+                  class="block my-4 mx-auto rounded-lg border border-gray-300 bg-sky-900 px-4 py-2 text-center text-sm font-bold text-white hover:bg-[#FF0066] hover:text-white"
+                >
+                  Crea il tuo evento!
+                </button>
+              </form>
+            </div>
+          </div>
+          <div
+            class="mt-4 flex h-[80px] justify-center bg-zinc-100 px-6 pt-4 pb-2"
+          ></div>
+        </div>
+        <!-- CARD CREATED -->
+        <div
+          id="card-created"
+          class="watch w-[90%] rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 lg:max-w-md"
+        >
+          <div class="flex justify-end px-4 pt-4">
+            <button
+              id="dropdownButton"
+              data-dropdown-toggle="dropdown"
+              class="inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              type="button"
+            >
+              <span class="sr-only">Open dropdown</span>
+              <svg
+                class="h-6 w-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
+                ></path>
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdown"
+              class="z-10 hidden w-44 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:bg-gray-700"
+            >
+              <ul class="py-2" aria-labelledby="dropdownButton">
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Edit</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Export Data</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Delete</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col items-center pb-10">
+            <img
+              class="mb-3 h-24 w-24 rounded-full shadow-lg"
+              src="./assets/images/mario-dandrea.jpg"
+              alt="Person profile image"
+            />
+            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+              Mario D'Andrea
+            </h5>
+            <span class="text-sm text-gray-500 dark:text-gray-400"
+              >Cosenza Amante di anime</span
+            >
+            <div class="mt-4 flex space-x-3 md:mt-6">
+              <a
+                href="login.html"
+                class="inline-flex items-center rounded-lg bg-white px-4 py-2 text-center text-sm font-bold text-sky-900 hover:bg-[#FF0066] hover:text-white"
+                >Scopri di più</a
+              >
+              <a
+                href="login.html"
+                class="inline-flex items-center rounded-lg border border-gray-300 bg-sky-900 px-4 py-2 text-center text-sm font-bold text-white hover:bg-[#FF0066] hover:text-white"
+                >Partecipa ora</a
+              >
+            </div>
+            <div class="px-6 pt-8 text-center">
+              <div class="mb-2 text-xl font-bold text-sky-900">
+                <p id="event__Title"></p>
+              </div>
+              <p
+                id="event__Description"
+                class="text-base text-gray-700 dark:text-white"
+              ></p>
+            </div>
+          </div>
+          <div class="mt-4 bg-zinc-100 px-6 pt-4 pb-2">
+            <span class="card-hashtag shadow-lg">#Cinema</span>
+            <span class="card-hashtag shadow-lg">#Avatar</span>
+            <span class="card-hashtag shadow-lg">#Friends</span>
+            <span class="card-hashtag-shop shadow-lg">@CinemaAndromeda</span>
+          </div>
+        </div>
+      </div>
+      <!-- END EXAMPLE -->
     </main>
     <!-- //FOOTER -->
     <footer class="ft bg-white pt-12 dark:bg-gray-900">
@@ -429,12 +576,12 @@
         </div>
       </div>
       <div
-        class="gradient-bg px-4 py-6 text-white opacity-70 dark:bg-gray-700 md:flex md:items-center md:justify-between z-50 ftb"
+        class="gradient-bg ftb z-50 px-4 py-6 text-white opacity-70 dark:bg-gray-700 md:flex md:items-center md:justify-between"
       >
         <span class="text-sm text-white dark:text-gray-300 sm:text-center"
           >© 2023 <a href="index.html"> Eveny™ </a> All Rights Reserved.
         </span>
-        <div class="mt-4 flex space-x-6 sm:justify-center md:mt-0 z-50">
+        <div class="z-50 mt-4 flex space-x-6 sm:justify-center md:mt-0">
           <a
             href="#"
             class="text-white hover:text-gray-900 dark:hover:text-white"
