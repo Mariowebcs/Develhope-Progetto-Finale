@@ -1443,14 +1443,6 @@ body {
   padding-bottom: 0.5rem;
 }
 
-.pb-64{
-  padding-bottom: 16rem;
-}
-
-.pt-20{
-  padding-top: 5rem;
-}
-
 .pb-10{
   padding-bottom: 2.5rem;
 }
@@ -1489,22 +1481,6 @@ body {
 
 .pl-4{
   padding-left: 1rem;
-}
-
-.pt-3{
-  padding-top: 0.75rem;
-}
-
-.pt-32{
-  padding-top: 8rem;
-}
-
-.pt-36{
-  padding-top: 9rem;
-}
-
-.pb-60{
-  padding-bottom: 15rem;
 }
 
 .text-center{

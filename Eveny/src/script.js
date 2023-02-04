@@ -24,12 +24,14 @@ elementsToWatch.forEach((element) => {
 
           const button = document.getElementById("create-event");
 
-          button.onsubmit = async function createEvent() {
+          button.onclick = async function createEvent() {
             if (title.innerHTML === "" && description.innerHTML === "") {
               title.innerText = eventTitle.value;
               description.innerText = eventDescription.value;
-              cardCreate.classList.remove("opacity-0");
+              if(title.innerHTML!=="" && description.innerHTML!==""){
+                cardCreate.classList.remove("opacity-0");
               cardCreate.classList.add("opacity-100");
+            }              
             } else {
               alert("L'evento è gia stato creato!");
             }
