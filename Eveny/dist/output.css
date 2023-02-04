@@ -1483,6 +1483,30 @@ body {
   padding-left: 1rem;
 }
 
+.pb-9{
+  padding-bottom: 2.25rem;
+}
+
+.pb-96{
+  padding-bottom: 24rem;
+}
+
+.pb-\[450PX\]{
+  padding-bottom: 450PX;
+}
+
+.pb-\[450px\]{
+  padding-bottom: 450px;
+}
+
+.pb-\[500px\]{
+  padding-bottom: 500px;
+}
+
+.pb-20{
+  padding-bottom: 5rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -1906,6 +1930,26 @@ body {
   .md\:pt-0{
     padding-top: 0px;
   }
+
+  .md\:pb-64{
+    padding-bottom: 16rem;
+  }
+
+  .md\:pb-56{
+    padding-bottom: 14rem;
+  }
+
+  .md\:pb-0{
+    padding-bottom: 0px;
+  }
+
+  .md\:pb-16{
+    padding-bottom: 4rem;
+  }
+
+  .md\:pb-8{
+    padding-bottom: 2rem;
+  }
 }
 
 @media (min-width: 1024px){
@@ -1955,6 +1999,30 @@ body {
 
   .lg\:pt-0{
     padding-top: 0px;
+  }
+
+  .lg\:pb-64{
+    padding-bottom: 16rem;
+  }
+
+  .lg\:pb-5{
+    padding-bottom: 1.25rem;
+  }
+
+  .lg\:pb-56{
+    padding-bottom: 14rem;
+  }
+
+  .lg\:pb-0{
+    padding-bottom: 0px;
+  }
+
+  .lg\:pb-16{
+    padding-bottom: 4rem;
+  }
+
+  .lg\:pb-8{
+    padding-bottom: 2rem;
   }
 
   .lg\:text-4xl{
