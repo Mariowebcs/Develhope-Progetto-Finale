@@ -882,6 +882,10 @@ body {
   top: 3rem;
 }
 
+.top-10{
+  top: 2.5rem;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -1130,22 +1134,6 @@ body {
 
 .max-w-\[70\%\]{
   max-width: 70%;
-}
-
-.max-w-\[50\%\]{
-  max-width: 50%;
-}
-
-.max-w-\[50ch\]{
-  max-width: 50ch;
-}
-
-.max-w-\[45ch\]{
-  max-width: 45ch;
-}
-
-.max-w-\[30ch\]{
-  max-width: 30ch;
 }
 
 .flex-1{
@@ -1443,6 +1431,16 @@ body {
   padding-bottom: 1.5rem;
 }
 
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pr-6{
   padding-right: 1.5rem;
 }
@@ -1457,6 +1455,14 @@ body {
 
 .pb-2{
   padding-bottom: 0.5rem;
+}
+
+.pt-\[300px\]{
+  padding-top: 300px;
+}
+
+.pb-\[300px\]{
+  padding-bottom: 300px;
 }
 
 .pb-10{
@@ -1495,24 +1501,12 @@ body {
   padding-left: 1rem;
 }
 
-.pt-\[300px\]{
-  padding-top: 300px;
+.pt-\[2500px\]{
+  padding-top: 2500px;
 }
 
-.pb-\[300px\]{
-  padding-bottom: 300px;
-}
-
-.pt-\[150px\]{
-  padding-top: 150px;
-}
-
-.pb-\[150px\]{
-  padding-bottom: 150px;
-}
-
-.pb-\[\]{
-  padding-bottom: ;
+.pt-\[250px\]{
+  padding-top: 250px;
 }
 
 .text-center{
@@ -1919,10 +1913,6 @@ body {
     width: 45%;
   }
 
-  .md\:w-\[45\]{
-    width: 45;
-  }
-
   .md\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -1939,38 +1929,6 @@ body {
     justify-content: space-between;
   }
 
-  .md\:pb-0{
-    padding-bottom: 0px;
-  }
-
-  .md\:pt-0{
-    padding-top: 0px;
-  }
-
-  .md\:pb-20{
-    padding-bottom: 5rem;
-  }
-
-  .md\:pt-20{
-    padding-top: 5rem;
-  }
-
-  .md\:pb-64{
-    padding-bottom: 16rem;
-  }
-
-  .md\:pt-64{
-    padding-top: 16rem;
-  }
-
-  .md\:pb-96{
-    padding-bottom: 24rem;
-  }
-
-  .md\:pb-8{
-    padding-bottom: 2rem;
-  }
-
   .md\:pb-80{
     padding-bottom: 20rem;
   }
@@ -1979,16 +1937,8 @@ body {
     padding-top: 20rem;
   }
 
-  .md\:pt-4{
-    padding-top: 1rem;
-  }
-
-  .md\:pt-40{
-    padding-top: 10rem;
-  }
-
-  .md\:pt-7{
-    padding-top: 1.75rem;
+  .md\:pb-64{
+    padding-bottom: 16rem;
   }
 
   .md\:pt-72{
@@ -2017,10 +1967,6 @@ body {
     width: 41.666667%;
   }
 
-  .lg\:max-w-\[50\%\]{
-    max-width: 50%;
-  }
-
   .lg\:max-w-md{
     max-width: 28rem;
   }
@@ -2035,14 +1981,6 @@ body {
 
   .lg\:flex-row{
     flex-direction: row;
-  }
-
-  .lg\:pb-0{
-    padding-bottom: 0px;
-  }
-
-  .lg\:pt-0{
-    padding-top: 0px;
   }
 
   .lg\:text-4xl{
