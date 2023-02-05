@@ -29,15 +29,15 @@
             <!-- <h2 class="lg:hidden md:hidden text-2xl mb-10 flex justify-center font-bold italic">EVENY</h2> -->
             <!--form body-->
             <form action="" class="relative flex flex-col flex-1 gap-4">
-              <label for="" class="absolute left-6 -top-3 bg-white pl-2 pr-2 lg:flex hidden">Enter Email</label>
-              <input type="text" class="pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600 
-                sm:placeholder:text-gray-400 lg:placeholder:text-white" placeholder="Email">
-              <label for="" class="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden">Enter Password</label>
-              <input type="email" class="pl-4 p-2 rounded-2xl bg-white  border-2 border-purple-600 
-                invalid:border-red-500 sm:placeholder:text-gray-400 lg:placeholder:text-white" placeholder="Password">
+              <label for="email" class="absolute left-6 -top-3 bg-white pl-2 pr-2 lg:flex hidden">Enter Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" class="pl-4 p-2 rounded-2xl bg-white border-2 
+              border-purple-600 sm:placeholder:text-gray-400 lg:placeholder:text-white invalid:border-red-500">
+              <label for="pwd" class="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden">Enter Password</label>
+              <input type="password" name="pwd" id="pwd" placeholder="Password" class="pl-4 p-2 rounded-2xl bg-white border-2 
+                border-purple-600 sm:placeholder:text-gray-400 lg:placeholder:text-white">
               <div>
-                <input type="checkbox">
-                <label for="">Remember me</label>
+                <input type="checkbox" name="checkbox" id="checkbox" value="yes">
+                <label for="checkbox">Remember me</label>
               </div>
               <button type="submit" class="bg-gradient-to-b from-purple-600 to-pink-500 rounded-lg p-2 mb-4">
                 <p class="lg:hidden md:hidden text-white">LOGIN</p>
@@ -67,6 +67,28 @@
       </div>
       
     </div>
+
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const email = document.querySelector("#email").value;
+        const pwd = document.querySelector("#pwd").value;
+        const feedback = document.querySelector("#checkbox").value;
+
+        class userData {
+        constructor(email, password, feedback) {
+          this.email = email;
+          this.password = password;
+          this.feedback = feedback;
+        }
+      }
+
+      const userDetails = new userData(email, pwd, feedback);
+      localStorage.setItem("user", JSON.stringify(userDetails));
+
+      })
+    </script>
 
   </body>
 </html>
