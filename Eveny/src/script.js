@@ -16,43 +16,43 @@ elementsToWatch.forEach((element) => {
 });
 
 //SCRIPT CREATE CARD EXAMPLE FROM INPUT
-const eventTitle = document.getElementById("input-title");
-const eventDescription = document.getElementById("input-description");
-const cardCreate = document.getElementById("card-created");
-const title = document.getElementById("event__Title");
-const description = document.getElementById("event__Description");
-const button = document.getElementById("create-event");
-const eventSuccess = document.getElementById('eventSuccess');
+// const eventTitle = document.getElementById("input-title");
+// const eventDescription = document.getElementById("input-description");
+// const cardCreate = document.getElementById("card-created");
+// const title = document.getElementById("event__Title");
+// const description = document.getElementById("event__Description");
+// const button = document.getElementById("create-event");
+// const eventSuccess = document.getElementById('eventSuccess');
 
-if (title.innerHTML === "" && description.innerHTML === "") {
-    cardCreate.classList.add("opacity-0");
-} else {
-    cardCreate.classList.add("opacity-100");
-}
+// if (title.innerHTML === "" && description.innerHTML === "") {
+//     cardCreate.classList.add("opacity-0");
+// } else {
+//     cardCreate.classList.add("opacity-100");
+// }
 
-button.onclick = async function createEvent() {
-    if (title.innerHTML === "" && description.innerHTML === "") {
-        if (eventTitle.value !== "" && eventDescription.value !== "") {
-            title.innerText = eventTitle.value;
-            description.innerText = eventDescription.value;
-            eventTitle.value = "";
-            eventDescription.value = "";
-            eventTitle.setAttribute('disabled', '');
-            eventDescription.setAttribute('disabled', '');
-            eventTitle.classList.add('bg-zinc-200');
-            eventDescription.classList.add('bg-zinc-200');
-            eventSuccess.innerText = "Evento creato con successo"
-            eventSuccess.classList.remove('opacity-0');
-        } else {
-            alert("Attenzione compilare entrambi i campi")
-        }
-        if (title.innerHTML !== "" && description.innerHTML !== "") {
-            cardCreate.classList.remove("opacity-0");
-            cardCreate.classList.add("opacity-100");
-        }
-    } else {
-        alert("L'evento è gia stato creato!");
-    }
-};
+// button.onclick = async function createEvent() {
+//     if (title.innerHTML === "" && description.innerHTML === "") {
+//         if (eventTitle.value !== "" && eventDescription.value !== "") {
+//             title.innerText = eventTitle.value;
+//             description.innerText = eventDescription.value;
+//             eventTitle.value = "";
+//             eventDescription.value = "";
+//             eventTitle.setAttribute('disabled', '');
+//             eventDescription.setAttribute('disabled', '');
+//             eventTitle.classList.add('bg-zinc-200');
+//             eventDescription.classList.add('bg-zinc-200');
+//             eventSuccess.innerText = "Evento creato con successo"
+//             eventSuccess.classList.remove('opacity-0');
+//         } else {
+//             alert("Attenzione compilare entrambi i campi")
+//         }
+//         if (title.innerHTML !== "" && description.innerHTML !== "") {
+//             cardCreate.classList.remove("opacity-0");
+//             cardCreate.classList.add("opacity-100");
+//         }
+//     } else {
+//         alert("L'evento è gia stato creato!");
+//     }
+// };
 
 
