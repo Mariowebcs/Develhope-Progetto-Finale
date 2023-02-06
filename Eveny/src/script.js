@@ -22,6 +22,7 @@ const cardCreate = document.getElementById("card-created");
 const title = document.getElementById("event__Title");
 const description = document.getElementById("event__Description");
 const button = document.getElementById("create-event");
+const eventSuccess = document.getElementById('eventSuccess');
 
 if (title.innerHTML === "" && description.innerHTML === "") {
     cardCreate.classList.add("opacity-0");
@@ -34,6 +35,14 @@ button.onclick = async function createEvent() {
         if (eventTitle.value !== "" && eventDescription.value !== "") {
             title.innerText = eventTitle.value;
             description.innerText = eventDescription.value;
+            eventTitle.value = "";
+            eventDescription.value = "";
+            eventTitle.setAttribute('disabled', '');
+            eventDescription.setAttribute('disabled', '');
+            eventTitle.classList.add('bg-zinc-200');
+            eventDescription.classList.add('bg-zinc-200');
+            eventSuccess.innerText = "Evento creato con successo"
+            eventSuccess.classList.remove('opacity-0');
         } else {
             alert("Attenzione compilare entrambi i campi")
         }
@@ -45,4 +54,5 @@ button.onclick = async function createEvent() {
         alert("L'evento è gia stato creato!");
     }
 };
+
 

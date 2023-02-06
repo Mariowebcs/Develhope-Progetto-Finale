@@ -4,114 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
-    <script defer src="../fontawesome/js/solid.min.js"></script>
-    <script defer src="../fontawesome/js/fontawesome.min.js"></script>
-    <script defer src="../fontawesome/js/brands.js"></script>
-    <script defer src="../fontawesome/js/brands.min.js"></script>
+    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script defer src="./assets/fontawesome/js/brands.js"></script>
+    <script defer src="./assets/fontawesome/js/brands.min.js"></script>
   </head>
-  <body class="m-0 box-border h-screen p-0 text-black">
-    <!--background-->
-    <div
-      class="flex h-full w-full items-center justify-center bg-gradient-to-b from-purple-800 to-pink-600"
-    >
-      <!--main container-->
-      <div
-        class="flex h-5/6 w-10/12 items-center justify-center rounded-lg bg-white shadow-2xl shadow-black lg:max-w-screen-xl lg:flex-1"
-      >
-        <!--left side continer-->
-        <div class="flex w-5/6 justify-center gap-2 lg:w-5/12">
-          <!--form container-->
-          <div class="flex w-3/4 flex-col justify-center">
-            <!--header-->
-            <div class="hidden flex-col gap-4 pb-6 md:flex lg:flex">
-              <img
-                class="mx-4 place-self-center rounded-full bg-[#1c1d33] p-2"
-                src="./assets/images/eveny-logo-new.svg"
-                width="80"
-                alt=""
-              />
+  <body class="box-border p-0 m-0 h-screen text-zinc-900">
 
+    <!--background-->
+    <div class="w-full h-full flex bg-gradient-to-b from-purple-800 to-pink-600 items-center justify-center">
+
+      <!--main container-->
+      <div class="bg-white flex items-center justify-center w-10/12 lg:max-w-screen-xl h-5/6 rounded-lg shadow-2xl shadow-black lg:flex-1">
+        <!--left side continer-->
+        <div class="flex justify-center gap-2 lg:w-5/12 w-5/6"> 
+          <!--form container-->
+          <div class="flex flex-col justify-center w-3/4">
+            <!--header-->
+            <div class="lg:flex md:flex flex-col hidden gap-4 pb-6">
               <h1 class="text-3xl font-bold">Welcome to Eveny</h1>
               <p class="text-lg">Please login to use the platform</p>
             </div>
-            <img
-              class="mx-4 mb-4 place-self-center rounded-full bg-[#1c1d33] p-2 md:hidden"
-              src="./assets/images/eveny-logo-new.svg"
-              width="70"
-              alt=""
-            />
+            <img class="md:hidden place-self-center my-4" width="150px" src="./assets/images/logo-login-mobile.png" alt="">
             <!-- <h2 class="lg:hidden md:hidden text-2xl mb-10 flex justify-center font-bold italic">EVENY</h2> -->
             <!--form body-->
-            <form action="" class="relative flex flex-1 flex-col gap-4">
-              <label
-                for=""
-                class="absolute left-6 -top-3 hidden bg-white pl-2 pr-2 lg:flex"
-                >Enter Email</label
-              >
-              <input
-                type="email"
-                class="rounded-2xl border-2 border-purple-600 bg-white p-2 pl-4 sm:placeholder:text-gray-400 lg:placeholder:text-white"
-                placeholder="Email"
-              />
-              <label
-                for=""
-                class="absolute top-12 left-6 hidden bg-white pl-2 pr-2 lg:flex"
-                >Enter Password</label
-              >
-              <input
-                type="password"
-                class="rounded-2xl border-2 border-purple-600 bg-white p-2 pl-4 invalid:border-red-500 sm:placeholder:text-gray-400 lg:placeholder:text-white"
-                placeholder="Password"
-              />
+            <form action="" method="post" class="relative flex flex-col flex-1 gap-4">
+              <label for="email" class="absolute left-6 -top-3 bg-white pl-2 pr-2 lg:flex hidden">Enter Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" class="pl-4 p-2 rounded-2xl bg-white border-2 
+              border-purple-600 sm:placeholder:text-gray-400 lg:placeholder:text-white invalid:border-red-500">
+              <label for="pwd" class="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden">Enter Password</label>
+              <input type="password" name="pwd" id="pwd" placeholder="Password" class="pl-4 p-2 rounded-2xl bg-white border-2 
+                border-purple-600 sm:placeholder:text-gray-400 lg:placeholder:text-white">
               <div>
-                <input id="rememberMe" type="checkbox" />
-                <label for="rememberMe">Remember me</label>
+                <input type="checkbox" name="checkbox" id="checkbox" value="yes">
+                <label for="checkbox">Remember me</label>
               </div>
-              <button
-                type="submit"
-                class="mb-4 rounded-lg bg-gradient-to-b from-purple-600 to-pink-500 p-2"
-              >
-                <p class="text-white md:hidden lg:hidden">LOGIN</p>
-                <p class="hidden text-white md:inline lg:inline">SIGN IN</p>
+              <button type="submit" class="bg-gradient-to-b from-purple-600 to-pink-500 rounded-lg p-2 mb-4">
+                <p class="lg:hidden md:hidden text-white">LOGIN</p>
+                <p class="lg:inline md:inline hidden text-white">SIGN IN</p>
               </button>
             </form>
             <!--footer-->
-            <div class="mb-4 flex flex-col items-center gap-8">
-              <p class="mt-4 lg:hidden">Or log in with</p>
-              <div class="logo flex flex-wrap justify-center gap-4">
-                <div class="rounded-2xl border-2 border-slate-300">
-                  <a href="" class="p-4"
-                    ><i class="fa-brands fa-square-facebook text-blue-800"></i>
-                    Facebook</a
-                  >
+            <div class="flex items-center flex-col gap-8 mb-10">
+              <p class="mt-4 lg:hidden">Or log with</p>
+              <div class="logo flex gap-4 flex-wrap justify-center">
+                <div>
+                    <button type="button" class="lg:mt-6 text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg class="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
+                        Sign in with Google
+                      </button>
                 </div>
-                <div class="rounded-2xl border-2 border-slate-300">
-                  <a href="" class="p-4"
-                    ><i class="fa-brands fa-google"></i> Google</a
-                  >
+                <div>
+                    <button type="button" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2">
+                        <svg class="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"></path></svg>
+                        Sign in with Facebook
+                      </button>
                 </div>
               </div>
             </div>
-            <div class="mt-5 flex flex-wrap justify-center gap-1 lg:hidden">
-              <span>Not a member?</span
-              ><a href="#" class="underline">Sign up now</a>
-            </div>
-            <div class="text-center">
-              <a class="cursor-pointer hover:underline" href="index.html"
-                >Back to home</a
-              >
+            <div class="flex justify-center gap-1 mt-5  flex-wrap">
+              <span>Not a member?</span><a href="#" class="underline">Sign up now</a>
             </div>
           </div>
         </div>
-        <!--desktop-layout-image-->
-        <div class="hidden max-h-full lg:flex">
-          <img
-            class="rounded-tr-lg rounded-br-lg bg-center bg-cover"
-            src=".\assets\images\people-neon2.png"
-            alt=""
-          />
-        </div>
+      <!--desktop-layout-image-->
+        <div class="lg:flex max-h-full hidden">
+        <img class="rounded-tr-lg rounded-br-lg" src=".\assets\images\people-neon2.png" alt=""></div>
       </div>
+      
     </div>
+
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const email = document.querySelector("#email").value;
+        const pwd = document.querySelector("#pwd").value;
+        const feedback = document.querySelector("#checkbox").value;
+
+        class userData {
+        constructor(email, password, feedback) {
+          this.email = email;
+          this.password = password;
+          this.feedback = feedback;
+        }
+      }
+
+      const userDetails = new userData(email, pwd, feedback);
+      localStorage.setItem("user", JSON.stringify(userDetails));
+
+      })
+    </script>
+
   </body>
 </html>
