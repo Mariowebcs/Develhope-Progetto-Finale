@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .input-form label{
+        display: block;
+        margin: .3em 0 .3em 0;
+    }
+
+    input,textarea,select{
+        border: 1px solid black;
+        border-radius: .2rem;
+        width: 100%;
+    }   
+}
