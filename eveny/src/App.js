@@ -5,7 +5,7 @@ import "./Index.css";
 function App() {
   return (
     <div>
-      <CreateEvent />
+      <CreateEvent /> 
     </div>
   );
 }

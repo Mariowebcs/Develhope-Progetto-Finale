@@ -42,6 +42,11 @@ const CreateEventForm = (props) => {
         eventImage : imgSelected
     }
     console.log(dataEvent);
+    setEventTitle("")
+    setEventDescription("")
+    setEventDate("")
+    setImgSelected("")
+    setNumMembers(2)
   }
 
   return (
@@ -54,6 +59,7 @@ const CreateEventForm = (props) => {
             min={`${year}-${month}-${day}`}
             onChange={changeEventDateHandler}
             value={eventDate}
+            required
           />
         </div>
         <div className="input-form my-4 text-black">
@@ -101,7 +107,9 @@ const CreateEventForm = (props) => {
           <label htmlFor="user-img">Scegli la tua immagine</label>
           <input type="file" required value={imgSelected} onChange={changeImgSelectedHandler}/>
         </div>
-        <button type="submit" className="mt-6 py-4 px-6 text-white bg-[#ff0066]">Crea Evento</button>
+        <button type="submit" className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4">Crea Evento</button>
+        <button onClick={props.onCancel} className="mt-6 py-4 px-6 text-white bg-sky-900">Annulla</button>
+
       </form>
     </div>
   );
