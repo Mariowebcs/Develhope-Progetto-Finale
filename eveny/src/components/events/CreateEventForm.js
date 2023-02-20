@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Index.css";
+// import "../Index.css";
 
 const CreateEventForm = (props) => {
   const date = new Date();
@@ -42,11 +42,13 @@ const CreateEventForm = (props) => {
         eventImage : imgSelected
     }
     console.log(dataEvent);
+    props.onSaveEvent(dataEvent);
     setEventTitle("")
     setEventDescription("")
     setEventDate("")
     setImgSelected("")
     setNumMembers(2)
+    props.onCancel()
   }
 
   return (

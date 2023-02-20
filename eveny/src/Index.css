@@ -14,3 +14,13 @@
         width: 100%;
     }   
 }
+
+@layer components {
+    .card-hashtag {
+        @apply relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    }
+
+    .card-hashtag-shop {
+        @apply relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    }
+}
