@@ -3,7 +3,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 export function InterestingEvents() {
   return (
-    <div className="flex flex-col ml-4 mt-4  ">
+    <div className="flex flex-col ml-4 mt-4">
       <span className="text-lg">
         <strong>Eventi più ricercati</strong>
       </span>

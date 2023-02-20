@@ -34,7 +34,7 @@ export function SearchBar() {
 
   return (
     <div className="flex-col">
-      <div className="flex w-[95%] my-3 ml-3 gap-4 justify-around">
+      <div className="flex w-[350px] my-3 ml-3 gap-4 justify-around">
         {/* back button */}
         <button className="active:text-[#ff0066]">
           <FontAwesomeIcon icon={faChevronLeft} />
@@ -76,9 +76,8 @@ export function SearchBar() {
                   </a>
                 }{" "}
                 {event && (
-                  <button id="addSearch" type="button" onClick={() => removeEvent(index)}>
+                  <button className="absolute left-80" id="addSearch" type="button" onClick={() => removeEvent(index)}>
                     <FontAwesomeIcon
-                      className="absolute right-10 bottom-0.5"
                       icon={faXmark}
                     />
                   </button>
