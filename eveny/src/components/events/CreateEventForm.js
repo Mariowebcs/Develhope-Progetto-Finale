@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import "../Index.css";
 
 const CreateEventForm = (props) => {
+
   const date = new Date();
   const day = date.toLocaleString("it-IT", { day: "2-digit" });
   const month = date.toLocaleString("it-IT", { month: "2-digit" });
@@ -27,10 +28,12 @@ const CreateEventForm = (props) => {
     setNumMembers(event.target.value);
   };
 
+
+
   const[imgSelected,setImgSelected] = useState('');
   const changeImgSelectedHandler = (event)=>{
     setImgSelected(event.target.value);
-  }
+    }
 
   const submitHandler = (event)=>{
     event.preventDefault();
@@ -77,7 +80,7 @@ const CreateEventForm = (props) => {
             onChange={changeEventTitleHandler}
           />
         </div>
-        <div className="input-form">
+        <div className="input-formE">
           <label htmlFor="ev-descr">Descrizione dell'evento: </label>
           <textarea
             name="event-description"
@@ -107,7 +110,7 @@ const CreateEventForm = (props) => {
         </div>
         <div className="input-form">
           <label htmlFor="user-img">Scegli la tua immagine</label>
-          <input type="file" required value={imgSelected} onChange={changeImgSelectedHandler}/>
+          <input type="file"  value={imgSelected} id="user-img" onChange={changeImgSelectedHandler}/>
         </div>
         <button type="submit" className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4">Crea Evento</button>
         <button onClick={props.onCancel} className="mt-6 py-4 px-6 text-white bg-sky-900">Annulla</button>

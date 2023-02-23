@@ -18,7 +18,6 @@ function App() {
     <div>
       <CreateEvent onAddEvent={AddEventHandler} />
       <Events events={events} />
-      
     </div>
   );
 }

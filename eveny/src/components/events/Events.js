@@ -10,7 +10,8 @@ const Events = (props) => {
           description={event.description}
           date={event.date}
           memNUm={event.membersNumber}
-          image={event.eventImage}
+          key={event.id}
+          // image={event.eventImage}
         />
       ))}
     </div>
