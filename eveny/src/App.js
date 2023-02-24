@@ -1,13 +1,18 @@
 import React from "react";
-import CreateEvent from "./components/CreateEvent";
-import { EventsSearch } from "./components/EventsSearch";
+import { SearchBar } from "./components/Searchbar/Searchbar";
+import { EventsSearch } from "./components/Searchbar/EventsSearch";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ResultsPage from "./components/Searchbar/ResultsPage";
 import "./Index.css";
 
 function App() {
   return (
-    <div>
-      <EventsSearch />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<EventsSearch />} />
+        <Route path="/searchTerm/:searchTerm" element={<ResultsPage />} />
+      </Routes>
+    </Router>
   );
 }
 

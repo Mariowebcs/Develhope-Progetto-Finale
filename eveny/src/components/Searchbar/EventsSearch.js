@@ -1,10 +1,12 @@
-import { SearchBar } from "./SearchBar";
 import { InterestingEvents } from "./MightInterestYou";
+import { SearchBar } from "./Searchbar";
 export function EventsSearch() {
   return (
     <div>
-      <SearchBar></SearchBar>
-      <InterestingEvents></InterestingEvents>
+      <SearchBar />
+      <InterestingEvents />
     </div>
   );
 }
+
+export default EventsSearch
