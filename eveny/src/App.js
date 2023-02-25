@@ -1,5 +1,4 @@
 import React from "react";
-import { SearchBar } from "./components/Searchbar/Searchbar";
 import { EventsSearch } from "./components/Searchbar/EventsSearch";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ResultsPage from "./components/Searchbar/ResultsPage";

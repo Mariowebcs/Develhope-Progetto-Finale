@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import Events from '../assets/Events.json'
 
 export function InterestingEvents() {
   return (
@@ -7,65 +9,22 @@ export function InterestingEvents() {
       <span className="text-lg">
         <strong>Eventi più ricercati</strong>
       </span>
-      <ul>
-        <div className="flex flex-col mt-2 ml-2 flex gap-2">
-          <div className="flex">
+        <div className="flex flex-col mt-2 ml-2 gap-2">
+          {Events.map((item) => (
+            <div className="flex" key={item.id}>
             <FontAwesomeIcon
-              className="text-[#ff0066] text-xs mt-1.5 mr-2"
+              className={`text-[${item.color}] text-xs mt-1.5 mr-2`}
               icon={faCircle}
             />
-            <a className="hover:text-[#0F4DD9]" href="#">
-              Eventi a Milano
-            </a>
+            <Link
+              to={`/searchTerm/${item.text}`}
+              className="hover:text-[#0F4DD9]"
+            >
+              {item.text}
+            </Link>
           </div>
-          <div className="flex">
-            <FontAwesomeIcon
-              className="text-[#0C4A6E] text-xs mt-1.5 mr-2"
-              icon={faCircle}
-            />
-            <a className="hover:text-[#ff0066]" href="#">
-              Milano Pub King Arthur
-            </a>
-          </div>
-          <div className="flex">
-            <FontAwesomeIcon
-              className="text-[#ff0066] text-xs mt-1.5 mr-2"
-              icon={faCircle}
-            />
-            <a className="hover:text-[#0F4DD9]" href="#">
-              Concerto Arctic Monkeys Milano
-            </a>
-          </div>
-          <div className="flex">
-            <FontAwesomeIcon
-              className="text-[#0C4A6E] text-xs mt-1.5 mr-2"
-              icon={faCircle}
-            />
-            <a className="hover:text-[#ff0066]" href="#">
-              Pizzata da Newpolean
-            </a>
-          </div>
-          <div className="flex">
-            <FontAwesomeIcon
-              className="text-[#ff0066] text-xs mt-1.5 mr-2"
-              icon={faCircle}
-            />
-            <a className="hover:text-[#0F4DD9]" href="#">
-              Serata al Bowling
-            </a>
-          </div>
-          <div className="flex">
-            <FontAwesomeIcon
-              className="text-[#0C4A6E] text-xs mt-1.5 mr-2"
-              icon={faCircle}
-            />
-            <a className="hover:text-[#ff0066]" href="#">
-              {" "}
-              Serata all'UCI film Spiderman{" "}
-            </a>
-          </div>
+          ))}
         </div>
-      </ul>
     </div>
   );
 }

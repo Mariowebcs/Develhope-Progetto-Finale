@@ -1,17 +1,27 @@
 [
   {
-    "id": "1",
-    "title": "Pizzata con amici da Rosso Pomodoro",
-    "img_event": "https://unsplash.com/it/foto/UrzN-8K1PCE"
+    "id": 1,
+    "text": "Eventi a Milano",
+    "color": "#ff0066"
   },
   {
-    "id": "2",
-    "title": "Serata giochi da tavolo a casa mia",
-    "img_event": "https://unsplash.com/it/foto/2Ya5U8_Uqho"
+    "id": 2,
+    "text": "Pizzata da Newpolean",
+    "color": "#0C4A6E"
   },
   {
-    "id": "3",
-    "title": "Concerto a Milano",
-    "img_event": "https://unsplash.com/it/foto/NYrVisodQ2M"
+    "id": 3,
+    "text": "Serata al Bowling",
+    "color": "#ff0066"
+  },
+  {
+    "id": 4,
+    "text": "Milano Pub King Arthur",
+    "color": "#0C4A6E"
+  },
+  {
+    "id": 5,
+    "text": "Concerto Arctic Monkeys Milano",
+    "color": "#ff0066"
   }
 ]

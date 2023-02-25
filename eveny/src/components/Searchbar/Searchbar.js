@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -8,7 +8,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-export function SearchBar() {
+export function SearchBar(props) {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
@@ -35,6 +35,7 @@ export function SearchBar() {
         setSearchHistory(newHistory);
         localStorage.setItem("searchHistory", JSON.stringify(newHistory));
       }
+      props.onAddTerms(searchTerm)
       navigate(`/searchTerm/${searchTerm}`);
     }
   };
@@ -78,13 +79,13 @@ export function SearchBar() {
       <div className="flex flex-col">
         <ul>
           {searchHistory?.map((term, index) => (
-            <div className="ml-4 mt-4 flex relative" key={term}>
+            <div className="ml-3 mt-4 flex relative" key={term}>
               <li>
-                {term && <FontAwesomeIcon className="mr-2" icon={faClock} />}
+                {term && <FontAwesomeIcon className="mr-2 text-[#0C4A6E]" icon={faClock} />}
                 {
-                  <a className="hover:text-[#ff0066]" href="#">
+                  <Link to={`/searchTerm/${term}`} className="hover:text-[#ff0066]">
                     {term}
-                  </a>
+                  </Link>
                 }{" "}
                 {term && (
                   <button
