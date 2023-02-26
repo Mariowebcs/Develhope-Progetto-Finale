@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Events from '../assets/Events.json'
+import Events from '../../../data/Events.json'
 
 export function InterestingEvents() {
   return (

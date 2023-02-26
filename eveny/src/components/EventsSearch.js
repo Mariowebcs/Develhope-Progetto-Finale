@@ -1,5 +1,5 @@
-import { InterestingEvents } from "./MightInterestYou";
-import { SearchBar } from "./Searchbar";
+import { InterestingEvents } from "./ui/Searchbar/MightInterestYou";
+import { SearchBar } from "./ui/Searchbar/Searchbar";
 export function EventsSearch() {
 
   const searchData = (data) => {
