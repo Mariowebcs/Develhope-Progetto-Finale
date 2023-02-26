@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Events from '../../../data/Events.json'
+import Events from "../../../data/Events.json";
 
 export function InterestingEvents() {
   return (
@@ -9,9 +9,9 @@ export function InterestingEvents() {
       <span className="text-lg">
         <strong>Eventi più ricercati</strong>
       </span>
-        <div className="flex flex-col mt-2 ml-2 gap-2">
-          {Events.map((item) => (
-            <div className="flex" key={item.id}>
+      <div className="flex flex-col mt-2 ml-2 gap-2">
+        {Events.map((item) => (
+          <div className="flex" key={item.id}>
             <FontAwesomeIcon
               className={`text-[${item.color}] text-xs mt-1.5 mr-2`}
               icon={faCircle}
@@ -23,8 +23,8 @@ export function InterestingEvents() {
               {item.text}
             </Link>
           </div>
-          ))}
-        </div>
+        ))}
+      </div>
     </div>
   );
 }

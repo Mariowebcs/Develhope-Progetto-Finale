@@ -35,7 +35,7 @@ export function SearchBar(props) {
         setSearchHistory(newHistory);
         localStorage.setItem("searchHistory", JSON.stringify(newHistory));
       }
-      props.onAddTerms(searchTerm)
+      props.onAddTerms(searchTerm);
       navigate(`/searchTerm/${searchTerm}`);
     }
   };
@@ -81,12 +81,20 @@ export function SearchBar(props) {
           {searchHistory?.map((term, index) => (
             <div className="ml-3 mt-4 flex relative" key={term}>
               <li>
-                {term && <FontAwesomeIcon className="mr-2 text-[#0C4A6E]" icon={faClock} />}
+                {term && (
+                  <FontAwesomeIcon
+                    className="mr-2 text-[#0C4A6E]"
+                    icon={faClock}
+                  />
+                )}
                 {
-                  <Link to={`/searchTerm/${term}`} className="hover:text-[#ff0066]">
+                  <Link
+                    to={`/searchTerm/${term}`}
+                    className="hover:text-[#ff0066]"
+                  >
                     {term}
                   </Link>
-                }{" "}
+                }
                 {term && (
                   <button
                     className="absolute left-56"
