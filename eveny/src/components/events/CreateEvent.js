@@ -17,8 +17,6 @@ const CreateEvent = (props) => {
       ...enteredDataEvent,
       id : Math.random()
     }
-    console.log(dataEvent);
-    console.log('in create event');
     props.onAddEvent(dataEvent);
   }
 

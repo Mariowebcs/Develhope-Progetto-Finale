@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "text": "Eventi a Milano",
+      "color": "#ff0066"
+    },
+    {
+      "id": 2,
+      "text": "Pizzata da Newpolean",
+      "color": "#0C4A6E"
+    },
+    {
+      "id": 3,
+      "text": "Serata al Bowling",
+      "color": "#ff0066"
+    },
+    {
+      "id": 4,
+      "text": "Milano Pub King Arthur",
+      "color": "#0C4A6E"
+    },
+    {
+      "id": 5,
+      "text": "Concerto Arctic Monkeys Milano",
+      "color": "#ff0066"
+    }
+  ]

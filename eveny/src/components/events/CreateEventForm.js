@@ -38,11 +38,11 @@ const CreateEventForm = (props) => {
   const submitHandler = (event)=>{
     event.preventDefault();
     const dataEvent = {
-        title : eventTitle,
-        description : eventDescription,
-        date : new Date(eventDate),
-        membersNumber : numMembers,
-        eventImage : imgSelected
+        "title" : eventTitle.toLowerCase(),
+        "description" : eventDescription.toLowerCase(),
+        "date" : eventDate,
+        "membersNumber" : numMembers,
+        "eventImage" : imgSelected
     }
     console.log(dataEvent);
     props.onSaveEvent(dataEvent);
