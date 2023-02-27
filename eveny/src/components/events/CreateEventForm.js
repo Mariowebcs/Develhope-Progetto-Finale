@@ -2,9 +2,8 @@ import React, { useState } from "react";
 // import "../Index.css";
 
 const CreateEventForm = (props) => {
-
   const date = new Date();
-  const day = date.toLocaleString("it-IT", { day: "2-digit" });
+  const day =   date.toLocaleString("it-IT", { day: "2-digit" });
   const month = date.toLocaleString("it-IT", { month: "2-digit" });
   const year = date.getFullYear();
 
@@ -28,31 +27,29 @@ const CreateEventForm = (props) => {
     setNumMembers(event.target.value);
   };
 
-
-
-  const[imgSelected,setImgSelected] = useState('');
-  const changeImgSelectedHandler = (event)=>{
+  const [imgSelected, setImgSelected] = useState("");
+  const changeImgSelectedHandler = (event) => {
     setImgSelected(event.target.value);
-    }
+  };
 
-  const submitHandler = (event)=>{
+  const submitHandler = (event) => {
     event.preventDefault();
     const dataEvent = {
-        "title" : eventTitle.toLowerCase(),
-        "description" : eventDescription.toLowerCase(),
-        "date" : eventDate,
-        "membersNumber" : numMembers,
-        "eventImage" : imgSelected
-    }
+      title: eventTitle.toLowerCase(),
+      description: eventDescription.toLowerCase(),
+      date: new Date(eventDate),
+      membersNumber: numMembers,
+      eventImage: imgSelected,
+    };
     console.log(dataEvent);
     props.onSaveEvent(dataEvent);
-    setEventTitle("")
-    setEventDescription("")
-    setEventDate("")
-    setImgSelected("")
-    setNumMembers(2)
-    props.onCancel()
-  }
+    setEventTitle("");
+    setEventDescription("");
+    setEventDate("");
+    setImgSelected("");
+    setNumMembers(2);
+    props.onCancel();
+  };
 
   return (
     <div>
@@ -110,11 +107,25 @@ const CreateEventForm = (props) => {
         </div>
         <div className="input-form">
           <label htmlFor="user-img">Scegli la tua immagine</label>
-          <input type="file"  value={imgSelected} id="user-img" onChange={changeImgSelectedHandler}/>
+          <input
+            type="file"
+            value={imgSelected}
+            id="user-img"
+            onChange={changeImgSelectedHandler}
+          />
         </div>
-        <button type="submit" className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4">Crea Evento</button>
-        <button onClick={props.onCancel} className="mt-6 py-4 px-6 text-white bg-sky-900">Annulla</button>
-
+        <button
+          type="submit"
+          className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4"
+        >
+          Crea Evento
+        </button>
+        <button
+          onClick={props.onCancel}
+          className="mt-6 py-4 px-6 text-white bg-sky-900"
+        >
+          Annulla
+        </button>
       </form>
     </div>
   );

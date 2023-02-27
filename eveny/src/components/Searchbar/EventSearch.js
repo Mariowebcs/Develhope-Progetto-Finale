@@ -12,9 +12,9 @@ export function EventsSearch(props) {
 
   const searchingHandler = (verify) => {
     if (verify) {
-      setRender(true);
-    }else{
-        setRender(false)
+      setRender(!render);
+    } else {
+      setRender(!render);
     }
   };
 

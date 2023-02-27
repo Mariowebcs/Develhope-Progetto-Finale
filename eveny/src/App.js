@@ -25,13 +25,12 @@ function App() {
     console.log(term);
   };
 
-
   useEffect(() => {
     localStorage.setItem("EventsData", JSON.stringify(CreatedEvents));
   }, [CreatedEvents]);
 
-  const filteredEventsSearch = CreatedEvents?.filter((event) =>
-    event.title.includes(term)
+  const filteredEventsSearch = CreatedEvents?.filter(
+    (event) => event.title.includes(term) || event.description.includes(term)
   );
 
   return (
@@ -47,9 +46,9 @@ function App() {
             element={<ResultsPage items={filteredEventsSearch} />}
           />
         </Routes>
-        <CreateEvent onAddEvent={AddEventHandler} />
-        <Events events={CreatedEvents} filterTerm={term} />
       </Router>
+      <CreateEvent onAddEvent={AddEventHandler} />
+      <Events events={CreatedEvents} filterTerm={term} />
     </div>
   );
 }

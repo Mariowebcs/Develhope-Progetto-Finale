@@ -13,18 +13,17 @@ export function SearchBar(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
   const [searching, setSearching] = useState(false);
-  let verify;
+  
+
   const searchingHandler = () => {
-    setSearching(true);
-    verify = true;
-    props.onSearching(verify);
+    setSearching(!searching);
+    props.onSearching(searching);
   };
 
-  const focusOutHandler = ()=>{
-    setSearching(false);
-    verify = false;
-    props.onSearching(verify);
-  }
+  const focusOutHandler = () => {
+    setSearching(!searching)
+    props.onSearching(searching);
+  };
 
   useEffect(() => {
     const history = localStorage.getItem("searchHistory");
@@ -92,7 +91,7 @@ export function SearchBar(props) {
         </button>
       </div>
       {/* history events */}
-      {searching && (
+      {searching &&(
         <div className="flex flex-col">
           <ul>
             {searchHistory?.map((term, index) => (

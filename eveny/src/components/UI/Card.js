@@ -4,10 +4,10 @@ import ButtonSecondary from "../shared/ButtonSecondary";
 import "./Card.css";
 
 const Card = (props) => {
-  // const date = props.date;
-  // const day = date.toLocaleString("it-IT", { day: "2-digit" });
-  // const month = date.toLocaleString("it-IT", { month: "2-digit" });
-  // const year = date.getFullYear();
+  // const data = props.date;
+  // const day = data.toLocaleString("it-IT", { day: "2-digit" });
+  // const month = data.toLocaleString("it-IT", { month: "2-digit" });
+  // const year = data.getFullYear();
   
   return (
       <div className="card w-[90%] rounded-md border border-gray-200 bg-white shadow-lg my-6 md:w-[48%]">
@@ -53,7 +53,7 @@ const Card = (props) => {
               {props.description}
             </p>
             {/* <span>{`${day}-${month}-${year}`}</span> */}
-              <span>{props.date}</span>
+              <span>{props.date.toLocaleString("it-IT")}</span>
           </div>
         </div>
         <div className="mt-4 bg-zinc-100 px-6 pt-4 pb-2">

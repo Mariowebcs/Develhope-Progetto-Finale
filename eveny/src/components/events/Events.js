@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../UI/Card";
-import CreatedEvents from '../assets/CreatedEvents.json'
+import CreatedEvents from "../assets/CreatedEvents.json";
 
 const Events = (props) => {
   return (
