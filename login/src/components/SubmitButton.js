@@ -1,7 +1,7 @@
 import React from "react";
 
-export const SubmitButton = ( { label, buttonStyle, onClick } ) => {
+export const SubmitButton = ( { label, buttonStyle, onClick, isDisabled } ) => {
     return (
-        <button type="submit" onClick={onClick} className={buttonStyle} >{label}</button>
+        <button type="submit" onClick={onClick} className={buttonStyle} disabled={isDisabled}>{label}</button>
     )
 }

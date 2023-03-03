@@ -1,8 +1,9 @@
 import React from "react";
-import { ButtonLinkIcon } from "./components/ButtonLinkIcon";
+import { GoogleButton } from "./components/GoogleButton";
 import { Form } from "./components/Form";
 import logoImage from "./logo-login-mobile.png";
 import loginImage from "./people-neon2.png";
+import { FacebookButton } from "./components/FacebookButton"
 
 export function Login() {
     return (
@@ -23,12 +24,12 @@ export function Login() {
                         <Form />
                         <div className="flex flex-col items-center gap-8 mb-10 w-full">
                             <p className="mt-2 lg:hidden">Or log with</p>
-                            <a href="https://www.facebook.com/" className="flex justify-center w-4/5 h-8 lg:mt-3">
-                                <ButtonLinkIcon icon="Facebook" />
-                            </a>
-                            <a href="https://www.google.com/" className="flex justify-center w-4/5">
-                                <ButtonLinkIcon icon="Google" />
-                            </a>
+                            <div className="flex justify-center w-4/5 h-8 lg:mt-3">
+                                <FacebookButton />
+                            </div>
+                            <div className="flex justify-center w-4/5">
+                                <GoogleButton />
+                            </div>
                         </div>
                         {/* sign up */}
                         <div className="flex justify-center  flex-wrap">
@@ -38,7 +39,7 @@ export function Login() {
                 </div>
                 {/* image-desktop-layout */}
                 <div className="lg:flex max-h-full hidden w-3/4">
-                    <img src={loginImage} alt="Login Image" className="rounded-tr-lg rounded-br-lg"></img>
+                    <img src={loginImage} alt="Home layout" className="rounded-tr-lg rounded-br-lg"></img>
                 </div>
             </div>
         </div>

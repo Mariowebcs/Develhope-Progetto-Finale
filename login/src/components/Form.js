@@ -10,17 +10,10 @@ export function Form() {
         password: "",
         remember: false
     })
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Email: ${data.email}, Password: ${data.password}, Checkbox: ${data.remember}`);
-    }
+    const [isFocused, setIsFocused] = useState(false)
 
     const handleData = (event) => {
         const { name, type, value, checked} = event.target;
-
-        localStorage.setItem("email", data.email);
-        localStorage.setItem("remember", data.remember);
 
         setData((data) => {
             return {
@@ -30,19 +23,41 @@ export function Form() {
         })
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        localStorage.setItem("email", data.email);
+        localStorage.setItem("remember", data.remember);
+    }
+
+    const handleFocus = () => {
+        setIsFocused(true)
+    }
+
+    const handleBlur = () => {
+        setIsFocused(false)
+    }
+
+    const isInvalidPassword = data.password.length < 8 && isFocused;
+
     return (
         <form onSubmit={handleSubmit} className="flex relative flex-col flex-1 gap-4 w-3/4 items-center">
             <EmailInput value={data.email} onChange={handleData}  
-                inputStyle="pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600 
-                sm:placeholder:text-gray-400 lg:placeholder:text-white w-full" 
+                inputStyle="inputStyleEmail"
                 labelStyle="absolute left-6 -top-3 bg-white pl-2 pr-2 lg:flex hidden" />
             <PasswordInput value={data.password} onChange={handleData} 
-                inputStyle="pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600 
-                sm:placeholder:text-gray-400 lg:placeholder:text-white w-full" 
-                labelStyle="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden" />
+                inputStyle={isInvalidPassword === true ? "inputStylePasswordInvalid" : "inputStylePassword"} 
+                labelStyle="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden" 
+                onFocus={handleFocus} onBlur={handleBlur}/>
+            {isInvalidPassword && (
+                <p className="text-red-500 text-xs italic mt-1">
+                La password deve contenere almeno 8 caratteri
+                </p>
+            )}    
             <CheckboxInput checked={data.remember} onChange={handleData} />
             <SubmitButton label="LOGIN" buttonStyle="bg-gradient-to-b from-purple-600 to-pink-500 
-                rounded-lg p-2 mb-4 text-white w-full" onClick={handleSubmit} />
+                rounded-lg p-2 mb-4 text-white w-full" onClick={handleSubmit} 
+                isDisabled={data.email === "" && data.password === ""} />
         </form>
     )
 

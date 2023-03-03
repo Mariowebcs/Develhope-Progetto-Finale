@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .inputStylePassword {
+        @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600 
+        sm:placeholder:text-gray-400 lg:placeholder:text-white w-full
+    }
+    .inputStylePasswordInvalid {
+        @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600 
+        sm:placeholder:text-gray-400 lg:placeholder:text-white w-full
+        focus:outline-none focus:border-red-500 focus:ring-red-500
+    }
+    .inputStyleEmail {
+        @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600 
+        sm:placeholder:text-gray-400 lg:placeholder:text-white w-full 
+        focus:outline-none focus:invalid:border-red-500 focus:invalid:ring-red-500
+    }
+    .buttonIconStyle {
+        @apply border-2 border-slate-300 rounded-2xl w-4/5 pl-10 pr-10 flex justify-center items-center gap-2
+    }
+}
