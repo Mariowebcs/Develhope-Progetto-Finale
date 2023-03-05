@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const CreateEventForm = (props) => {
   const date = new Date();
-  const day =   date.toLocaleString("it-IT", { day: "2-digit" });
+  const day = date.toLocaleString("it-IT", { day: "2-digit" });
   const month = date.toLocaleString("it-IT", { month: "2-digit" });
   const year = date.getFullYear();
 
