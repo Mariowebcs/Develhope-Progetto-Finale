@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .input-form label{
+        display: block;
+        margin: .3em 0 .3em 0;
+    }
+
+    input,textarea,select{
+        border: 1px solid black;
+        border-radius: .2rem;
+        width: 100%;
+    }   
+}
+
+@layer components {
+    .card-hashtag {
+        @apply relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    }
+
+    .card-hashtag-shop {
+        @apply relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    }
+}
