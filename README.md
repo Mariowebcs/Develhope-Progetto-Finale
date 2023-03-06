@@ -25,5 +25,14 @@ Eveny has several key features that make it an ideal platform for connecting wit
 * <b>Social integration</b>: Integration with social media platforms for easy sharing of events and connections with friends.
 * <b>Accessibility</b>: Improvements to the platform to make it more accessible for users with disabilities.
 
-License
+## License
 Eveny is proprietary software, and its source code is not available to the public. To use Eveny, you must obtain a license from the copyright holder.
+
+Contributors:
+
+- <a href="https://github.com/Mariowebcs"> Mario D'Andrea </a>
+- <a href="https://github.com/Malupp"> Manuel Luppino </a>
+- <a href=""> Andrea Ciambriello </a>
+- <a href=""> Moreno Maroccia </a>
+- <a href=""> Giuseppe Meli </a>
+- <a href=""> Silvio Craparotta </a>
