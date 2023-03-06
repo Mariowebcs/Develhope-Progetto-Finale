@@ -28,7 +28,7 @@ Eveny has several key features that make it an ideal platform for connecting wit
 ## License
 Eveny is proprietary software, and its source code is not available to the public. To use Eveny, you must obtain a license from the copyright holder.
 
-Contributors:
+<b>Contributors</b>:
 
 - <a href="https://github.com/Mariowebcs"> Mario D'Andrea </a>
 - <a href="https://github.com/Malupp"> Manuel Luppino </a>
