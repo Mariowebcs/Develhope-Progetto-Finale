@@ -12,12 +12,12 @@ To get started with Eveny, simply sign up for an account and create a profile. Y
 
 ## Features
 Eveny has several key features that make it an ideal platform for connecting with others who share your interests:
-* Event creation: Create your own events and invite others to attend.
-* Event search: Easily search for events that interest you by filtering through tags or cards.
-* User profiles: Create a profile that showcases your interests and passions.
-* Reviews and ratings: Leave reviews and ratings for events to help others make informed decisions.
-* Messaging: Connect with other users through messaging to discuss events and shared interests. (WiP)
-* Notifications: Stay up-to-date on the latest events and messages with personalized notifications. (WiP)
+* <b>Event creation</b>: Create your own events and invite others to attend.
+* <b>Event search</b>: Easily search for events that interest you by filtering through tags or cards.
+* <b>User profiles</b>: Create a profile that showcases your interests and passions.
+* <b>Reviews and ratings</b>: Leave reviews and ratings for events to help others make informed decisions.
+* <b>Messaging</b>: Connect with other users through messaging to discuss events and shared interests. (WiP)
+* <b>Notifications</b>: Stay up-to-date on the latest events and messages with personalized notifications. (WiP)
 
 ## Roadmap
 * <b>Event discovery</b>: Improved algorithms for recommending events based on user interests and location.
