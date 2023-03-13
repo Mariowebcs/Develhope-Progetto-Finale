@@ -1,5 +1,5 @@
 import React from "react";
-import facebookImage from "../2021_Facebook_icon.svg.png";
+import facebookImage from "../assets/2021_Facebook_icon.svg.png";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 export const FacebookButton = () => {

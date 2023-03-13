@@ -1,8 +1,8 @@
 import React from "react";
 
-export const CheckboxInput = ({ checked, onChange }) => {
+export const CheckboxInput = ({ checked, onChange, checkBoxStyle }) => {
     return (
-        <fieldset className="w-full">
+        <fieldset className={checkBoxStyle}>
             <input name="remember" type="checkbox" checked={checked} onChange={onChange} />
             <label for="checkbox" > Remember me</label>
         </fieldset>

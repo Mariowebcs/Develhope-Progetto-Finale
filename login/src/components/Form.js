@@ -41,7 +41,7 @@ export function Form() {
     const isInvalidPassword = data.password.length < 8 && isFocused;
 
     return (
-        <form onSubmit={handleSubmit} className="flex relative flex-col flex-1 gap-4 w-3/4 items-center">
+        <form onSubmit={handleSubmit} className="flex relative flex-col flex-1 gap-6 w-3/4 items-start">
             <EmailInput value={data.email} onChange={handleData}  
                 inputStyle="inputStyleEmail"
                 labelStyle="absolute left-6 -top-3 bg-white pl-2 pr-2 lg:flex hidden" />
@@ -50,14 +50,13 @@ export function Form() {
                 labelStyle="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden" 
                 onFocus={handleFocus} onBlur={handleBlur}/>
             {isInvalidPassword && (
-                <p className="text-red-500 text-xs italic mt-1">
+                <p className="text-red-500 text-xs italic">
                 La password deve contenere almeno 8 caratteri
                 </p>
             )}    
-            <CheckboxInput checked={data.remember} onChange={handleData} />
-            <SubmitButton label="LOGIN" buttonStyle="bg-gradient-to-b from-purple-600 to-pink-500 
-                rounded-lg p-2 mb-4 text-white w-full" onClick={handleSubmit} 
-                isDisabled={data.email === "" && data.password === ""} />
+            <CheckboxInput checked={data.remember} onChange={handleData} checkBoxStyle={isInvalidPassword === true ? "w-full absolute top-44" : ""} />
+            <SubmitButton label="LOGIN" buttonStyle={isInvalidPassword === true ? "buttonStyleInactive" : "buttonStyleActive"} 
+            onClick={handleSubmit} isDisabled={data.email === "" && data.password === ""} />
         </form>
     )
 

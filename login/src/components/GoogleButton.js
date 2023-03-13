@@ -1,5 +1,5 @@
 import React from "react";
-import googleImage from "../Google__G__Logo.svg.png";
+import googleImage from "../assets/Google__G__Logo.svg.png";
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from "axios";
 

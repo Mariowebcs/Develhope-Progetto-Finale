@@ -20,4 +20,15 @@
     .buttonIconStyle {
         @apply border-2 border-slate-300 rounded-2xl w-4/5 pl-10 pr-10 flex justify-center items-center gap-2
     }
+    .buttonStyleActive {
+        @apply bg-gradient-to-b from-purple-600 to-pink-500 
+        rounded-lg p-2 mb-2 text-white w-full
+    }
+    .buttonStyleInactive {
+        @apply bg-gradient-to-b from-purple-600 to-pink-500 
+        rounded-lg p-2 mb-2 text-white w-full relative top-8
+    }
+    .inputRegisterStyle {
+        @apply p-2 rounded-2xl bg-white border-2 border-purple-600 sm:placeholder:text-gray-400
+    }
 }
