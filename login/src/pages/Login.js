@@ -37,7 +37,7 @@ const Login = () => {
                         </div>
                         {/* sign up */}
                         <div className="flex justify-center flex-wrap">
-                            <p>Not a member? </p><Link to="/register" ><p className="underline">Sign up now</p></Link>
+                            <p>Not a member? </p><Link to="/register" ><p className="underline">Sign up now</p></Link>  {/*to="/register/step1" */}
                         </div>
                     </div>
                 

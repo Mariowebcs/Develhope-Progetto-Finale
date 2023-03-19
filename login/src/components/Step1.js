@@ -38,9 +38,10 @@ const Step1 = () => {
         
     }
     return (
+    
         <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-purple-800 to-pink-600">
         <div className="flex flex-col items-center justify-center bg-white w-10/12 h-5/6 rounded-lg shadow-2xl shadow-black
-            lg:max-w-screen-xl lg:flex-1">
+            lg:max-w-screen-xl lg:flex-1">           
             <h1 className="text-2xl font-bold mb-4">Register now</h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                 <input type="text" name="name" value={data.name} onChange={handleInput} 
@@ -60,10 +61,12 @@ const Step1 = () => {
                 <input type="text" name="città" value={data.città} onChange={handleInput} 
                     className="inputRegisterStyle" placeholder="Città" />
                 <button type="submit" onClick={handleSubmit} className="bg-gradient-to-b from-purple-600 to-pink-500 
-                    rounded-lg p-2 mt-4 text-white w-full"><Link to="step2">Go</Link></button>
+                    rounded-lg p-2 mt-4 text-white w-full"><Link to="/register/step2">Go</Link></button>
             </form>
+            
         </div>
         </div>
+        
     )
 }
 
