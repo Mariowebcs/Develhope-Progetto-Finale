@@ -11,7 +11,14 @@ function ResultsPage(props) {
           {searchTerm}
         </a>{" "}
       </p> */}
-      {props.items?.map((event)=><Card title={event.title} description={event.description} key={event.id} date={event.date}/>)}
+      {props.items?.map((event) => (
+        <Card
+          title={event.title}
+          description={event.description}
+          key={event.id}
+          date={event.date}
+        />
+      ))}
     </div>
   );
 }

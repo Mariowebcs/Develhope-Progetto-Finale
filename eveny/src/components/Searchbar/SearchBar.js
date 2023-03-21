@@ -13,7 +13,6 @@ export function SearchBar(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
   const [searching, setSearching] = useState(false);
-  
 
   const searchingHandler = () => {
     setSearching(!searching);
@@ -21,7 +20,7 @@ export function SearchBar(props) {
   };
 
   const focusOutHandler = () => {
-    setSearching(!searching)
+    setSearching(!searching);
     props.onSearching(searching);
   };
 
@@ -91,7 +90,7 @@ export function SearchBar(props) {
         </button>
       </div>
       {/* history events */}
-      {searching &&(
+      {searching && (
         <div className="flex flex-col">
           <ul>
             {searchHistory?.map((term, index) => (

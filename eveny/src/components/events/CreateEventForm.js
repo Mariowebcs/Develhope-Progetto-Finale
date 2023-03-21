@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import "../Index.css";
 
 const CreateEventForm = (props) => {
@@ -32,6 +33,8 @@ const CreateEventForm = (props) => {
     setImgSelected(event.target.value);
   };
 
+  const navigate = useNavigate();
+
   const submitHandler = (event) => {
     event.preventDefault();
     const dataEvent = {
@@ -41,14 +44,17 @@ const CreateEventForm = (props) => {
       membersNumber: numMembers,
       eventImage: imgSelected,
     };
-    console.log(dataEvent);
-    props.onSaveEvent(dataEvent);
+    props.onAddEvent(dataEvent);
     setEventTitle("");
     setEventDescription("");
     setEventDate("");
     setImgSelected("");
     setNumMembers(2);
-    props.onCancel();
+    navigate("/events");
+  };
+
+  const returnBackHandler = () => {
+    navigate("/events");
   };
 
   return (
@@ -121,7 +127,7 @@ const CreateEventForm = (props) => {
           Crea Evento
         </button>
         <button
-          onClick={props.onCancel}
+          onClick={returnBackHandler}
           className="mt-6 py-4 px-6 text-white bg-sky-900"
         >
           Annulla

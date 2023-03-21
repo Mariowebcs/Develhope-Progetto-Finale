@@ -12,17 +12,17 @@ const CreateEvent = (props) => {
     setIsEditing(false);
   };
 
-  const saveEventHandler = (enteredDataEvent) =>{
+  const saveEventHandler = (enteredDataEvent) => {
     const dataEvent = {
       ...enteredDataEvent,
-      id : Math.random()
-    }
+      id: Math.random(),
+    };
     props.onAddEvent(dataEvent);
-  }
+  };
 
   return (
     <div className="flex justify-center items-center">
-      {!isEditing && ( 
+      {!isEditing && (
         <button
           onClick={startEditing}
           className="mt-6 py-4 px-6 text-white  bg-[#ff0066] mx-4"
@@ -30,7 +30,12 @@ const CreateEvent = (props) => {
           Crea il tuo evento
         </button>
       )}
-      {isEditing && <CreateEventForm onCancel={stopEditing} onSaveEvent={saveEventHandler}/>}
+      {isEditing && (
+        <CreateEventForm
+          onCancel={stopEditing}
+          onSaveEvent={saveEventHandler}
+        />
+      )}
     </div>
   );
 };
