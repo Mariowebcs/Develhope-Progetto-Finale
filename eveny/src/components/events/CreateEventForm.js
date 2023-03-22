@@ -38,6 +38,7 @@ const CreateEventForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const dataEvent = {
+      id : crypto.randomUUID(),
       title: eventTitle.toLowerCase(),
       description: eventDescription.toLowerCase(),
       date: new Date(eventDate),
@@ -50,7 +51,7 @@ const CreateEventForm = (props) => {
     setEventDate("");
     setImgSelected("");
     setNumMembers(2);
-    navigate("/events");
+    navigate("/events")
   };
 
   const returnBackHandler = () => {
@@ -121,7 +122,6 @@ const CreateEventForm = (props) => {
           />
         </div>
         <button
-          type="submit"
           className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4"
         >
           Crea Evento

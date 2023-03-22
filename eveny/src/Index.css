@@ -24,10 +24,10 @@
     user-select: none;
   }
 
-  .BGcolor {
+  /* .BGcolor {
     background-color: #41718d;
     background-image: linear-gradient(160deg, #41718d 0%, #80d0c79b 100%);
-  }
+  } */
 
   .SearchBG {
     background-color: #a2b4be;
@@ -78,5 +78,9 @@
   }
   .inputRegisterStyle {
     @apply p-2 rounded-2xl bg-white border-2 border-purple-600 sm:placeholder:text-gray-400;
+  }
+
+  .BGcolor {
+    @apply bg-sky-900
   }
 }
