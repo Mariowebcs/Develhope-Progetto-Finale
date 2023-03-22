@@ -41,6 +41,10 @@
     width: 18px;
     opacity: 0.3;
   }
+
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer components {

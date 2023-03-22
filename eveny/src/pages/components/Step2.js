@@ -12,6 +12,10 @@ const Step2 = () => {
     setSearchTerm(event.target.value);
   };
 
+  const filteredArray = itemsArray.filter((item) => {
+    return item.interests.includes(searchTerm);
+  })
+
   const handleRemoveItems = (index) => {
     //rimuove items
     setSelectedItems(selectedItems.filter((_, i) => i !== index));
@@ -20,6 +24,7 @@ const Step2 = () => {
   const onSearch = (search) => {
     setSearchTerm(search);
     setSelectedItems([...selectedItems, search]);
+    setSearchTerm('')
   };
 
   const registerData = JSON.parse(localStorage.getItem("registerData"));
@@ -40,18 +45,31 @@ const Step2 = () => {
       >
         <div className="absolute top-10 flex flex-col gap-4 w-max-72 items-center justify-center">
           <h1 className="text-2xl font-bold mb-4">Choose Your Interests</h1>
-
-            <div>
-              {itemsArray.map((item, index) => (
-                <button
-                  key={index}
-                  className="cursor-pointer text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full"
-                  onClick={() => onSearch(item.interests)}
-                >
-                  {item.interests}
-                </button>
-              ))}
-            </div>
+          <form>
+            <input
+              onChange={handleInputChange}
+              className="border-2 border-purple-600 w-full rounded-2xl p-1 focus:outline-none" />
+          </form>
+          <div className="h-[255px] overflow-y-scroll scrollbar">
+            {filteredArray.length > 0 && filteredArray.map((item, index) => (
+              <button
+                key={index}
+                className="cursor-pointer text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full"
+                onClick={() => onSearch(item.interests)}
+              >
+                {item.interests}
+              </button>
+            ))}
+            {!filteredArray.length > 0 && itemsArray.map((item, index) => (
+              <button
+                key={index}
+                className="cursor-pointer text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full"
+                onClick={() => onSearch(item.interests)}
+              >
+                {item.interests}
+              </button>
+            )) }
+          </div>
 
 
           {/* i miei interessi */}
