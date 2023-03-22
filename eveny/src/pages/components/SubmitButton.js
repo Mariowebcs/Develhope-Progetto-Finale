@@ -4,7 +4,6 @@ const SubmitButton = ({ label, buttonStyle, onClick, isDisabled }) => {
   return (
     <button
       type="submit"
-      onClick={onClick}
       className={buttonStyle}
       disabled={isDisabled}
     >

@@ -12,17 +12,6 @@ export function SearchBar(props) {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
-  const [searching, setSearching] = useState(false);
-
-  const searchingHandler = () => {
-    setSearching(!searching);
-    props.onSearching(searching);
-  };
-
-  const focusOutHandler = () => {
-    setSearching(!searching);
-    props.onSearching(searching);
-  };
 
   useEffect(() => {
     const history = localStorage.getItem("searchHistory");
@@ -47,7 +36,6 @@ export function SearchBar(props) {
         setSearchHistory(newHistory);
         localStorage.setItem("searchHistory", JSON.stringify(newHistory));
       }
-      setSearching(false);
       props.onSaveTerm(searchTerm);
       navigate(`/searchTerm/${searchTerm}`);
     }
@@ -74,8 +62,6 @@ export function SearchBar(props) {
             className="rounded-full w-[250px] pl-8 focus:border-[#ff0066] focus:outline-none"
             placeholder="Cerca un evento..."
             onChange={inputSearching}
-            onFocus={searchingHandler}
-            onBlur={focusOutHandler}
           />
           <button className="absolute left-7 " onClick={SearchEvent}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -90,42 +76,41 @@ export function SearchBar(props) {
         </button>
       </div>
       {/* history events */}
-      {searching && (
-        <div className="flex flex-col">
-          <ul>
-            {searchHistory?.map((term, index) => (
-              <div className="ml-3 mt-4 flex relative" key={term}>
-                <li>
-                  {term && (
-                    <FontAwesomeIcon
-                      className="mr-2 text-[#0C4A6E]"
-                      icon={faClock}
-                    />
-                  )}
-                  {
-                    <Link
-                      to={`/searchTerm/${term}`}
-                      className="hover:text-[#ff0066]"
-                    >
-                      {term}
-                    </Link>
-                  }{" "}
-                  {term && (
-                    <button
-                      className="absolute left-56"
-                      id="addSearch"
-                      type="button"
-                      onClick={() => removeSearchTerm(index)}
-                    >
-                      <FontAwesomeIcon icon={faXmark} />
-                    </button>
-                  )}
-                </li>
-              </div>
-            ))}
-          </ul>
-        </div>
-      )}
+
+      <div className="flex flex-col">
+        <ul>
+          {searchHistory?.map((term, index) => (
+            <div className="ml-3 mt-4 flex relative" key={term}>
+              <li>
+                {term && (
+                  <FontAwesomeIcon
+                    className="mr-2 text-[#0C4A6E]"
+                    icon={faClock}
+                  />
+                )}
+                {
+                  <Link
+                    to={`/searchTerm/${term}`}
+                    className="hover:text-[#ff0066]"
+                  >
+                    {term}
+                  </Link>
+                }{" "}
+                {term && (
+                  <button
+                    className="absolute left-56"
+                    id="addSearch"
+                    type="button"
+                    onClick={() => removeSearchTerm(index)}
+                  >
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                )}
+              </li>
+            </div>
+          ))}
+        </ul>
+      </div>
     </form>
   );
 }

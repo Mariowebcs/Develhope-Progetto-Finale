@@ -3,18 +3,23 @@ import avatar1 from "../assets/avatar1.jpg";
 import evenylogo from "../assets/evenylogo.png";
 import searchicon from "../assets/searchicon.png";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export function Navbar() {
+const  Navbar =( ) => {
   // handle menu
 
   const [showMenu, setShowMenu] = useState(false);
-
+  const navigate = useNavigate();
   const handleAvatarClick = () => {
     setShowMenu(!showMenu);
   };
 
+  const focusHandler = () => {
+    navigate("/search");
+  }
+
   return (
-    <nav className="NavContainer p-4 h-48 BGcolor w-full">
+    <nav className="NavContainer p-4 h-24 BGcolor w-full">
       {/* Container Logo + User */}
       <div className="NavTop mx-auto  mb-2 flex justify-between">
         {/* Logo */}
@@ -26,7 +31,7 @@ export function Navbar() {
               alt="LogoEveny"
             />
           </div>
-          <h4 className="text-center font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-[#6C21A7] to-[#DB2777]">
+          <h4 className="text-center font-bold tracking-tight text-transparent bg-clip-text bg-[#ff0066]">
             Eveny
           </h4>
         </div>
@@ -34,7 +39,7 @@ export function Navbar() {
         {/* Avatar */}
 
         <div
-          className="NavAvatar w-12 h-12 rounded-full overflow-hidden noSelect"
+          className="NavAvatar w-14 h-14 rounded-full overflow-hidden noSelect"
           onClick={handleAvatarClick}
           onBlur={handleAvatarClick}
         >
@@ -63,14 +68,14 @@ export function Navbar() {
       </div>
 
       {/* SearchBar Title */}
-      <div className="NavSearchTitle  mx-auto mb-2  flex justify-center items-center">
+      {/* <div className="NavSearchTitle  mx-auto mb-2  flex justify-center items-center">
         <div>
           <h3 className="text-white text-lg noSelect">Cerca un evento!</h3>
         </div>
-      </div>
+      </div> */}
 
       {/* SearchBar Text Input */}
-      <div className="relative flex justify-center">
+      {/* <div className="relative flex justify-center">
         <div className="absolute inset-y-0 mr-52 flex items-center pointer-events-none">
           <img className="searchicon noDrag" src={searchicon} alt="" />
         </div>
@@ -79,8 +84,11 @@ export function Navbar() {
           type="text"
           className="searchInput w-64 h-9 rounded-full  pl-10 py-2 px-4 text-white outline-none focus:outline-[#9333EA] focus:outline-2 placeholder-gray-500 placeholder-opacity-75 SearchBG"
           placeholder="Cerca Evento"
+          onFocus={focusHandler}
         />
-      </div>
+      </div> */}
     </nav>
   );
 }
+
+export default Navbar;

@@ -13,19 +13,55 @@ import SearchBar from "./components/Searchbar/SearchBar";
 import Step1 from "./pages/components/Step1";
 import Step2 from "./pages/components/Step2";
 import Step3 from "./pages/components/Step3";
-import { Route, Router, Routes } from "react-router-dom";
+import { Navigate, Route, Router, Routes, useNavigate } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 function App() {
   const DataEvents = JSON.parse(localStorage.getItem("EventsData"));
+  const userLoginData = JSON.parse(localStorage.getItem("userLoginData"));
+  const userEvents = [];
+  const navigate = useNavigate();
+
   // const [events, setEvents] = useState([]);
   const [CreatedEvents, setCreatedEvents] = useState(DataEvents);
   const [term, setTerm] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
+
+  window.onload = () => {
+    if (userLoginData?.authenticated === true) {
+      setAuthenticated(true);
+    } else {
+      navigate("/");
+    }
+  };
 
   const AddEventHandler = (data) => {
-    setCreatedEvents((state) => {
-      if (state) return [data, ...state];
-      return [data];
-    });
+    const newData = {
+      ...data,
+      userId : userLoginData?.id
+    }
+    const userEvent = [];
+    if(userEvent.length===0){
+      userEvent.push(data.id);
+    }
+    userLoginData["eventId"] = userEvent;
+    localStorage.setItem("userLoginData",JSON.stringify(userLoginData));
+    const dataTemp = JSON.parse(localStorage.getItem("userLoginData"));
+    if(dataTemp.eventId.length!==0){
+      setCreatedEvents((state) => {
+        if (state) return [newData, ...state];
+        return [newData];
+      });
+    }else{
+      alert("Hai già creato un evento")
+    }
+
+
+    //controllo e pusho l'id evento nel mio array.
+    // if (userLoginData.userEvent.length !== 0) {
+    //   userEvent.push(data.id);
+    //   //setto di nuovo il local storage per avere anche questi dati
+    // }
   };
 
   const dataTermHandler = (data) => {

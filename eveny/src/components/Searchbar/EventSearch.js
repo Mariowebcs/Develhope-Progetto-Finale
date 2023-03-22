@@ -8,20 +8,10 @@ export function EventsSearch(props) {
     props.onAddTerms(searchTerm);
   };
 
-  const [render, setRender] = useState(false);
-
-  const searchingHandler = (verify) => {
-    if (verify) {
-      setRender(!render);
-    } else {
-      setRender(!render);
-    }
-  };
-
   return (
-    <div>
-      <SearchBar onSaveTerm={searchData} onSearching={searchingHandler} />
-      {render && <InterestingEvents />}
+    <div className="flex flex-col justify-center items-center">
+      <SearchBar onSaveTerm={searchData} />
+      <InterestingEvents />
     </div>
   );
 }
