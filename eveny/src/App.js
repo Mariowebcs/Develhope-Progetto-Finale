@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CreateEvent from "./components/events/CreateEvent";
 import Events from "./components/events/Events";
 import "./Index.css";
-import CreatedEvents from "./components/assets/CreatedEvents.json";
+import CreatedEvents from "./components/json/CreatedEvents.json";
 import EventSearch from "./components/Searchbar/EventSearch";
 import ResultsPage from "./components/Searchbar/ResultPage";
 import Login from "./pages/Login";
