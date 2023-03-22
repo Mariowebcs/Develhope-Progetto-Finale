@@ -26,6 +26,7 @@ function App() {
   const [CreatedEvents, setCreatedEvents] = useState(DataEvents);
   const [term, setTerm] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
+  const [userEvent,setUserEvent] = useState([]);
 
   window.onload = () => {
     if (userLoginData?.authenticated === true) {
@@ -38,27 +39,31 @@ function App() {
   const AddEventHandler = (data) => {
     const newData = {
       ...data,
-      userId : userLoginData?.id
-    }
-    const userEvent = [];
-    if(userEvent.length===0){
-      userEvent.push(data.id);
-    }
-    userLoginData["eventId"] = userEvent;
-    localStorage.setItem("userLoginData",JSON.stringify(userLoginData));
-    const dataTemp = JSON.parse(localStorage.getItem("userLoginData"));
-    if(dataTemp.eventId.length!==0){
-      setCreatedEvents((state) => {
-        if (state) return [newData, ...state];
-        return [newData];
-      });
-    }else{
-      alert("Hai già creato un evento")
-    }
+      userId: userLoginData?.id,
+    };
 
+    setCreatedEvents((state) => {
+      if (state) return [newData, ...state];
+      return [newData];
+    });
+
+    setUserEvent((prev)=>{
+      if(prev) return[...prev,data.id]
+      return[data.id]
+    })
+    userLoginData["eventId"] = userEvent;
+    localStorage.setItem("userLoginData", JSON.stringify(userLoginData));
+
+
+    // userLoginData["created"] = true;
+    // if (userLoginData["eventId"].length > 0 && !userLoginData["created"]) {
+
+    // } else {
+    //   alert("Hai già creato un evento");
+    // }
 
     //controllo e pusho l'id evento nel mio array.
-    // if (userLoginData.userEvent.length !== 0) {
+    // if (userLoginData.userEvent?.length !== 0) {
     //   userEvent.push(data.id);
     //   //setto di nuovo il local storage per avere anche questi dati
     // }

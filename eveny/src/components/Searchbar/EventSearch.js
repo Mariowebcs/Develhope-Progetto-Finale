@@ -9,7 +9,7 @@ export function EventsSearch(props) {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col">
       <SearchBar onSaveTerm={searchData} />
       <InterestingEvents />
     </div>
