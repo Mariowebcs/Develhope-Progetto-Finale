@@ -19,7 +19,6 @@ import userEvent from "@testing-library/user-event";
 function App() {
   const DataEvents = JSON.parse(localStorage.getItem("EventsData"));
   const userLoginData = JSON.parse(localStorage.getItem("userLoginData"));
-  const userEvents = [];
   const navigate = useNavigate();
 
   // const [events, setEvents] = useState([]);
@@ -51,9 +50,8 @@ function App() {
       if(prev) return[...prev,data.id]
       return[data.id]
     })
-    userLoginData["eventId"] = userEvent;
+    userLoginData["eventId"] = [...userEvent];
     localStorage.setItem("userLoginData", JSON.stringify(userLoginData));
-
 
     // userLoginData["created"] = true;
     // if (userLoginData["eventId"].length > 0 && !userLoginData["created"]) {
