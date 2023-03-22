@@ -60,7 +60,7 @@ const  Navbar =( ) => {
                 <a href="https://www.w3schools.com">Profilo</a>
               </li>
               <li className="hover:bg-neutral-200 bg-opacity-80 rounded-lg py-1">
-                <a href="https://www.w3schools.com">Logout</a>
+                <span onClick={""}>Logout</span>
               </li>
             </ul>
           </div>

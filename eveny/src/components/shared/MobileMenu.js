@@ -29,7 +29,7 @@ const MobileMenu = () => {
         <button className="text-3xl" onClick={linkAddHandler}>
           <FontAwesomeIcon
             icon={faCirclePlus}
-            className="text-4xl bg-[#ff0066] rounded-full p-4 relative bottom-[0.7rem]"
+            className="text-4xl"
             inverse
           />
         </button>
