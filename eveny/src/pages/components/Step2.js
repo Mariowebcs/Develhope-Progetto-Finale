@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import itemsArray from "../assets/items.json";
+import itemsArray from "../../components/json/items.json";
 
 const Step2 = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,38 +40,19 @@ const Step2 = () => {
       >
         <div className="absolute top-10 flex flex-col gap-4 w-max-72 items-center justify-center">
           <h1 className="text-2xl font-bold mb-4">Choose Your Interests</h1>
-          {/* search bar */}
-          <div>
-            <input
-              type="search"
-              name="search"
-              value={searchTerm}
-              onChange={handleInputChange}
-              placeholder="Search"
-              className="border-2 border-purple-600 w-full rounded-2xl p-1 focus:outline-none"
-            />
-            <div>
-              {itemsArray
-                .filter((item) => {
-                  const search = searchTerm.toLowerCase();
-                  const interest = item.interests.toLowerCase();
 
-                  return (
-                    search && interest.startsWith(search) && interest !== search
-                  );
-                })
-                .slice(0, 8)
-                .map((item, index) => (
-                  <div
-                    key={index}
-                    onClick={() => onSearch(item.interests)}
-                    className="cursor-pointer text-start mt-1 mb-1"
-                  >
-                    {item.interests}
-                  </div>
-                ))}
+            <div>
+              {itemsArray.map((item, index) => (
+                <button
+                  key={index}
+                  className="cursor-pointer text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full"
+                  onClick={() => onSearch(item.interests)}
+                >
+                  {item.interests}
+                </button>
+              ))}
             </div>
-          </div>
+
 
           {/* i miei interessi */}
           <div className="flex flex-col gap-4 items-center justify-center">

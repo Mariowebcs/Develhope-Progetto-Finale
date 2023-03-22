@@ -90,7 +90,7 @@ const Step1 = () => {
             value={data.regione}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Regione"
+            placeholder="Region / Country"
           />
           <input
             type="text"
@@ -98,7 +98,7 @@ const Step1 = () => {
             value={data.provincia}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Provincia"
+            placeholder="Province"
           />
           <input
             type="text"
@@ -106,7 +106,7 @@ const Step1 = () => {
             value={data.città}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Città"
+            placeholder="City"
           />
 
           <button

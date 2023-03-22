@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../UI/Card";
-import CreatedEvents from "../assets/CreatedEvents.json";
+import CreatedEvents from "../json/CreatedEvents.json";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../Searchbar/SearchBar";
 import EventsSearch from "../Searchbar/EventSearch";
