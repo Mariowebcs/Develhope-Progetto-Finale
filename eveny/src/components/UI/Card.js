@@ -30,7 +30,7 @@ const Card = (props) => {
           </svg>
         </button>
       </div>
-      <div className="flex flex-col items-center pb-10">
+      <div className="flex flex-col items-center">
         <img
           className="mb-3 h-24 w-24 rounded-full shadow-lg"
           src="./mariodandrea-cv.png"
@@ -43,7 +43,7 @@ const Card = (props) => {
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Cosenza Amante di anime
         </span>
-        <div className="mt-4 flex space-x-3 md:mt-6">
+        <div className="flex space-x-3 md:mt-6">
           <Button label="Scopri di più" />
           <ButtonSecondary label="Partecipa ora" />
         </div>

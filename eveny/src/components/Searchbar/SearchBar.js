@@ -46,6 +46,10 @@ export function SearchBar(props) {
     setSearchHistory(newHistory);
   };
 
+  const backToHomepage = () => {
+    navigate("/events")
+  }
+
   return (
     <form
       className="flex flex-col w-[350px] relative my-3 ml-3 gap-4 justify-around"
@@ -53,7 +57,9 @@ export function SearchBar(props) {
     >
       <div className="relative">
         {/* back button */}
-        <button className="mr-2">
+        <button
+        className="mr-2"
+        onClick={backToHomepage}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         {/* searchbar */}

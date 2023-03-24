@@ -6,6 +6,7 @@ const Step2 = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItems, setSelectedItems] = useState([]);
   const [buttonVisible, setButtonVisible] = useState(Array(itemsArray.length).fill(true)); // tramite il fill tramutiamo tutti i valori dell'array in true
+  const [shakeButtonIndex, setShakeButtonIndex] = useState(null);
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -58,6 +59,8 @@ const Step2 = () => {
     navigate("/step3");
   };
 
+
+
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-purple-800 to-pink-600">
       <div
@@ -76,12 +79,12 @@ const Step2 = () => {
               buttonVisible[index] && (
                 <button
                   key={index}
-                  className="cursor-pointer text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full"
-                  onClick={() => onSearch(item.interests, index)}
+                  className={`cursor-pointer hover:bg-purple-300 text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full ${shakeButtonIndex === index ? 'shake' : ''}`}
+                  onClick={() => {onSearch(item.interests, index), setShakeButtonIndex(index)}}
+
                 >
                   {item.interests}
                 </button>
-
               )
             ))}
           </div>

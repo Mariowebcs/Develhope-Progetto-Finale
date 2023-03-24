@@ -28,7 +28,7 @@ const Events = (props) => {
         </button>
       </div> */}
 
-      <div className="flex flex-col justify-between items-center mt-8 w-[90%] flex-wrap my-0 mx-auto md:flex-row">
+      <div className="flex flex-col justify-between items-center mt-8 w-[100%] flex-wrap my-0 mx-auto md:flex-row">
         {props.events?.map((event) => (
           <Card
             title={event.title}
