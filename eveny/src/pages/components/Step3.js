@@ -64,9 +64,9 @@ const Step3 = () => {
           />
           <label
             htmlFor="image"
-            className="bg-zinc-100 border border-black rounded-lg shadow-md flex flex-col justify-center items-center p-6 hover:cursor-pointer"
+            className="bg-zinc-100 border border-black rounded-full shadow-md flex flex-col justify-center items-center p-6 hover:cursor-pointer"
           >
-            Carica la tua immagine del profilo
+            Upload your profile picture
           </label>
           <input
             type="file"
