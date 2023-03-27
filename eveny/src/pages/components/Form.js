@@ -1,0 +1,126 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import EmailInput from "./EmailInput";
+import PasswordInput from "./PasswordInput";
+import CheckboxInput from "./CheckboxInput";
+import SubmitButton from "./SubmitButton";
+
+//Preleviamo i dati dal local storage
+
+const handleClick = () => console.log(registerData);
+
+const Form = () => {
+  // const [data, setData] = useState({
+  //   email: "",
+  //   password: "",
+  //   remember: false,
+  // });
+
+  // const handleData = (event) => {
+  //   const { name, type, value, checked } = event.target;
+
+  //   setData((data) => {
+  //     return {
+  //       ...data,
+  //       [name]: type === "checkbox" ? checked : value,
+  //     };
+  //   });
+  // };
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleCheckboxChange = (event) => {
+    setRemember(event.target.checked);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const registerData = JSON.parse(localStorage.getItem("registerData"));
+
+    if (registerData?.email === email && registerData?.password === password) {
+      const userDataLogin = {
+        id : registerData.id,
+        email: email,
+        password: password,
+        authenticated : true
+      };
+
+      console.log(userDataLogin);
+      localStorage.setItem("userLoginData",JSON.stringify(userDataLogin));
+      alert("Login avvenuto con successo");
+      navigate(`/events/`)
+    }else{
+      alert("utente sconosciuto o dati errati")
+    }
+  }
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  const isInvalidPassword = password.length < 8 && isFocused;
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="flex relative flex-col flex-1 gap-6 w-3/4 items-start"
+    >
+      <EmailInput
+        value={email}
+        onChange={handleEmailChange}
+        inputStyle="inputStyleEmail"
+        labelStyle="absolute left-6 -top-3 bg-white pl-2 pr-2 lg:flex hidden"
+      />
+      <PasswordInput
+        value={password}
+        onChange={handlePasswordChange}
+        inputStyle={
+          isInvalidPassword === true
+            ? "inputStylePasswordInvalid"
+            : "inputStylePassword"
+        }
+        labelStyle="absolute top-12 left-6 bg-white pl-2 pr-2 lg:flex hidden"
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      />
+      {isInvalidPassword && (
+        <p className="text-red-500 text-xs italic">
+          La password deve contenere almeno 8 caratteri
+        </p>
+      )}
+      <CheckboxInput
+        checked={remember}
+        onChange={handleCheckboxChange}
+        checkBoxStyle={
+          isInvalidPassword === true ? "w-full absolute top-44" : ""
+        }
+      />
+      <SubmitButton
+        label="LOGIN"
+        buttonStyle={
+          isInvalidPassword === true
+            ? "buttonStyleInactive"
+            : "buttonStyleActive"
+        }
+        isDisabled={email === "" || password === ""}
+      />
+    </form>
+  );
+};
+
+export default Form;

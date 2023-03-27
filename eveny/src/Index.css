@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .input-form label {
+    display: block;
+    margin: 0.3em 0 0.3em 0;
+  }
+
+  input,
+  textarea,
+  select {
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    width: 100%;
+  }
+
+  .noDrag {
+    pointer-events: none;
+  }
+
+  .noSelect {
+    user-select: none;
+  }
+
+  /* .BGcolor {
+    background-color: #41718d;
+    background-image: linear-gradient(160deg, #41718d 0%, #80d0c79b 100%);
+  } */
+
+  .SearchBG {
+    background-color: #a2b4be;
+  }
+
+  .NavAvatar {
+    cursor: pointer;
+  }
+
+  .searchicon {
+    width: 18px;
+    opacity: 0.3;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .card-hashtag {
+    @apply relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+  }
+
+  .card-hashtag-shop {
+    @apply relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+  }
+  .inputStylePassword {
+    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600
+        sm:placeholder:text-gray-400 lg:placeholder:text-white w-full;
+  }
+  .inputStylePasswordInvalid {
+    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600
+        sm:placeholder:text-gray-400 lg:placeholder:text-white w-full
+        focus:outline-none focus:border-red-500 focus:ring-red-500;
+  }
+  .inputStyleEmail {
+    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600
+        sm:placeholder:text-gray-400 lg:placeholder:text-white w-full
+        focus:outline-none focus:invalid:border-red-500 focus:invalid:ring-red-500;
+  }
+  .buttonIconStyle {
+    @apply border-2 border-slate-300 rounded-2xl w-4/5 pl-10 pr-10 flex justify-center items-center gap-2;
+  }
+  .buttonStyleActive {
+    @apply bg-gradient-to-b from-purple-600 to-pink-500
+        rounded-lg p-2 mb-2 text-white w-full;
+  }
+  .buttonStyleInactive {
+    @apply bg-gradient-to-b from-purple-600 to-pink-500
+        rounded-lg p-2 mb-2 text-white w-full relative top-8;
+  }
+  .inputRegisterStyle {
+    @apply p-2 rounded-2xl bg-white border-2 border-purple-600 sm:placeholder:text-gray-400;
+  }
+
+  .BGcolor {
+    @apply bg-sky-900
+  }
+}
