@@ -38,12 +38,16 @@ const  Navbar =( ) => {
     }, [ref]);
   }
 
+  const backMenuHandler = () =>{
+    navigate("/events");
+  }
+
   return (
     <nav className="NavContainer p-4 h-24 BGcolor w-full">
       {/* Container Logo + User */}
       <div className="NavTop mx-auto  mb-2 flex justify-between">
         {/* Logo */}
-        <div className="flex flex-col ">
+        <div className="flex flex-col cursor-pointer" onClick={backMenuHandler}>
           <div className="NavLogo w-12 h-12 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover noDrag noSelect"
@@ -81,7 +85,7 @@ const  Navbar =( ) => {
                 <a href="https://www.w3schools.com">Profilo</a>
               </li>
               <li className="hover:bg-neutral-200 bg-opacity-80 rounded-lg py-1">
-                <span >Logout</span>
+                <span>Logout</span>
               </li>
             </ul>
           </div>

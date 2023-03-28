@@ -52,6 +52,8 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Name"
+            required
+            autoFocus
           />
           <input
             type="text"
@@ -60,6 +62,7 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Surname"
+            required
           />
           <input
             type="date"
@@ -75,6 +78,7 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Email"
+            required
           />
           <input
             type="text"
@@ -83,6 +87,7 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Address"
+            required
           />
           <input
             type="text"
@@ -91,6 +96,7 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Region / Country"
+            required
           />
           <input
             type="text"
@@ -99,6 +105,7 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Province"
+            required
           />
           <input
             type="text"
@@ -107,6 +114,7 @@ const Step1 = () => {
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="City"
+            required
           />
 
           <button

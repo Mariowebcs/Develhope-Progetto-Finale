@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EmailInput from "./EmailInput";
 import PasswordInput from "./PasswordInput";
@@ -26,6 +26,13 @@ const Form = () => {
   //     };
   //   });
   // };
+  const rememberData = JSON.parse(localStorage.getItem("rememberData"));
+
+  window.onload = () => {
+    console.log(rememberData);
+    setEmail(rememberData.email);
+    setPassword(rememberData.password);
+  };
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -47,23 +54,30 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const registerData = JSON.parse(localStorage.getItem("registerData"));
+    if (remember) {
+      const rememberData = {
+        email: email,
+        password: password,
+      };
+      localStorage.setItem("rememberData", JSON.stringify(rememberData));
+    }
 
     if (registerData?.email === email && registerData?.password === password) {
       const userDataLogin = {
-        id : registerData.id,
+        id: registerData.id,
         email: email,
         password: password,
-        authenticated : true
+        authenticated: true,
       };
 
       console.log(userDataLogin);
-      localStorage.setItem("userLoginData",JSON.stringify(userDataLogin));
+      localStorage.setItem("userLoginData", JSON.stringify(userDataLogin));
       alert("Login avvenuto con successo");
-      navigate(`/events/`)
-    }else{
-      alert("utente sconosciuto o dati errati")
+      navigate(`/events/`);
+    } else {
+      alert("utente sconosciuto o dati errati");
     }
-  }
+  };
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -103,13 +117,15 @@ const Form = () => {
           La password deve contenere almeno 8 caratteri
         </p>
       )}
-      <CheckboxInput
-        checked={remember}
-        onChange={handleCheckboxChange}
-        checkBoxStyle={
-          isInvalidPassword === true ? "w-full absolute top-44" : ""
-        }
-      />
+      <div>
+        <CheckboxInput
+          checked={remember}
+          onChange={handleCheckboxChange}
+          checkBoxStyle={
+            isInvalidPassword === true ? "w-full absolute top-44" : ""
+          }
+        />
+      </div>
       <SubmitButton
         label="LOGIN"
         buttonStyle={

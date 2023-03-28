@@ -8,6 +8,16 @@
     margin: 0.3em 0 0.3em 0;
   }
 
+  .mobile-menu{
+    position: fixed;
+    bottom: 0;
+    display : flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+
   input,
   textarea,
   select {
@@ -69,16 +79,16 @@
     @apply relative hover:-top-1 inline-block bg-sky-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
   }
   .inputStylePassword {
-    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600
+    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-sky-900
         sm:placeholder:text-gray-400 lg:placeholder:text-white w-full;
   }
   .inputStylePasswordInvalid {
-    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600
+    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-sky-900
         sm:placeholder:text-gray-400 lg:placeholder:text-white w-full
         focus:outline-none focus:border-red-500 focus:ring-red-500;
   }
   .inputStyleEmail {
-    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-purple-600
+    @apply pl-4 p-2 rounded-2xl bg-white border-2 border-sky-900
         sm:placeholder:text-gray-400 lg:placeholder:text-white w-full
         focus:outline-none focus:invalid:border-red-500 focus:invalid:ring-red-500;
   }
@@ -94,7 +104,7 @@
         rounded-lg p-2 mb-2 text-white w-full relative top-8;
   }
   .inputRegisterStyle {
-    @apply p-2 rounded-2xl bg-white border-2 border-purple-600 sm:placeholder:text-gray-400;
+    @apply p-2 rounded-2xl bg-white border-2 border-sky-900 sm:placeholder:text-gray-400;
   }
 
   .BGcolor {

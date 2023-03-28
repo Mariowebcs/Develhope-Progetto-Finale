@@ -7,6 +7,8 @@ import {
   faClock,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import MobileMenu from "../shared/MobileMenu";
+import Navbar from "../shared/Navbar";
 
 export function SearchBar(props) {
   const navigate = useNavigate();
@@ -47,77 +49,77 @@ export function SearchBar(props) {
   };
 
   const backToHomepage = () => {
-    navigate("/events")
-  }
+    navigate("/events");
+  };
 
   return (
-    <form
-      className="flex flex-col w-[350px] relative my-3 ml-3 gap-4 justify-around"
-      onSubmit={SearchEvent}
-    >
-      <div className="relative">
-        {/* back button */}
-        <button
-        className="mr-2"
-        onClick={backToHomepage}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
-        {/* searchbar */}
-        <label htmlFor="search">
-          <input
-            className="rounded-full w-[250px] pl-8 focus:border-[#ff0066] focus:outline-none"
-            placeholder="Cerca un evento..."
-            onChange={inputSearching}
-          />
-          <button className="absolute left-7 " onClick={SearchEvent}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+    <div className="w-full">
+      <form
+        className="flex flex-col w-[350px] relative my-3 ml-3 gap-4 justify-around"
+        onSubmit={SearchEvent}
+      >
+        <div className="relative">
+          {/* back button */}
+          <button className="mr-2" onClick={backToHomepage}>
+            <FontAwesomeIcon icon={faChevronLeft} />
           </button>
-        </label>
-        {/* search button */}
-        <button
-          className="text-[#ff0066] ml-2 active:text-[#0C4A6E] hover:text-[#0C4A6E]"
-          onClick={SearchEvent}
-        >
-          Cerca
-        </button>
-      </div>
-      {/* history events */}
+          {/* searchbar */}
+          <label htmlFor="search">
+            <input
+              className="rounded-full w-[250px] pl-8 focus:border-[#ff0066] focus:outline-none"
+              placeholder="Cerca un evento..."
+              onChange={inputSearching}
+            />
+            <button className="absolute left-7 " onClick={SearchEvent}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
+          </label>
+          {/* search button */}
+          <button
+            className="text-[#ff0066] ml-2 active:text-[#0C4A6E] hover:text-[#0C4A6E]"
+            onClick={SearchEvent}
+          >
+            Cerca
+          </button>
+        </div>
+        {/* history events */}
 
-      <div className="flex flex-col">
-        <ul>
-          {searchHistory?.map((term, index) => (
-            <div className="ml-3 mt-4 flex relative" key={term}>
-              <li>
-                {term && (
-                  <FontAwesomeIcon
-                    className="mr-2 text-[#0C4A6E]"
-                    icon={faClock}
-                  />
-                )}
-                {
-                  <Link
-                    to={`/searchTerm/${term}`}
-                    className="hover:text-[#ff0066]"
-                  >
-                    {term}
-                  </Link>
-                }{" "}
-                {term && (
-                  <button
-                    className="absolute left-56"
-                    id="addSearch"
-                    type="button"
-                    onClick={() => removeSearchTerm(index)}
-                  >
-                    <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                )}
-              </li>
-            </div>
-          ))}
-        </ul>
-      </div>
-    </form>
+        <div className="flex flex-col">
+          <ul>
+            {searchHistory?.map((term, index) => (
+              <div className="ml-3 mt-4 flex relative" key={term}>
+                <li>
+                  {term && (
+                    <FontAwesomeIcon
+                      className="mr-2 text-[#0C4A6E]"
+                      icon={faClock}
+                    />
+                  )}
+                  {
+                    <Link
+                      to={`/searchTerm/${term}`}
+                      className="hover:text-[#ff0066]"
+                    >
+                      {term}
+                    </Link>
+                  }{" "}
+                  {term && (
+                    <button
+                      className="absolute left-56"
+                      id="addSearch"
+                      type="button"
+                      onClick={() => removeSearchTerm(index)}
+                    >
+                      <FontAwesomeIcon icon={faXmark} />
+                    </button>
+                  )}
+                </li>
+              </div>
+            ))}
+          </ul>
+        </div>
+      </form>
+    </div>
   );
 }
 

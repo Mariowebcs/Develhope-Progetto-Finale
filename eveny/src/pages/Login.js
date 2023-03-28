@@ -16,7 +16,7 @@ const Login = () => {
       <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-purple-800 to-pink-600">
         {/* container */}
         <div
-          className="bg-white flex items-center justify-center w-10/12 h-5/6 rounded-lg shadow-2xl shadow-black
+          className="bg-white flex items-center justify-center w-11/12 h-6/6 rounded-lg shadow-2xl shadow-black
                 lg:max-w-screen-xl lg:flex-1"
         >
           {/* left-side */}
@@ -30,7 +30,7 @@ const Login = () => {
             <img
               src={logoImage}
               alt="Eveny"
-              className="md:hidden place-self-center h-3/4 w-3/4 max-w-[190px]"
+              className="md:hidden place-self-center h-3/4 w-3/4 max-w-[160px]"
             />
             <Form />
             <div className="flex flex-col items-center gap-4 mb-10 w-full relative top-4">

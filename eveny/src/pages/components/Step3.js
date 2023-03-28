@@ -32,7 +32,8 @@ const Step3 = () => {
     };
     console.log(dataProfile);
     localStorage.setItem("registerData", JSON.stringify(dataProfile));
-    navigate("/")
+    alert("Registrazione avvenuta con successo!");
+    navigate("/");
   };
 
   return (
@@ -53,6 +54,8 @@ const Step3 = () => {
             onChange={habdleInputChange}
             className="inputRegisterStyle w-full"
             placeholder="Username"
+            required
+            autoFocus
           />
           <input
             type="password"
@@ -61,10 +64,11 @@ const Step3 = () => {
             onChange={habdleInputChange}
             className="inputRegisterStyle  w-full"
             placeholder="Password"
+            required
           />
           <label
             htmlFor="image"
-            className="bg-zinc-100 border border-black rounded-full shadow-md flex flex-col justify-center items-center p-6 hover:cursor-pointer"
+            className="bg-sky-900 border border-black rounded-full shadow-md flex flex-col justify-center items-center p-6 hover:cursor-pointer text-white"
           >
             Upload your profile picture
           </label>

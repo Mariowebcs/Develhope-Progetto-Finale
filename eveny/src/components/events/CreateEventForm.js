@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MobileMenu from "../shared/MobileMenu";
+import Navbar from "../shared/Navbar";
 // import "../Index.css";
 
 const CreateEventForm = (props) => {
@@ -38,7 +40,7 @@ const CreateEventForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const dataEvent = {
-      id : crypto.randomUUID(),
+      id: crypto.randomUUID(),
       title: eventTitle.toLowerCase(),
       description: eventDescription.toLowerCase(),
       date: new Date(eventDate),
@@ -51,7 +53,7 @@ const CreateEventForm = (props) => {
     setEventDate("");
     setImgSelected("");
     setNumMembers(2);
-    navigate("/events")
+    navigate("/events");
   };
 
   const returnBackHandler = () => {
@@ -59,80 +61,98 @@ const CreateEventForm = (props) => {
   };
 
   return (
-    <div>
-      <form action="" onSubmit={submitHandler}>
-        <div className="input-form">
-          <label htmlFor="ev-descr">Seleziona la data </label>
-          <input
-            type="date"
-            min={`${year}-${month}-${day}`}
-            onChange={changeEventDateHandler}
-            value={eventDate}
-            required
-          />
-        </div>
-        <div className="input-form my-4 text-black">
-          <label htmlFor="ev-title">Titolo dell'evento: </label>
-          <input
-            type="text"
-            required
-            maxLength="30"
-            minLength="10"
-            id="ev-title"
-            name="event-title"
-            value={eventTitle}
-            onChange={changeEventTitleHandler}
-          />
-        </div>
-        <div className="input-formE">
-          <label htmlFor="ev-descr">Descrizione dell'evento: </label>
-          <textarea
-            name="event-description"
-            id="ev-descr"
-            cols="22"
-            rows="5"
-            value={eventDescription}
-            onChange={changeEventDescriptionHandler}
-            required
-            minLength="25"
-            maxLength="60"
-          ></textarea>
-        </div>
-        <div className="input-form">
-          <label htmlFor="ev-mem">Seleziona numero di partecipanti</label>
-          <input
-            type="range"
-            name="event-members"
-            id="ev-mem"
-            min="2"
-            max="20"
-            step="1"
-            value={numMembers}
-            onChange={changeNumMembersHandler}
-          />
-          <span>{numMembers}</span>
-        </div>
-        <div className="input-form">
-          <label htmlFor="user-img">Scegli la tua immagine</label>
-          <input
-            type="file"
-            value={imgSelected}
-            id="user-img"
-            onChange={changeImgSelectedHandler}
-          />
-        </div>
-        <button
-          className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4"
-        >
-          Crea Evento
-        </button>
-        <button
-          onClick={returnBackHandler}
-          className="mt-6 py-4 px-6 text-white bg-sky-900"
-        >
-          Annulla
-        </button>
-      </form>
+    <div className="w-full">
+      <Navbar/>
+      <div className="flex flex-col items-center justify-center h-[100vh]">
+        <form action="" onSubmit={submitHandler}>
+          <div className="input-form">
+            <label htmlFor="ev-descr">Seleziona la data </label>
+            <input
+              type="date"
+              min={`${year}-${month}-${day}`}
+              onChange={changeEventDateHandler}
+              value={eventDate}
+              required
+            />
+          </div>
+          <div className="input-form my-4 text-black">
+            <label htmlFor="ev-title">Titolo dell'evento: </label>
+            <input
+              type="text"
+              required
+              maxLength="30"
+              minLength="10"
+              id="ev-title"
+              name="event-title"
+              value={eventTitle}
+              onChange={changeEventTitleHandler}
+            />
+          </div>
+          <div className="input-formE">
+            <label htmlFor="ev-descr">Descrizione dell'evento: </label>
+            <textarea
+              name="event-description"
+              id="ev-descr"
+              cols="22"
+              rows="5"
+              value={eventDescription}
+              onChange={changeEventDescriptionHandler}
+              required
+              minLength="25"
+              maxLength="60"
+            ></textarea>
+          </div>
+          <div className="input-form">
+            <label htmlFor="ev-mem">Seleziona numero di partecipanti</label>
+            <input
+              type="range"
+              name="event-members"
+              id="ev-mem"
+              min="2"
+              max="20"
+              step="1"
+              value={numMembers}
+              onChange={changeNumMembersHandler}
+            />
+            <span>{numMembers}</span>
+          </div>
+          <div className="input-form">
+            <label
+              htmlFor="user-img"
+              className=" bg-zinc-100
+            border
+            border-black
+            rounded-full
+            shadow-md
+            flex
+            flex-col
+            justify-center
+            items-center
+            p-6
+            hover:cursor-pointer"
+            >
+              Scegli la tua immagine
+            </label>
+            <input
+              type="file"
+              value={imgSelected}
+              id="user-img"
+              onChange={changeImgSelectedHandler}
+              className="hidden"
+            />
+          </div>
+          <button className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4">
+            Crea Evento
+          </button>
+          <button
+            onClick={returnBackHandler}
+            className="mt-6 py-4 px-6 text-white bg-sky-900"
+          >
+            Annulla
+          </button>
+        </form>
+      </div>
+      <MobileMenu/>
     </div>
   );
 };

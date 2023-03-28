@@ -1,4 +1,7 @@
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../shared/Button";
 import ButtonSecondary from "../shared/ButtonSecondary";
 import "./Card.css";
@@ -8,11 +11,16 @@ const Card = (props) => {
   // const day = data.toLocaleString("it-IT", { day: "2-digit" });
   // const month = data.toLocaleString("it-IT", { month: "2-digit" });
   // const year = data.getFullYear();
+  const  navigate = useNavigate();
+
+  const addPreferredHandler = () =>{
+
+  }
 
   return (
     <div className="card w-[90%] rounded-md border border-gray-200 bg-white shadow-lg my-6 md:w-[48%]">
       <div className="flex justify-end px-4 pt-4">
-        <button
+        {/* <button
           id="dropdownButton"
           data-dropdown-toggle="dropdown"
           className="inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
@@ -28,6 +36,9 @@ const Card = (props) => {
           >
             <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
           </svg>
+        </button> */}
+        <button className="text-3xl hover:text-red-600" onClick={addPreferredHandler}>
+          <FontAwesomeIcon icon={faHeart}/>
         </button>
       </div>
       <div className="flex flex-col items-center">

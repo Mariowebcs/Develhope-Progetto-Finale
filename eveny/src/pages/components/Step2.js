@@ -72,14 +72,14 @@ const Step2 = () => {
           <div>
             <input
               onChange={handleInputChange}
-              className="border-2 border-purple-600 w-full rounded-2xl p-1 focus:outline-none" />
+              className="border-2 border-sky-900 w-full rounded-2xl p-1 focus:outline-none" />
           </div>
           <div className="h-[180px] overflow-y-scroll scrollbar w-[95%]">
             {filteredArray.map((item, index) => (
               buttonVisible[index] && (
                 <button
                   key={index}
-                  className={`cursor-pointer hover:bg-purple-300 text-start px-2 mt-1 mb-1 mx-3 border-purple-800 border-solid border-2 rounded-full ${shakeButtonIndex === index ? 'shake' : ''}`}
+                  className={`cursor-pointer hover:bg-sky-900 hover:text-white text-start px-2 mt-1 mb-1 mx-3 border-sky-900 border-solid border-2 rounded-full ${shakeButtonIndex === index ? 'shake' : ''}`}
                   onClick={() => {onSearch(item.interests, index), setShakeButtonIndex(index)}}
 
                 >
@@ -95,13 +95,13 @@ const Step2 = () => {
               {uniqueItems.map((item, index) => (
                 <li
                   key={index}
-                  className="bg-purple-800 rounded-3xl p-1 text-white w-fit"
+                  className="bg-[#ff0066] rounded-3xl p-1 text-white w-fit"
                 >
                   {item}{" "}
                   <button
                     type="button"
                     onClick={() => handleRemoveItems(index)}
-                    className="rounded-full bg-purple-400 w-6 h-6 text-black"
+                    className="rounded-full bg-white w-6 h-6 text-black"
                   >
                     X
                   </button>
@@ -115,7 +115,7 @@ const Step2 = () => {
           type="button"
           onClick={handleSubmitInterests}
           className="bg-gradient-to-b from-purple-600 to-pink-500
-                rounded-lg p-2 text-white w-8/12 absolute bottom-14"
+                rounded-lg p-2 text-white w-8/12 absolute bottom-8"
         >
           Go
         </button>
