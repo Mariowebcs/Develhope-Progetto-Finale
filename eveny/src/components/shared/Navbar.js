@@ -2,7 +2,7 @@ import React from "react";
 import avatar1 from "../assets/avatar1.jpg";
 import evenylogo from "../assets/evenylogo.png";
 import searchicon from "../assets/searchicon.png";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const  Navbar =( ) => {
@@ -18,12 +18,36 @@ const  Navbar =( ) => {
     navigate("/search");
   }
 
+  const wrapperRef = useRef(null);
+  closeDropdown(wrapperRef);
+
+  function closeDropdown(ref) {
+    useEffect(() => {
+      // Uso lo ref hook per permettere al dropdown di essere chiuso su ogni parte dello schermo
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setShowMenu(showMenu)
+        }
+      }
+      // Collego al click la funzione che mi fa partire il dropdown
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Richiude il dropdown
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const backMenuHandler = () =>{
+    navigate("/events");
+  }
+
   return (
     <nav className="NavContainer p-4 h-24 BGcolor w-full">
       {/* Container Logo + User */}
       <div className="NavTop mx-auto  mb-2 flex justify-between">
         {/* Logo */}
-        <div className="flex flex-col ">
+        <div className="flex flex-col cursor-pointer" onClick={backMenuHandler}>
           <div className="NavLogo w-12 h-12 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover noDrag noSelect"
@@ -42,6 +66,7 @@ const  Navbar =( ) => {
           className="NavAvatar w-14 h-14 rounded-full overflow-hidden noSelect"
           onClick={handleAvatarClick}
           onBlur={handleAvatarClick}
+          ref={wrapperRef}
         >
           <img
             className="w-full h-full object-cover noDrag noSelect"
@@ -60,7 +85,7 @@ const  Navbar =( ) => {
                 <a href="https://www.w3schools.com">Profilo</a>
               </li>
               <li className="hover:bg-neutral-200 bg-opacity-80 rounded-lg py-1">
-                <span onClick={""}>Logout</span>
+                <span>Logout</span>
               </li>
             </ul>
           </div>

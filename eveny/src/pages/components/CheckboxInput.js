@@ -10,6 +10,7 @@ const CheckboxInput = ({ checked, onChange, checkBoxStyle }) => {
           type="checkbox"
           checked={checked}
           onChange={onChange}
+          id="checkbox"
         />
       </fieldset>
       <label htmlFor="checkbox"> Remember me</label>
