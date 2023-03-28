@@ -9,6 +9,7 @@ import MobileMenu from "../shared/MobileMenu";
 
 const Events = (props) => {
   const navigate = useNavigate();
+  const { authenticated } = JSON.parse(localStorage.getItem("userLoginData"));
   const clickHandler = () => {
     navigate("/addevent");
   };
@@ -16,47 +17,39 @@ const Events = (props) => {
     navigate("/search");
   };
   return (
-    <div className="w-full">
-      <Navbar />
-      {/* <div className="flex flex-col justify-center items-center">
-        <button
-          className="mt-6 py-4 px-6 text-white  bg-[#ff0066] mx-4"
-          type="button"
-          onClick={clickHandler}
-        >
-          Crea il tuo evento
-        </button>
-      </div> */}
-
-      <div className="flex flex-col justify-between items-center mt-8 w-[100%] flex-wrap  mb-12 mx-auto md:flex-row">
-        {props.events?.length > 0 ? (
-          props.events?.map((event) => (
-            <Card
-              title={event.title}
-              description={event.description}
-              date={event.date}
-              memNUm={event.membersNumber}
-              key={event.id}
-              // image={event.eventImage}
-            />
-          ))
-        ) : (
-          <div className="flex flex-col justify-center items-center">
-            <p>Non sono presenti eventi nella tua città.</p>
-            <button
-              className="mt-6 py-4 px-6 text-white  bg-[#ff0066] mx-4"
-              type="button"
-              onClick={clickHandler}
-            >
-              Crea il tuo evento
-            </button>
-          </div>
-        )}
+    authenticated && (
+      <div className="w-full">
+        <Navbar />
+        <div className="flex flex-col justify-between items-center mt-8 w-[100%] flex-wrap  mb-12 mx-auto md:flex-row">
+          {props.events?.length > 0 ? (
+            props.events?.map((event) => (
+              <Card
+                title={event.title}
+                description={event.description}
+                date={event.date}
+                memNUm={event.membersNumber}
+                key={event.id}
+                // image={event.eventImage}
+              />
+            ))
+          ) : (
+            <div className="flex flex-col justify-center items-center">
+              <p>Non sono presenti eventi nella tua città.</p>
+              <button
+                className="mt-6 py-4 px-6 text-white  bg-[#ff0066] mx-4"
+                type="button"
+                onClick={clickHandler}
+              >
+                Crea il tuo evento
+              </button>
+            </div>
+          )}
+        </div>
+        <div className="mobile-menu w-full">
+          <MobileMenu className="w-[90%]" />
+        </div>
       </div>
-      <div className="mobile-menu w-full">
-        <MobileMenu className="w-[90%]" />
-      </div>
-    </div>
+    )
   );
 };
 

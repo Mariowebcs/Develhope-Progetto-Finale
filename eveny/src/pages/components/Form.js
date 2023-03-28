@@ -129,11 +129,11 @@ const Form = () => {
       <SubmitButton
         label="LOGIN"
         buttonStyle={
-          isInvalidPassword === true
+          email.length ===0 || password.length ===0
             ? "buttonStyleInactive"
             : "buttonStyleActive"
         }
-        isDisabled={email === "" || password === ""}
+        isDisabled={email.length ===0 || password.length ===0}
       />
     </form>
   );

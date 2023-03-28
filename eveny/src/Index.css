@@ -8,10 +8,10 @@
     margin: 0.3em 0 0.3em 0;
   }
 
-  .mobile-menu{
+  .mobile-menu {
     position: fixed;
     bottom: 0;
-    display : flex;
+    display: flex;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -62,11 +62,21 @@
   }
 
   @keyframes shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-10px, 0); }
-    50% { transform: translate(10px, 0); }
-    75% { transform: translate(-10px, 0); }
-    100% { transform: translate(0, 0); }
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-10px, 0);
+    }
+    50% {
+      transform: translate(10px, 0);
+    }
+    75% {
+      transform: translate(-10px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
   }
 }
 
@@ -100,7 +110,7 @@
         rounded-lg p-2 mb-2 text-white w-full;
   }
   .buttonStyleInactive {
-    @apply bg-gradient-to-b from-purple-600 to-pink-500
+    @apply bg-zinc-300
         rounded-lg p-2 mb-2 text-white w-full relative top-8;
   }
   .inputRegisterStyle {
@@ -108,6 +118,6 @@
   }
 
   .BGcolor {
-    @apply bg-sky-900
+    @apply bg-sky-900;
   }
 }
