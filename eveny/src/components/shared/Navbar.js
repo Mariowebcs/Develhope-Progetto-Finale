@@ -42,6 +42,10 @@ const  Navbar =( ) => {
     navigate("/events");
   }
 
+  const handleLogout = () => {
+    navigate("/");
+  }
+
   return (
     <nav className="NavContainer p-4 h-24 BGcolor w-full">
       {/* Container Logo + User */}
@@ -75,21 +79,19 @@ const  Navbar =( ) => {
           />
         </div>
 
-        {showMenu && (
           <div className="NavMenu noSelect absolute z-50 top-[70px] right-2 rounded-lg h-20 w-20 bg-neutral-100 bg-opacity-80 shadow-lg">
             <ul className="flex flex-col h-20 justify-around text-center text-xs text-slate-600">
               <li className="hover:bg-neutral-200 bg-opacity-80 rounded-lg py-1">
-                <a href="https://www.w3schools.com">Preferenze</a>
+                <a href="#">Preferenze</a>
               </li>
               <li className="hover:bg-neutral-200 bg-opacity-80 rounded-lg py-1">
-                <a href="https://www.w3schools.com">Profilo</a>
+                <a href="#">Profilo</a>
               </li>
               <li className="hover:bg-neutral-200 bg-opacity-80 rounded-lg py-1">
-                <span>Logout</span>
+                <div className="cursor-pointer" onClick={() => handleLogout()}>Logout</div>
               </li>
             </ul>
           </div>
-        )}
       </div>
 
       {/* SearchBar Title */}
