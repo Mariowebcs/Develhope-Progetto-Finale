@@ -1,14 +1,19 @@
 import express from 'express';
-import cors from 'cors';
 import { config } from 'dotenv';
 import { addUserToCollection, connectToServer, getUsers } from './conn.js';
+import cors from "cors"
 
 config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 204
+}))
+
 // get driver connection
 app.get('/test', async (req, res) => {
   const users = await getUsers(process.env.MONGO_URI);

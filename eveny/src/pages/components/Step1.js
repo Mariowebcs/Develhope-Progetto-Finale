@@ -2,19 +2,29 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Step1 = () => {
-  const [data, setData] = useState({
-    name: "",
-    surname: "",
-    birthday: "",
-    email: "",
-    address: "",
-  });
+  const [data, setData] = useState();
   //search for api about gps
 
-
   const navigate = useNavigate();
+  const registerPost = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/v1/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(data)
+      });
+      const dataUser = res.json()
+      console.log(dataUser)
+    } catch (error) {
+      console.error(error);
+    }
+  }
   const handleInput = (event) => {
-  const { name, value } = event.target;
+    const { name, value } = event.target;
 
     setData((data) => {
       return {
@@ -34,7 +44,7 @@ const Step1 = () => {
     console.log(dataRegister);
     //add function pass props
     localStorage.setItem("registerData", JSON.stringify(dataRegister));
-
+    registerPost()
     navigate("/step2");
   };
   return (
@@ -48,7 +58,6 @@ const Step1 = () => {
           <input
             type="text"
             name="name"
-            value={data.name}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Name"
@@ -58,7 +67,6 @@ const Step1 = () => {
           <input
             type="text"
             name="surname"
-            value={data.surname}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Surname"
@@ -67,14 +75,13 @@ const Step1 = () => {
           <input
             type="date"
             name="birthday"
-            value={data.birthday}
             onChange={handleInput}
             className="inputRegisterStyle"
           />
           <input
             type="email"
             name="email"
-            value={data.email}
+
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Email"
@@ -83,7 +90,6 @@ const Step1 = () => {
           <input
             type="text"
             name="address"
-            value={data.address}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Address"
@@ -92,7 +98,6 @@ const Step1 = () => {
           <input
             type="text"
             name="regione"
-            value={data.regione}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Region / Country"
@@ -101,7 +106,6 @@ const Step1 = () => {
           <input
             type="text"
             name="provincia"
-            value={data.provincia}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Province"
@@ -110,7 +114,6 @@ const Step1 = () => {
           <input
             type="text"
             name="città"
-            value={data.città}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="City"

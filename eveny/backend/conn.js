@@ -8,19 +8,11 @@ const connectToServer = async (uri) => {
       message: 'Inserted'
     });
     await res.close();
+    return insertRes;
   } catch (ex) {
     console.log(ex)
   }
 
-
-  // client.connect(err => {
-  //   if (err) console.log(err);
-  //   else console.log('mi sono connesso al server');
-  //   const collection = client.db("Eveny").collection("Data_Eveny");
-  //   console.log(collection);
-  //   // perform actions on the collection object
-  //   client.close();
-  // });
 }
 
 const addUserToCollection = async (uri, payload) => {
@@ -34,7 +26,6 @@ const addUserToCollection = async (uri, payload) => {
     console.log(ex)
   }
 }
-
 
 const getUsers = async (uri) => {
   const client = new MongoClient(uri, { useNewUrlParser: true });
