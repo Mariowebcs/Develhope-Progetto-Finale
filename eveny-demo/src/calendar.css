@@ -1,0 +1,71 @@
+html,body{
+    margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+}
+
+main {
+	height: 10vh;
+	overflow: hidden;
+	overflow-wrap:normal;
+	overflow-block:hidden ;
+	
+	margin-right: 175px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrapper {
+	font-size: 20vmin;
+	height: 2em;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	mix-blend-mode: screen;
+}
+
+.wrapper.invert span {
+	color: black;
+}
+
+.wrapper.invert span::before {
+	-webkit-text-stroke: .1em var(--color);
+}
+
+.wrapper span {
+	--color: rgb(79,70,229);
+	font-family: Impact, 'Anton', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	display: block;
+	position: absolute;
+	color: var(--color);
+	letter-spacing: -.005em;
+}
+
+.wrapper span::before, .wrapper span::after {
+	content: attr(data-text);
+	display: block;
+	position: relative;
+	padding: 0 .1em;
+	z-index: 1;
+}
+
+.wrapper span::before {
+	position: absolute;
+	-webkit-text-stroke: .1em black;
+	z-index: 0;
+}
+
+.wrapper span:first-child {
+	transform: translate(-.255em, -.25em);
+}
+
+.wrapper span:last-child {
+	--color: rgb(124,58,237);
+	transform: translate(.255em, .25em);
+}
