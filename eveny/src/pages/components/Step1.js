@@ -8,7 +8,7 @@ const Step1 = () => {
   const navigate = useNavigate();
   const registerPost = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/v1/user", {
+      const res = await fetch("http://localhost:4500/api/v1/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
