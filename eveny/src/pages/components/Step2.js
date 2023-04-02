@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import itemsArray from "../../components/json/items.json";
 
 const Step2 = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [myInterests, setMyInterests] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const [buttonVisible, setButtonVisible] = useState(Array(itemsArray.length).fill(true)); // tramite il fill tramutiamo tutti i valori dell'array in true
   const [shakeButtonIndex, setShakeButtonIndex] = useState(null);
@@ -13,13 +14,25 @@ const Step2 = () => {
     //testo search bar
     setSearchTerm(event.target.value);
   };
+
+  // fetcho l'array di interessi sul database
+  useEffect(() => {
+    const interestsDB = async () => {
+      const res = await fetch("http://localhost:4500/interests")
+      const interests = await res.json();
+      setMyInterests(interests)
+    }
+    interestsDB()
+  }, [])
+
   // filtra testo di ricerca sia per lowerCase che per Uppercase
-  const filteredArray = itemsArray.filter((item) => {
+    const filteredArray = myInterests.filter((item) => {
     const interests = item.interests.toLowerCase();
     const searchTermLower = searchTerm.toLowerCase();
     const searchTermUpper = searchTerm.toUpperCase();
     return interests.includes(searchTermLower) || interests.includes(searchTermUpper);
   })
+
   // filtra l'array dello useState selectedItems
   const uniqueItems = selectedItems.filter((item, index) => {
     return selectedItems.indexOf(item) === index;
@@ -45,7 +58,7 @@ const Step2 = () => {
     }
     // riabilita il bottone corrispondente nella sezione dei bottoni selezionabili
     const newButtonVisibility = [...buttonVisible];
-    newButtonVisibility[itemsArray.findIndex((item) => item.interests === selectedItems[index])] = true;
+    newButtonVisibility[myInterests.findIndex((item) => item.interests === selectedItems[index])] = true;
     setButtonVisible(newButtonVisibility);
   };
 
@@ -58,8 +71,6 @@ const Step2 = () => {
     localStorage.setItem("registerData", JSON.stringify(registerData));
     navigate("/step3");
   };
-
-
 
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-purple-800 to-pink-600">
@@ -80,7 +91,7 @@ const Step2 = () => {
                 <button
                   key={index}
                   className={`cursor-pointer hover:bg-sky-900 hover:text-white text-start px-2 mt-1 mb-1 mx-3 border-sky-900 border-solid border-2 rounded-full ${shakeButtonIndex === index ? 'shake' : ''}`}
-                  onClick={() => {onSearch(item.interests, index), setShakeButtonIndex(index)}}
+                  onClick={() => { onSearch(item.interests, index), setShakeButtonIndex(index) }}
 
                 >
                   {item.interests}
