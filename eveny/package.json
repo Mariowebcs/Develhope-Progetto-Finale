@@ -46,7 +46,10 @@
   "devDependencies": {
     "@craco/craco": "^7.0.0",
     "babel-eslint": "^10.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "jest": "^27.5.1",
     "prettier": "2.8.6",
+    "supertest": "^6.3.3",
     "tailwindcss": "^3.2.7",
     "webpack-bundle-analyzer": "^4.8.0"
   }

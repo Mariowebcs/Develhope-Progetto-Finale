@@ -15,7 +15,7 @@
     align-self: center;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
   }
 
   input,
@@ -53,6 +53,10 @@
   }
 
   .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  body::-webkit-scrollbar {
     display: none;
   }
 

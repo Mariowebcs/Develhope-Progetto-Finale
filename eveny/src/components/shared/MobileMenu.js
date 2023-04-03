@@ -22,8 +22,8 @@ const MobileMenu = () => {
     navigate("/events");
   };
   return (
-    <div className="containerMenu flex justify-center h-16 w-full sticky bottom-0 bg-white">
-      <div className="menu flex justify-around w-[95%] h-12 BGcolor rounded-full md:w-[480px] ">
+    <div className="containerMenu flex justify-center  w-full  bg-white">
+      <div className="menu flex justify-around w-[100%] h-12 BGcolor">
         <button onClick={backHomeHandler}>
           <FontAwesomeIcon icon={faHouse} className="text-2xl" inverse />
         </button>
