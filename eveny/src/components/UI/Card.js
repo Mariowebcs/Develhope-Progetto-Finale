@@ -19,7 +19,7 @@ const Card = (props) => {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      const date = new Date(props.dat);   //errore
+      const date = new Date(props.date);   //errore
       const now = new Date();
       const difference = date - now;
 
@@ -59,51 +59,49 @@ const Card = (props) => {
   const { username } = JSON.parse(localStorage.getItem("registerData"));
 
   return (
-        <>
-          <div className="w-[90%] rounded-xl border border-gray-200 bg-white shadow-lg md:w-[48%]">
-            <div className="flex justify-between items-center p-2 z-10 relative">
-              <img className="h-12 w-12 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-              <button className="text-3xl hover:text-red-600 w-fit" onClick={addPreferredHandler}>
-                <FontAwesomeIcon icon={faHeart}/>
-              </button>
+      <>
+        <div className="w-[90%] rounded-xl border border-gray-200 bg-white shadow-lg md:w-[48%]">
+          <div className="flex justify-between items-center p-2 z-10 relative">
+            <img className="h-12 w-12 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+            <button className="text-3xl hover:text-red-600 w-fit" onClick={addPreferredHandler}>
+              <FontAwesomeIcon icon={faHeart}/>
+            </button>
+          </div>
+          <img src={thumbnail} alt="Eveny" className="w-full object-cover rounded-xl relative bottom-16 z-0"/>
+          <div className="flex flex-col gap-2 relative bottom-20">
+            <div className="flex relative left-2">
+              <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+              <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+              <div className="h-10 w-10 rounded-full shadow-lg bg-sky-900 flex justify-center items-center">
+                <p className="text-white text-xl">+3</p>
+              </div>
             </div>
-            <img src={thumbnail} alt="Eveny" className="w-full object-cover rounded-xl relative bottom-16 z-0"/>
-            <div className="flex flex-col gap-2 relative bottom-20">
-              <div className="flex relative left-2">
-                <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-                <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-                <div className="h-10 w-10 rounded-full shadow-lg bg-sky-900 flex justify-center items-center">
-                  <p className="text-white text-xl">+3</p>
+              <div className="flex justify-between">
+                <div className="pl-2 flex flex-col gap-1">
+                  <div className="text-xl font-bold text-sky-900">{title}</div>
+                  <p>Luogo: {location} </p>
+                  <p className=" text-xl font-medium text-gray-900 dark:text-white">
+                    {username}
+                  </p>
+                  <p>Partecipanti: {memNUm}</p>
+                </div>
+                <div className="text-center mr-4 border border-zinc-100 bg-zinc-100 h-fit rounded-lg py-2 px-4">
+                  {renderClock === "ore" && <p>Inizia tra: <p>{time}</p></p>}
+                  {renderClock === "giorni" && <p>Inizia il: <p>{time}</p></p>}
+                  {renderClock === "terminato" && <p>Evento iniziato!</p>}
                 </div>
               </div>
-                <div className="flex justify-between">
-                  <div className="pl-2 flex flex-col gap-1">
-                    <div className="text-xl font-bold text-sky-900">{title}</div>
-                    <p>Luogo: {location} </p>
-                    <p className=" text-xl font-medium text-gray-900 dark:text-white">
-                      {username}
-                    </p>
-                    <p>Partecipanti: {memNUm}</p>
-                  </div>
-                  <div className="text-center mr-4 border border-zinc-100 bg-zinc-100 h-fit rounded-lg py-2 px-4">
-                    {renderClock === "ore" && <p>Inizia tra: <p>{time}</p></p>}
-                    {renderClock === "giorni" && <p>Inizia il: <p>{time}</p></p>}
-                    {renderClock === "terminato" && <p>Evento iniziato!</p>}
-                  </div>
-                </div>
-                <div className="flex justify-center relative top-6">
-                  <ButtonSecondary label="Partecipa ora" />
-                </div>
-            </div>
-            <div className="bg-zinc-100 flex gap-2 p-2">
-              <span className="card-hashtag shadow-lg">#Cinema</span>
-              <span className="card-hashtag shadow-lg">#Avatar</span>
-              <span className="card-hashtag shadow-lg">#Friends</span>
-            </div>
+              <div className="flex justify-center relative top-6">
+                <ButtonSecondary label="Partecipa ora" />
+              </div>
           </div>
-            
-        
-        </>
+          <div className="bg-zinc-100 flex gap-2 p-2">
+            <span className="card-hashtag shadow-lg">#Cinema</span>
+            <span className="card-hashtag shadow-lg">#Avatar</span>
+            <span className="card-hashtag shadow-lg">#Friends</span>
+          </div>
+        </div>
+      </>
   );
 };
 
