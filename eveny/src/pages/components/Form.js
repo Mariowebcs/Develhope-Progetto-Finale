@@ -26,6 +26,24 @@ const Form = () => {
   //     };
   //   });
   // };
+
+  // questo fetcha i dati dal db degli utenti e li stampa in console al click del bottone login
+  // il prossimo step é di eseguire la verifica
+  // useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:4500/users", {
+          method: "GET"
+        });
+        const {email} = await response.json();
+        console.log(email, "userData");
+      } catch (error) {
+        console.error("Errore durante la fetch dei dati degli utenti:", error);
+      }
+    };
+  //   fetchData();
+  // }, []);
+
   const rememberData = JSON.parse(localStorage.getItem("rememberData"));
 
   window.onload = () => {
@@ -51,9 +69,19 @@ const Form = () => {
     setRemember(event.target.checked);
   };
 
+  // const getUserEmailPassword = async () => {
+  //   try {
+      
+  //   } catch (error) {
+      
+  //   }
+  // }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const registerData = JSON.parse(localStorage.getItem("registerData"));
+    // getUserEmailPassword();
+    fetchData();
     if (remember) {
       const rememberData = {
         email: email,

@@ -8,6 +8,9 @@ const Step1 = () => {
     birthday: "",
     email: "",
     address: "",
+    region: "",
+    province: "",
+    city: ""
   });
   //search for api about gps
 
@@ -91,17 +94,17 @@ const Step1 = () => {
           />
           <input
             type="text"
-            name="regione"
-            value={data.regione}
+            name="region"
+            value={data.region}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Region / Country"
+            placeholder="Region"
             required
           />
           <input
             type="text"
-            name="provincia"
-            value={data.provincia}
+            name="province"
+            value={data.province}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="Province"
@@ -109,8 +112,8 @@ const Step1 = () => {
           />
           <input
             type="text"
-            name="città"
-            value={data.città}
+            name="city"
+            value={data.city}
             onChange={handleInput}
             className="inputRegisterStyle"
             placeholder="City"
