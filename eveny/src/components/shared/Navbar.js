@@ -2,7 +2,6 @@ import React from "react";
 import avatar1 from "../assets/avatar1.jpg";
 import evenylogo from "../assets/evenylogo.png";
 import searchicon from "../assets/searchicon.png";
-import logoWhiteImage from "../assets/eveny-white-logo.png";
 import logoWhiteImage2 from "../assets/evenywhitelogo.png";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
