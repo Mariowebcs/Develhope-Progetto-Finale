@@ -78,11 +78,51 @@
       transform: translate(0, 0);
     }
   }
+
+  .popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95%;
+    background-color: white;
+    transform: translateY(100%);
+    animation: slide-up 0.5s ease forwards;
+    z-index: 1000;
+  }
+
+  .popup button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(25%);
+    }
+  }
+
+  .popup.closing {
+    animation: slide-down 0.5s ease forwards;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(25%);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
 }
 
 @layer components {
   .card-hashtag {
-    @apply relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    @apply relative hover:-top-1  bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white cursor-pointer;
   }
 
   .card-hashtag-shop {

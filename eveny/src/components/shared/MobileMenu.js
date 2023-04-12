@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
@@ -10,37 +10,48 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const MobileMenu = () => {
+  const [currentPage, setCurrentPage] = useState("home");
   const navigate = useNavigate();
-  const linkAddHandler = () => {
-    navigate("/addevent");
-  };
-  const linkSearchHandler = () => {
-    navigate("/search");
+
+  const handleIconClick = (page) => {
+    setCurrentPage(page);
+    switch (page) {
+      case "home":
+        navigate("/events");
+        break;
+      case "search":
+        navigate("/search");
+        break;
+      case "addevent":
+        navigate("/addevent");
+        break;
+      default:
+        navigate("/events");
+    };
   };
 
-  const backHomeHandler = () => {
-    navigate("/events");
-  };
   return (
-    <div className="containerMenu flex justify-center h-16 w-full sticky bottom-0 bg-white">
-      <div className="menu flex justify-around w-[95%] h-12 BGcolor rounded-full md:w-[480px] ">
-        <button onClick={backHomeHandler}>
-          <FontAwesomeIcon icon={faHouse} className="text-2xl" inverse />
+      <div className="relative bottom-0 flex justify-around w-full h-12 border-solid border-t p-1
+        bg-white md:w-[480px]">
+        <button onClick={() => handleIconClick("home")}>
+          <FontAwesomeIcon icon={faHouse}
+          className={currentPage === "home" ? "text-2xl text-sky-900" : "text-2xl text-sky-900 opacity-50"} inverse />
         </button>
-        <button onClick={linkSearchHandler}>
-          <FontAwesomeIcon icon={faSearch} className="text-2xl" inverse />
+        <button onClick={() => handleIconClick("search")}>
+          <FontAwesomeIcon icon={faSearch}
+          className={currentPage === "search" ? "text-2xl text-sky-900" : "text-2xl text-sky-900 opacity-50"} inverse />
         </button>
-        <button className="text-3xl" onClick={linkAddHandler}>
-          <FontAwesomeIcon icon={faCirclePlus} className="text-4xl" inverse />
+        <button onClick={() => handleIconClick("addevent")}>
+          <FontAwesomeIcon icon={faCirclePlus}
+          className={currentPage === "addevent" ? "text-3xl text-sky-900" : "text-3xl text-sky-900 opacity-50"} inverse />
         </button>
         <button>
-          <FontAwesomeIcon icon={faBookmark} className="text-2xl" inverse />
+          <FontAwesomeIcon icon={faBookmark} className="text-2xl text-sky-900 opacity-50" inverse />
         </button>
         <button>
-          <FontAwesomeIcon icon={faBell} className="text-2xl" inverse />
+          <FontAwesomeIcon icon={faBell} className="text-2xl text-sky-900  opacity-50" inverse />
         </button>
       </div>
-    </div>
   );
 };
 

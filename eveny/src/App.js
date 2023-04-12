@@ -15,6 +15,8 @@ import Step2 from "./pages/components/Step2";
 import Step3 from "./pages/components/Step3";
 import { Navigate, Route, Router, Routes, useNavigate } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
+import CreateEventForm2 from "./components/events/CreateEventForm2";
+import CardEvent from "./components/events/CardEvent";
 
 function App() {
   const DataEvents = JSON.parse(localStorage.getItem("EventsData"));
@@ -74,9 +76,6 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      {/* <Navbar /> */}
-
       <Routes>
         <Route path="/" element={<Login />} />
         <Route
@@ -88,8 +87,16 @@ function App() {
           element={<Events events={CreatedEvents} filterTerm={term} />}
         />
         <Route
+          path="/events/:id"
+          element={<CardEvent events={CreatedEvents} />}
+        />
+        <Route
           path="/addevent"
           element={<CreateEventForm onAddEvent={AddEventHandler} />}
+        />
+        <Route
+          path="/addevent2"
+          element={<CreateEventForm2 onAddEvent={AddEventHandler} />}
         />
         <Route
           path="/search"
@@ -99,7 +106,6 @@ function App() {
         <Route path="/step2" element={<Step2 />} />
         <Route path="/step3" element={<Step3 />} />
       </Routes>
-    </div>
   );
 }
 

@@ -2,6 +2,8 @@ import React from "react";
 import avatar1 from "../assets/avatar1.jpg";
 import evenylogo from "../assets/evenylogo.png";
 import searchicon from "../assets/searchicon.png";
+import logoWhiteImage from "../assets/eveny-white-logo.png";
+import logoWhiteImage2 from "../assets/evenywhitelogo.png";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -40,24 +42,29 @@ const  Navbar =( ) => {
 
   const backMenuHandler = () =>{
     navigate("/events");
-  }
+  };
 
   return (
-    <nav className="NavContainer p-4 h-24 BGcolor w-full">
+    <nav className="p-3 bg-gradient-to-b from-purple-700 to-pink-700 border-b-zinc-200 fixed top-0 left-0 w-full z-20">
       {/* Container Logo + User */}
-      <div className="NavTop mx-auto  mb-2 flex justify-between">
+      <div className="mx-auto flex justify-between">
         {/* Logo */}
         <div className="flex flex-col cursor-pointer" onClick={backMenuHandler}>
-          <div className="NavLogo w-12 h-12 rounded-full overflow-hidden">
-            <img
+          {/* <div className="h-14 overflow-hidden"> */}
+            {/* <img
               className="w-full h-full object-cover noDrag noSelect"
               src={evenylogo}
               alt="LogoEveny"
+            /> */}
+            <img
+              src={logoWhiteImage2}
+              alt="Eveny"
+              className="h-14  "
             />
-          </div>
-          <h4 className="text-center font-bold tracking-tight text-transparent bg-clip-text bg-[#ff0066]">
+          {/* </div> */}
+          {/* <h4 className="text-center font-bold tracking-tight text-transparent bg-clip-text text-blue-900">
             Eveny
-          </h4>
+          </h4> */}
         </div>
 
         {/* Avatar */}
