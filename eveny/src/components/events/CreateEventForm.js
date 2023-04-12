@@ -76,7 +76,6 @@ const CreateEventForm = (props) => {
     };
 
     // postEvent(dataEvent);
-
     props.onAddEvent(dataEvent);
     setEventTitle("");
     setEventLocation("");
@@ -85,7 +84,6 @@ const CreateEventForm = (props) => {
     setImgSelected("");
     setNumMembers(2);
     navigate("/addevent2");
-
     localStorage.setItem("eventDetails", JSON.stringify(dataEvent));
   };
 
@@ -136,7 +134,7 @@ const CreateEventForm = (props) => {
           <div>
             <button onClick={returnBackHandler} className="w-32 m-4 p-4 text-white bg-sky-900 rounded-xl">
               Annulla
-            </button> 
+            </button>
             <button className="w-32 m-4 p-4 text-white bg-gradient-to-b from-purple-800 to-pink-600 rounded-xl">
               Avanti
             </button>

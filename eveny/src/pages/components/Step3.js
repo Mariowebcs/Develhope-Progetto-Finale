@@ -23,13 +23,50 @@ const Step3 = () => {
 
   const registerData = JSON.parse(localStorage.getItem("registerData"));
 
+  //Procedura per inviare i dati di registrazione al DB
+  // const registerPost = async (data) => {
+  //   try {
+  //     const res = await fetch("http://localhost:5000/users/api/v1/user", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Origin": "*",
+  //         "Accept": "application/json",
+  //       },
+  //       body: JSON.stringify(data)
+  //     });
+  //     const dataUser = res.json()
+  //     console.log(dataUser)
+  //   } catch (error){
+  //     console.log(error);
+  //   }
+  //   }
+
+  const registerPost = async (data) => {
+    try {
+      const res = await fetch("http://localhost:4500/users/api/v1/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(data)
+      });
+      const dataUser = res.json();
+      console.log(dataUser);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const dataProfile = {
       ...registerData,
       ...data,
     };
+    registerPost(dataProfile);
     console.log(dataProfile);
     localStorage.setItem("registerData", JSON.stringify(dataProfile));
     alert("Registrazione avvenuta con successo!");
