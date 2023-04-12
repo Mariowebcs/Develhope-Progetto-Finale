@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileMenu from "../shared/MobileMenu";
 import Navbar from "../shared/Navbar";
+import tagList from "../json/items.json";
 // import "../Index.css";
 
 const CreateEventForm = (props) => {
@@ -13,6 +14,11 @@ const CreateEventForm = (props) => {
   const [eventTitle, setEventTitle] = useState("");
   const changeEventTitleHandler = (event) => {
     setEventTitle(event.target.value);
+  };
+
+  const [eventLocation, setEventLocation] = useState("");
+  const changeEventLocationHandler = (event) => {
+    setEventLocation(event.target.value);
   };
 
   const [eventDescription, setEventDescription] = useState("");
@@ -30,6 +36,7 @@ const CreateEventForm = (props) => {
     setNumMembers(event.target.value);
   };
 
+  //state, gestione dell'immagine
   const [imgSelected, setImgSelected] = useState("");
   const changeImgSelectedHandler = (event) => {
     setImgSelected(event.target.value);
@@ -37,23 +44,49 @@ const CreateEventForm = (props) => {
 
   const navigate = useNavigate();
 
+// qui ci dovrebbe essere prima un get dell'id dell'utente che crea l'evento, lo mettiamo in dataEvent e facciamo il post
+  // const postEvent = async (data) => {
+  //   try {
+  //     const res = await fetch("http://localhost:4500/events/api/v1/events", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Origin": "*",
+  //         "Accept": "application/json",
+  //       },
+  //       body: JSON.stringify(data)
+  //     });
+  //     const dataEvent = res.json();
+  //     console.log(dataEvent);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const submitHandler = (event) => {
     event.preventDefault();
     const dataEvent = {
       id: crypto.randomUUID(),
-      title: eventTitle.toLowerCase(),
-      description: eventDescription.toLowerCase(),
+      title: eventTitle,
+      location: eventLocation,
+      description: eventDescription,
       date: new Date(eventDate),
       membersNumber: numMembers,
       eventImage: imgSelected,
     };
+
+    // postEvent(dataEvent);
+
     props.onAddEvent(dataEvent);
     setEventTitle("");
+    setEventLocation("");
     setEventDescription("");
     setEventDate("");
     setImgSelected("");
     setNumMembers(2);
-    navigate("/events");
+    navigate("/addevent2");
+
+    localStorage.setItem("eventDetails", JSON.stringify(dataEvent));
   };
 
   const returnBackHandler = () => {
@@ -61,99 +94,59 @@ const CreateEventForm = (props) => {
   };
 
   return (
-    <div className="w-full">
+    <>
       <Navbar/>
-      <div className="flex flex-col items-center justify-center h-[100vh]">
-        <form action="" onSubmit={submitHandler}>
-          <div className="input-form">
+      <div className="w-full mt-36 mb-12">
+        <form action="" onSubmit={submitHandler} className="flex flex-col items-center justify-center h-[83vh] gap-2 ">
+          <div className="w-11/12">
             <label htmlFor="ev-descr">Seleziona la data </label>
-            <input
-              type="date"
-              min={`${year}-${month}-${day}`}
-              onChange={changeEventDateHandler}
-              value={eventDate}
-              required
-            />
+            <input type="date" min={`${year}-${month}-${day}`} onChange={changeEventDateHandler}
+              value={eventDate} required className="inputRegisterStyle"/>
           </div>
-          <div className="input-form my-4 text-black">
+          <div className="text-black w-11/12">
             <label htmlFor="ev-title">Titolo dell'evento: </label>
-            <input
-              type="text"
-              required
-              maxLength="30"
-              minLength="10"
-              id="ev-title"
-              name="event-title"
-              value={eventTitle}
-              onChange={changeEventTitleHandler}
-            />
+            <input type="text" required maxLength="30" minLength="10" id="ev-title" className="inputRegisterStyle"
+              name="event-title" value={eventTitle} onChange={changeEventTitleHandler} />
           </div>
-          <div className="input-formE">
+          <div className="text-black w-11/12">
+            <label htmlFor="ev-locat">Luogo: </label>
+            <input type="text" required id="ev-locat" className="inputRegisterStyle"
+              name="event-location" value={eventLocation} onChange={changeEventLocationHandler} />
+          </div>
+          <div className="w-11/12">
             <label htmlFor="ev-descr">Descrizione dell'evento: </label>
-            <textarea
-              name="event-description"
-              id="ev-descr"
-              cols="22"
-              rows="5"
-              value={eventDescription}
-              onChange={changeEventDescriptionHandler}
-              required
-              minLength="25"
-              maxLength="60"
-            ></textarea>
+            <textarea name="event-description" id="ev-descr" cols="22" rows="4" className="inputRegisterStyle"
+              value={eventDescription} onChange={changeEventDescriptionHandler} required
+              minLength="25" maxLength="600"></textarea>
           </div>
-          <div className="input-form">
+          <div className="w-11/12">
             <label htmlFor="ev-mem">Seleziona numero di partecipanti</label>
-            <input
-              type="range"
-              name="event-members"
-              id="ev-mem"
-              min="2"
-              max="20"
-              step="1"
-              value={numMembers}
-              onChange={changeNumMembersHandler}
-            />
+            <input type="range" name="event-members" id="ev-mem" min="2" max="20"
+              step="1" value={numMembers} onChange={changeNumMembersHandler}/>
             <span>{numMembers}</span>
           </div>
-          <div className="input-form">
-            <label
-              htmlFor="user-img"
-              className=" bg-zinc-100
-            border
-            border-black
-            rounded-full
-            shadow-md
-            flex
-            flex-col
-            justify-center
-            items-center
-            p-6
-            hover:cursor-pointer"
-            >
+          <div className="w-11/12">
+            <label htmlFor="user-img" className=" bg-sky-900 border border-black text-white rounded-full
+            shadow-md flex flex-col justify-center items-center p-6 hover:cursor-pointer">
               Scegli la tua immagine
             </label>
-            <input
-              type="file"
-              value={imgSelected}
-              id="user-img"
-              onChange={changeImgSelectedHandler}
-              className="hidden"
-            />
+            <input type="file" value={imgSelected} id="user-img"
+              onChange={changeImgSelectedHandler} className="hidden"/>
           </div>
-          <button className="mt-6 py-4 px-6 text-white bg-[#ff0066] mx-4">
-            Crea Evento
-          </button>
-          <button
-            onClick={returnBackHandler}
-            className="mt-6 py-4 px-6 text-white bg-sky-900"
-          >
-            Annulla
-          </button>
+          <div>
+            <button onClick={returnBackHandler} className="w-32 m-4 p-4 text-white bg-sky-900 rounded-xl">
+              Annulla
+            </button> 
+            <button className="w-32 m-4 p-4 text-white bg-gradient-to-b from-purple-800 to-pink-600 rounded-xl">
+              Avanti
+            </button>
+          </div>
         </form>
       </div>
-      <MobileMenu/>
-    </div>
+      <div className="mobile-menu w-full relative">
+        <MobileMenu/>
+      </div>
+    </>
   );
 };
 

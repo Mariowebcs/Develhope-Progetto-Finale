@@ -8,10 +8,10 @@
     margin: 0.3em 0 0.3em 0;
   }
 
-  .mobile-menu{
+  .mobile-menu {
     position: fixed;
     bottom: 0;
-    display : flex;
+    display: flex;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -66,17 +66,67 @@
   }
 
   @keyframes shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-10px, 0); }
-    50% { transform: translate(10px, 0); }
-    75% { transform: translate(-10px, 0); }
-    100% { transform: translate(0, 0); }
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-10px, 0);
+    }
+    50% {
+      transform: translate(10px, 0);
+    }
+    75% {
+      transform: translate(-10px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  .popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95%;
+    background-color: white;
+    transform: translateY(100%);
+    animation: slide-up 0.5s ease forwards;
+    z-index: 1000;
+  }
+
+  .popup button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(25%);
+    }
+  }
+
+  .popup.closing {
+    animation: slide-down 0.5s ease forwards;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(25%);
+    }
+    to {
+      transform: translateY(100%);
+    }
   }
 }
 
 @layer components {
   .card-hashtag {
-    @apply relative hover:-top-1 inline-block bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer;
+    @apply relative hover:-top-1  bg-[#FF0066] rounded-full px-3 py-1 text-sm font-semibold text-white cursor-pointer;
   }
 
   .card-hashtag-shop {
@@ -104,7 +154,7 @@
         rounded-lg p-2 mb-2 text-white w-full;
   }
   .buttonStyleInactive {
-    @apply bg-gradient-to-b from-purple-600 to-pink-500
+    @apply bg-zinc-300
         rounded-lg p-2 mb-2 text-white w-full relative top-8;
   }
   .inputRegisterStyle {
@@ -112,6 +162,6 @@
   }
 
   .BGcolor {
-    @apply bg-sky-900
+    @apply bg-sky-900;
   }
 }

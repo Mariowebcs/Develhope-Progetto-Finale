@@ -51,8 +51,26 @@ const Step2 = () => {
 
   const registerData = JSON.parse(localStorage.getItem("registerData"));
 
+  // const registerInterests = async () => {
+  //   try {
+  //     const res = await fetch("", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Origin": "*",
+  //         "Accept": "application/json",
+  //       },
+  //       body: JSON.stringify(dataInterests)
+  //     });
+      
+  //   } catch (error) {
+      
+  //   }
+  // }
+
   const handleSubmitInterests = () => {
     const dataInterests = [...selectedItems];
+    // registerInterests();
     registerData["interests"] = dataInterests;
     console.log(registerData);
     localStorage.setItem("registerData", JSON.stringify(registerData));
