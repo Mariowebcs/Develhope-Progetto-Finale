@@ -52,6 +52,9 @@ const Card = (props) => {
 
   const  navigate = useNavigate();
 
+  const addPreferredHandler = () =>{
+
+  }
 
   const { username } = JSON.parse(localStorage.getItem("registerData"));
 
