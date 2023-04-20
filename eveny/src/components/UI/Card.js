@@ -13,10 +13,10 @@ import "../../Index.css";
 import CardEvent from "../events/CardEvent";
 
 const Card = (props) => {
-  const { title, description, location, date, memNUm, key} = props;
+  const { title, location, date, memNUm, id, tags} = props;
   const [time, setTime] = useState(null);
   const [renderClock, setRenderClock] = useState("");
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       const date = new Date(props.date);   //errore
@@ -49,8 +49,8 @@ const Card = (props) => {
 
     return () => clearInterval(interval);
   }, [props.date]);
- 
-  const  navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   const addPreferredHandler = () =>{
     
@@ -58,9 +58,16 @@ const Card = (props) => {
 
   const { username } = JSON.parse(localStorage.getItem("registerData"));
 
+  const openCard = () => {
+    // const div = event.target.innerText;
+    // console.log(div);
+    navigate(`/events/${id}`);           //qui ci andrà l'id dinamicamente ${}
+  }
+
   return (
       <>
-        <div className="w-[90%] rounded-xl border border-gray-200 bg-white shadow-lg md:w-[48%]">
+        <div className="w-[90%] rounded-xl border border-gray-200 bg-white shadow-lg md:w-[48%]"
+        onClick={openCard}>
           <div className="flex justify-between items-center p-2 z-10 relative">
             <img className="h-12 w-12 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
             <button className="text-3xl hover:text-red-600 w-fit" onClick={addPreferredHandler}>
@@ -73,7 +80,7 @@ const Card = (props) => {
               <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
               <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
               <div className="h-10 w-10 rounded-full shadow-lg bg-sky-900 flex justify-center items-center">
-                <p className="text-white text-xl">+3</p>
+                <p className="text-white text-xl">+{memNUm - 2}</p>
               </div>
             </div>
               <div className="flex justify-between">
@@ -96,9 +103,9 @@ const Card = (props) => {
               </div>
           </div>
           <div className="bg-zinc-100 flex gap-2 p-2">
-            <span className="card-hashtag shadow-lg">#Cinema</span>
-            <span className="card-hashtag shadow-lg">#Avatar</span>
-            <span className="card-hashtag shadow-lg">#Friends</span>
+            {tags?.map((tag, index) => (
+              <span key={index} className="card-hashtag shadow-lg">{`#${tag}`}</span>
+            ))}
           </div>
         </div>
       </>

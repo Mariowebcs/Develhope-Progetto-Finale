@@ -1,29 +1,95 @@
-import React from "react";
+import React, { useEffect } from "react";
 import thumbnail from "../assets/file.jpg";
 import avatar1 from "../assets/avatar1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faBell,
     faBookmark,
-    faSearch,
-    faUser,
-    faCirclePlus,
-    faHouse,
-    faHeart,
     faChevronLeft,
   } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import ButtonSecondary from "../shared/ButtonSecondary";
   
 
-const CardEvent = (props) => {
-    const { title, description, location, date, memNUm, key} = props;
-    console.log(title, description, location, date, memNUm, key);
+const CardEvent = () => {
+    const {id} = useParams();
+    const [event, setEvent] = useState([]);
+
+    useEffect(() => {
+      if(!id){
+        return;
+      }
+      const fetchData = async () => {
+        try {
+          const res = await fetch(`http://localhost:4500/events/${id}`, {
+            method: "GET"
+          });
+          const data = await res.json();
+          setEvent(data)
+        } catch (error) {
+          console.error("Errore durante la fetch dei dati degli utenti:", error);
+        }  
+      };
+      fetchData();
+    }, [id]);
+
+    const { title, description, membersNumber, tags } = event;
+
+    const [time, setTime] = useState(null);
+    const [renderClock, setRenderClock] = useState("");
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        const date = new Date(event.date);   //errore
+        const now = new Date();
+        const difference = date - now;
+
+        // console.log(difference);
+        if(difference > 0 && difference <= 86400000) {
+          const hours = Math.floor(difference / (1000 * 60 * 60));
+          const minutes = Math.floor((difference / (1000 * 60)) % 60);
+          const seconds = Math.floor((difference / 1000) % 60);
+
+          setTime(`${hours}h ${minutes}m ${seconds}s`);
+          setRenderClock("ore");
+        } else if (difference > 86400000) {
+          const day = date.getDate();
+          const month = date.getMonth() + 1;
+          const year = date.getFullYear();
+          const formattedDate = `${day}/${month}/${year}`;
+
+          setTime(formattedDate);
+          setRenderClock("giorni");
+        } else {
+          clearInterval(interval);
+          setTime("Evento iniziato!");
+          setRenderClock("terminato");
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }, [event.date]);
+
+    const [showAndHide, setShowAndHide] = useState(false);
+
+    // const handleShowDescription = () => {
+    //   setShowAndHide(!showAndHide);
+    // }
+
+    const navigate = useNavigate();
+
+    const backToEvents = () => {
+      navigate("/events");
+    }
+
     return (
         <>
         {/* background grigio */}
-        <div className="w-full rounded-xl border border-gray-200 bg-white relative">
+        <div className="w-full border border-gray-200 bg-white relative">
             <img src={thumbnail} alt="Eveny" className="w-full object-cover"/>
             <div className="flex justify-between w-11/12 m-auto absolute top-2 left-4">
-                <button onClick={""} className="z-10 border shadow-2xl flex items-center justify-center h-8 w-8 rounded-full bg-white">
+                <button onClick={backToEvents} className="z-10 border shadow-2xl flex items-center justify-center h-8 w-8 rounded-full bg-white">
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <button onClick={""} className="z-10 border shadow-2xl flex items-center justify-center h-8 w-8 rounded-full bg-white">
@@ -37,21 +103,25 @@ const CardEvent = (props) => {
                 <p className="text-lg">Mario D'Andrea</p>
               </div>
               <div className="w-full flex flex-col gap-2">
-                <p className="text-xl">Titolo</p>
+                <p className="text-xl">{title}</p>
               </div>
               <div className="w-full flex flex-col gap-2">
-                <p className="text-xl">Descrizione evento</p>
-                <p>Qui ci sarà la descrizione dell'evento...<strong>Mostra di più</strong></p>
+                <p>
+                {showAndHide ? description : `${description?.substring(0,5)}...`}
+                <span className="font-bold" onClick={() => setShowAndHide(!showAndHide)}>
+                  {showAndHide ? " Mostra di meno" : " Mostra di più"}
+                </span>
+                </p>
               </div>
-              {/* <div className="text-center mr-4 border border-zinc-100 bg-zinc-100 h-fit rounded-lg py-2 px-4">
+              <div className="text-center border border-zinc-100 bg-zinc-100 h-fit rounded-lg py-2 px-4 mx-auto">
                     {renderClock === "ore" && <p>Inizia tra: <p>{time}</p></p>}
                     {renderClock === "giorni" && <p>Inizia il: <p>{time}</p></p>}
                     {renderClock === "terminato" && <p>Evento iniziato!</p>}
-                </div> */}
+                </div>
               <div className="flex gap-2 py-2">
-                <span className="card-hashtag shadow-lg">#Cinema</span>
-                <span className="card-hashtag shadow-lg">#Avatar</span>
-                <span className="card-hashtag shadow-lg">#Friends</span>
+                {tags?.map((tag, index) => (
+                <span key={index} className="card-hashtag shadow-lg">{`#${tag}`}</span>
+            ))}
               </div>
               <div>
                 <p className="text-xl ">
@@ -86,6 +156,10 @@ const CardEvent = (props) => {
               </div>
             </div>
             
+            </div>
+            <div className="flex justify-center">
+              <button className="rounded-lg border bg-sky-900 px-4 py-2 text-center text-xl font-bold shadow-lg mb-4
+               text-white hover:bg-[#FF0066] hover:text-white">Partecipa ora</button>
             </div>
         </div>
         </>

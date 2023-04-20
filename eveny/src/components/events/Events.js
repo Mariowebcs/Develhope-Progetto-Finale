@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import CreatedEvents from "../json/CreatedEvents.json";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,25 @@ const Events = (props) => {
   const clickHandler = () => {
     navigate("/addevent");
   };
+
+  const [events, setEvents] = useState([]);
+  // fetch degli eventi in pagina su cui eseguire il map e in un secondo momento il filter
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:4500/events", {
+        method: "GET"
+      });
+        const data = await res.json();
+        setEvents(data)
+      } catch (error) {
+        console.error("Errore durante la fetch dei dati degli utenti:", error);
+      }
+    };
+    fetchData();
+  }, [])
+console.log(events);
+
   const searchHandler = () => {
     navigate("/search");
   };
@@ -23,17 +42,19 @@ const Events = (props) => {
         <div className="">
         
         <div className="flex flex-col justify-between items-center w-[100%] flex-wrap gap-6 mx-auto md:flex-row relative top-28">
-          {props.events?.length > 0 
+          {events?.length > 0 
           ? (
-            props.events?.map((event) => (
-              <Card
+            events?.map((event) => (
+              <Card 
                 title={event.title}
                 description={event.description}
                 location={event.location}
                 date={event.date}
                 memNUm={event.membersNumber}
-                key={event.id}
-                // image={event.eventImage}
+                id={event._id}
+                image={event.eventImage}
+                tags={event.tags}
+                userId={event.userId}
               />
             ))
           )
@@ -56,3 +77,19 @@ const Events = (props) => {
 };
 
 export default Events;
+
+
+// {props.events?.length > 0 
+//   ? (
+//     props.events?.map((event) => (
+//       <Card
+//         title={event.title}
+//         description={event.description}
+//         location={event.location}
+//         date={event.date}
+//         memNUm={event.membersNumber}
+//         key={event.id}
+//         // image={event.eventImage}
+//       />
+//     ))
+//   )

@@ -35,7 +35,7 @@ function App() {
       navigate("/");
     }
   };
-
+// qui si crea l'id per l'utente, si deve togliere perchè mongoDB crea da solo l'id
   const AddEventHandler = (data) => {
     const dataTemp = data;
     const newData = {
@@ -59,11 +59,11 @@ function App() {
     console.log(term);
   };
 
-  useEffect(() => {
+  useEffect(() => {         // va tolto
     localStorage.setItem("EventsData", JSON.stringify(CreatedEvents));
   }, [CreatedEvents]);
 
-  useEffect(() => {
+  useEffect(() => {         // va tolto
   const newUserLoginData = {
     ...userLoginData,
     eventId : [...userEvent]
@@ -84,7 +84,7 @@ function App() {
         />
         <Route
           path="/events"
-          element={<Events events={CreatedEvents} filterTerm={term} />}
+          element={<Events filterTerm={term} />}
         />
         <Route
           path="/events/:id"

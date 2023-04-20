@@ -63,10 +63,24 @@ const CreateEventForm = (props) => {
   //   }
   // };
 
+  // chiamata get per prendere l'id utente, il problema è che lui mi prende gli id di tutti gli utenti
+  const fetchId = async () => {
+    try {
+      const res = await fetch("http://localhost:4500/users", {
+        method: "GET"
+      });
+      const { _id } = await res.json();
+      console.log("id utente:", _id);
+    } catch (error) {
+      console.error("Errore durante la fetch dei dati degli utenti:", error);
+    }
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
+    
     const dataEvent = {
-      id: crypto.randomUUID(),
+      userId: fetchId(),        //qui ci deve essere l'id dell'utente preso da mongoDB
       title: eventTitle,
       location: eventLocation,
       description: eventDescription,
