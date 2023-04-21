@@ -44,6 +44,25 @@ const  Navbar =( ) => {
     navigate("/events");
   };
 
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:4500/users", {
+          method: "GET"
+        });
+        const data = await res.json();
+        setUser(data)
+      } catch (error) {
+        console.error("Errore durante la fetch dei dati degli utenti:", error);
+      }
+    };
+    fetchData();
+  }, [])
+
+  console.log(user)
+
   return (
     <nav className="p-3 bg-gradient-to-b from-purple-700 to-pink-700 border-b-zinc-200 fixed top-0 left-0 w-full z-20">
       {/* Container Logo + User */}
@@ -68,9 +87,10 @@ const  Navbar =( ) => {
         </div>
 
         {/* Avatar */}
-
+        <div className="flex items-center gap-4">
+        <p className="text-xl font-medium text-white">{user.name}</p>
         <div
-          className="NavAvatar w-14 h-14 rounded-full overflow-hidden noSelect"
+          className="w-14 h-14 rounded-full overflow-hidden noSelect"
           onClick={handleAvatarClick}
           onBlur={handleAvatarClick}
           ref={wrapperRef}
@@ -80,7 +100,7 @@ const  Navbar =( ) => {
             src={avatar1}
             alt="UserAvatar"
           />
-        </div>
+        </div></div>
 
         {showMenu && (
           <div className="NavMenu noSelect absolute z-50 top-[70px] right-2 rounded-lg h-20 w-20 bg-neutral-100 bg-opacity-80 shadow-lg">

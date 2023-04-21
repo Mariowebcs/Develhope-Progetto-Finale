@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
-  faBookmark,
   faSearch,
   faCirclePlus,
   faHouse,
+  faHeart
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +46,7 @@ const MobileMenu = () => {
           className={currentPage === "addevent" ? "text-3xl text-sky-900" : "text-3xl text-sky-900 opacity-50"} inverse />
         </button>
         <button>
-          <FontAwesomeIcon icon={faBookmark} className="text-2xl text-sky-900 opacity-50" inverse />
+          <FontAwesomeIcon icon={faHeart} className="text-2xl text-sky-900 opacity-50" inverse />
         </button>
         <button>
           <FontAwesomeIcon icon={faBell} className="text-2xl text-sky-900  opacity-50" inverse />

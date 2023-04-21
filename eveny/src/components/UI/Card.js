@@ -56,7 +56,7 @@ const Card = (props) => {
     
   }
 
-  const { username } = JSON.parse(localStorage.getItem("registerData"));
+  const { username } = JSON.parse(localStorage.getItem("registerData")); //utente dal db
 
   const openCard = () => {
     // const div = event.target.innerText;
@@ -70,8 +70,8 @@ const Card = (props) => {
         onClick={openCard}>
           <div className="flex justify-between items-center p-2 z-10 relative">
             <img className="h-12 w-12 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-            <button className="text-3xl hover:text-red-600 w-fit" onClick={addPreferredHandler}>
-              <FontAwesomeIcon icon={faHeart}/>
+            <button className="flex items-center justify-center bg-sky-900 bg-opacity-10 h-10 w-10 rounded-full" onClick={addPreferredHandler}>
+              <FontAwesomeIcon icon={faHeart} className="text-white text-3xl hover:text-red-600"/>
             </button>
           </div>
           <img src={thumbnail} alt="Eveny" className="w-full object-cover rounded-xl relative bottom-16 z-0"/>

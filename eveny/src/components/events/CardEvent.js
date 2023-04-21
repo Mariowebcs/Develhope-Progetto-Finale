@@ -9,8 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import ButtonSecondary from "../shared/ButtonSecondary";
-  
+import EventPopup from "./EventPopup";
 
 const CardEvent = () => {
     const {id} = useParams();
@@ -82,6 +81,8 @@ const CardEvent = () => {
     const backToEvents = () => {
       navigate("/events");
     }
+
+    const [openPopup, setOpenPopup] = useState(false);
 
     return (
         <>
@@ -158,10 +159,13 @@ const CardEvent = () => {
             
             </div>
             <div className="flex justify-center">
-              <button className="rounded-lg border bg-sky-900 px-4 py-2 text-center text-xl font-bold shadow-lg mb-4
+              <button onClick={() => setOpenPopup(true)}
+                className="rounded-lg border bg-sky-900 px-4 py-2 text-center text-xl font-bold shadow-lg mb-4
                text-white hover:bg-[#FF0066] hover:text-white">Partecipa ora</button>
             </div>
+          {openPopup && <EventPopup closePopup={setOpenPopup} />}  
         </div>
+        
         </>
     )
 }
