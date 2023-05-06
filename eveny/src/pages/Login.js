@@ -22,8 +22,8 @@ const Login = () => {
           {/* login */}
           <div className="flex flex-col justify-center items-center w-full lg:w-5/12 gap-2">
             <div className="lg:flex md:flex flex-col hidden gap-4 pb-6 w-full items-center">
-              <h1 className="text-3xl font-bold">Welcome to Eveny</h1>
-              <p className="text-lg">Please login to use the platform</p>
+              <h1 className="text-3xl font-bold">Benvenuto a Eveny</h1>
+              <p className="text-lg">Accedi per usare la piattaforma</p>
             </div>
             <img
               src={logoImage}
@@ -32,7 +32,7 @@ const Login = () => {
             />
             <Form />
             <div className="flex flex-col items-center gap-4 mb-10 w-full relative top-4">
-              <p className="mt-2 lg:hidden">Or log with</p>
+              <p className="mt-2 lg:hidden">Accedi con</p>
               {/* <div className="flex justify-center w-4/5 h-8 lg:mt-3"> */}
               {/* <FacebookButton /> */}
               {/* </div> */}
@@ -42,9 +42,9 @@ const Login = () => {
             </div>
             {/* sign up */}
             <div className="flex flex-col items-center justify-center flex-wrap">
-              <p>Not a member? </p>
+              <p>Non sei iscritto? </p>
               <Link to="/step1">
-                <p className="underline">Sign up now</p>
+                <p className="underline">Registrati ora</p>
               </Link>{" "}
               {/*to="/register/step1" */}
             </div>

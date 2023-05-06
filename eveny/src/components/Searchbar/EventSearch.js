@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { InterestingEvents } from "./MightInterestYou";
 import { SearchBar } from "./SearchBar";
+import Navbar from "../shared/Navbar";
+import MobileMenu from "../shared/MobileMenu";
 export function EventsSearch(props) {
   const searchData = (data) => {
     const searchTerm = data;
@@ -9,10 +11,15 @@ export function EventsSearch(props) {
   };
 
   return (
-    <div className="flex flex-col">
-      <SearchBar onSaveTerm={searchData} />
-      <InterestingEvents />
+    <>
+      <Navbar />
+      <div className="flex flex-col relative top-28 items-center gap-5">
+        <SearchBar />
+        {/* <InterestingEvents /> */}
+
     </div>
+      <MobileMenu />
+    </>
   );
 }
 

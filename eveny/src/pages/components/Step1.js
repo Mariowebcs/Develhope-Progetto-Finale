@@ -46,7 +46,7 @@ const Step1 = () => {
         className="flex flex-col items-center justify-center bg-white w-10/12 h-5/6 rounded-lg shadow-2xl shadow-black
             lg:max-w-screen-xl lg:flex-1"
       >
-        <h1 className="text-2xl font-bold mb-4">Register now</h1>
+        <h1 className="text-2xl font-bold mb-4">Registrati</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
           <input
             type="text"
@@ -54,7 +54,7 @@ const Step1 = () => {
             value={data.name}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Name"
+            placeholder="Nome"
             required
             autoFocus
           />
@@ -64,7 +64,7 @@ const Step1 = () => {
             value={data.surname}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Surname"
+            placeholder="Cognome"
             required
           />
           <input
@@ -89,7 +89,7 @@ const Step1 = () => {
             value={data.address}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Address"
+            placeholder="Indirizzo"
             required
           />
           <input
@@ -98,7 +98,7 @@ const Step1 = () => {
             value={data.region}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Region"
+            placeholder="Regione"
             required
           />
           <input
@@ -107,7 +107,7 @@ const Step1 = () => {
             value={data.province}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="Province"
+            placeholder="Provincia"
             required
           />
           <input
@@ -116,7 +116,7 @@ const Step1 = () => {
             value={data.city}
             onChange={handleInput}
             className="inputRegisterStyle"
-            placeholder="City"
+            placeholder="Città"
             required
           />
 
@@ -125,7 +125,7 @@ const Step1 = () => {
             className="bg-gradient-to-b from-purple-600 to-pink-500
                     rounded-lg p-2 mt-4 text-white w-full"
           >
-            Go
+            Avanti
           </button>
         </form>
       </div>

@@ -23,6 +23,24 @@ const Step3 = () => {
 
   const registerData = JSON.parse(localStorage.getItem("registerData"));
 
+  const postUser = async (data) => {
+    try {
+      const res = await fetch("http://localhost:4500/users/api/v1/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(data)
+      });
+      const dataEvent = res.json();
+      console.log(dataEvent);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -30,8 +48,9 @@ const Step3 = () => {
       ...registerData,
       ...data,
     };
-    console.log(dataProfile);
+    // console.log(dataProfile);
     localStorage.setItem("registerData", JSON.stringify(dataProfile));
+    postUser(dataProfile);
     alert("Registrazione avvenuta con successo!");
     navigate("/");
   };
@@ -46,7 +65,7 @@ const Step3 = () => {
           onSubmit={handleSubmit}
           className="flex flex-col gap-4 absolute top-10 w-max-72 items-center justify-center"
         >
-          <h1 className="text-2xl font-bold mb-4">Your Profile</h1>
+          <h1 className="text-2xl font-bold mb-4">Il tuo profilo</h1>
           <input
             type="text"
             name="username"
@@ -70,7 +89,7 @@ const Step3 = () => {
             htmlFor="image"
             className="bg-sky-900 border border-black rounded-full shadow-md flex flex-col justify-center items-center p-6 hover:cursor-pointer text-white"
           >
-            Upload your profile picture
+            Carica la tua foto profilo
           </label>
           <input
             type="file"
@@ -84,7 +103,7 @@ const Step3 = () => {
             name="description"
             onChange={habdleInputChange}
             value={data.description}
-            placeholder="Describe yourself"
+            placeholder="Aggiungi una descrizione di te stesso"
             className="inputRegisterStyle w-full"
           ></textarea>
 
@@ -93,7 +112,7 @@ const Step3 = () => {
             className="bg-gradient-to-b from-purple-600 to-pink-500
                     rounded-lg p-2 mt-4 text-white w-full"
           >
-            Go
+            Avanti
           </button>
         </form>
       </div>

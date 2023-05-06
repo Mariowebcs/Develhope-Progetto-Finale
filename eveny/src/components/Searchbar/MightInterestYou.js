@@ -5,7 +5,7 @@ import Events from "../json/Events.json";
 
 export function InterestingEvents() {
   return (
-    <div className="flex flex-col ml-4 mt-4">
+    <div className="flex flex-col">
       <span className="text-lg">
         <strong>Eventi più ricercati</strong>
       </span>

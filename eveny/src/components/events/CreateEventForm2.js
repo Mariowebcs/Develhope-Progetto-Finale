@@ -129,7 +129,7 @@ const CreateEventForm2 = (props) => {
                 </button>
                 <button type="button" onClick={handleSubmitInterests}
                   className="w-32 m-4 p-4 text-white bg-gradient-to-b from-purple-800 to-pink-600 rounded-xl">
-                    Go
+                    Avanti
                 </button>
               </div>
             </div>

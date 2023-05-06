@@ -31,7 +31,7 @@ const MobileMenu = () => {
   };
 
   return (
-      <div className="relative bottom-0 flex justify-around w-full h-12 border-solid border-t p-1
+      <div className="absolute bottom-0 flex justify-around w-full h-12 border-solid border-t p-1
         bg-white md:w-[480px]">
         <button onClick={() => handleIconClick("home")}>
           <FontAwesomeIcon icon={faHouse}

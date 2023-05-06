@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
-import thumbnail from "../assets/file.jpg";
+import thumbnail from "../assets/people-neon1.png";
 import avatar1 from "../assets/avatar1.jpg";
+import avatar2 from "../assets/avatar2.jpg";
+import userLogo from "../assets/userLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faBookmark,
@@ -100,7 +102,7 @@ const CardEvent = () => {
             <div>
             <div className="flex flex-col gap-1 ml-2 mt-2">
               <div className="w-full flex items-center gap-2">
-                <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+                <img className="h-10 w-10 rounded-full shadow-lg" src={userLogo} alt="UserAvatar"/>
                 <p className="text-lg">Mario D'Andrea</p>
               </div>
               <div className="w-full flex flex-col gap-2">
@@ -130,24 +132,16 @@ const CardEvent = () => {
                 </p>
                 <ul className="flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-                    Mario D'Andrea
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+                    <img className="h-10 w-10 rounded-full shadow-lg" src={avatar2} alt="UserAvatar"/>
                     Andrea Ciambriello
                   </li>
                   <li className="flex items-center gap-2">
-                    <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+                    <img className="h-10 w-10 rounded-full shadow-lg" src={userLogo} alt="UserAvatar"/>
                     Manuel Luppino
                   </li>
                   <li className="flex items-center gap-2">
-                    <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+                    <img className="h-10 w-10 rounded-full shadow-lg" src={userLogo} alt="UserAvatar"/>
                     Giuseppe Meli
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-                    Moreno Maroccia
                   </li>
                   <li className="flex items-center gap-2">
                     <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
@@ -160,7 +154,7 @@ const CardEvent = () => {
             </div>
             <div className="flex justify-center">
               <button onClick={() => setOpenPopup(true)}
-                className="rounded-lg border bg-sky-900 px-4 py-2 text-center text-xl font-bold shadow-lg mb-4
+                className="rounded-lg border bg-sky-900 px-8 py-2 text-center text-xl font-bold shadow-lg mb-4
                text-white hover:bg-[#FF0066] hover:text-white">Partecipa ora</button>
             </div>
           {openPopup && <EventPopup closePopup={setOpenPopup} />}  

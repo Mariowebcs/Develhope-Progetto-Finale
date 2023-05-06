@@ -39,7 +39,7 @@ console.log(events);
     authenticated && (
       <>
       <Navbar />
-        <div className="">
+        {/* <div className=""> */}
         
         <div className="flex flex-col justify-between items-center w-[100%] flex-wrap gap-6 mx-auto md:flex-row relative top-28">
           {events?.length > 0 
@@ -70,7 +70,7 @@ console.log(events);
         <div className="mobile-menu w-full z-20">
           <MobileMenu className="w-[90%]" />
         </div>
-      </div>
+      {/* </div> */}
       </>
     )
   );

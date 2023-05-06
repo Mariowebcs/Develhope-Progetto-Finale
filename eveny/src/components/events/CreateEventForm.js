@@ -110,7 +110,7 @@ const CreateEventForm = (props) => {
   return (
     <>
       <Navbar/>
-      <div className="w-full mt-36 mb-12">
+      <div className="w-full mt-36 mb-24">
         <form action="" onSubmit={submitHandler} className="flex flex-col items-center justify-center h-[83vh] gap-2 ">
           <div className="w-11/12">
             <label htmlFor="ev-descr">Seleziona la data </label>

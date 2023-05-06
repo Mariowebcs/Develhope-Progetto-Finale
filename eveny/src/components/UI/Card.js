@@ -6,7 +6,9 @@ import Button from "../shared/Button";
 import ButtonSecondary from "../shared/ButtonSecondary";
 import logoWhiteImage2 from "../assets/evenywhitelogo.png";
 import avatar1 from "../assets/avatar1.jpg";
-import thumbnail from "../assets/file.jpg";
+import avatar2 from "../assets/avatar2.jpg";
+import userLogo from "../assets/userLogo.png";
+import thumbnail from "../assets/people-neon1.png";
 import "./Card.css";
 import Modal from "./Modal";
 import "../../Index.css";
@@ -69,7 +71,7 @@ const Card = (props) => {
         <div className="w-[90%] rounded-xl border border-gray-200 bg-white shadow-lg md:w-[48%]"
         onClick={openCard}>
           <div className="flex justify-between items-center p-2 z-10 relative">
-            <img className="h-12 w-12 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+            <img className="h-12 w-12 rounded-full shadow-lg border border-sky-900" src={avatar2} alt="UserAvatar"/>
             <button className="flex items-center justify-center bg-sky-900 bg-opacity-10 h-10 w-10 rounded-full" onClick={addPreferredHandler}>
               <FontAwesomeIcon icon={faHeart} className="text-white text-3xl hover:text-red-600"/>
             </button>
@@ -78,7 +80,7 @@ const Card = (props) => {
           <div className="flex flex-col gap-2 relative bottom-20">
             <div className="flex relative left-2">
               <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
-              <img className="h-10 w-10 rounded-full shadow-lg" src={avatar1} alt="UserAvatar"/>
+              <img className="h-10 w-10 rounded-full shadow-lg" src={userLogo} alt="UserAvatar"/>
               <div className="h-10 w-10 rounded-full shadow-lg bg-sky-900 flex justify-center items-center">
                 <p className="text-white text-xl">+{memNUm - 2}</p>
               </div>
@@ -88,7 +90,7 @@ const Card = (props) => {
                   <div className="text-xl font-bold text-sky-900">{title}</div>
                   <p>Luogo: {location} </p>
                   <p className=" text-xl font-medium text-gray-900 dark:text-white">
-                    {username}
+                    Mario D'andrea
                   </p>
                   <p>Partecipanti: {memNUm}</p>
                 </div>

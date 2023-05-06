@@ -1,5 +1,5 @@
 import React from "react";
-import avatar1 from "../assets/avatar1.jpg";
+import avatar2 from "../assets/avatar2.jpg";
 import evenylogo from "../assets/evenylogo.png";
 import searchicon from "../assets/searchicon.png";
 import logoWhiteImage from "../assets/eveny-white-logo.png";
@@ -46,20 +46,20 @@ const  Navbar =( ) => {
 
   const [user, setUser] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("http://localhost:4500/users", {
-          method: "GET"
-        });
-        const data = await res.json();
-        setUser(data)
-      } catch (error) {
-        console.error("Errore durante la fetch dei dati degli utenti:", error);
-      }
-    };
-    fetchData();
-  }, [])
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await fetch("http://localhost:4500/users", {
+  //         method: "GET"
+  //       });
+  //       const data = await res.json();
+  //       setUser(data)
+  //     } catch (error) {
+  //       console.error("Errore durante la fetch dei dati degli utenti:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [])
 
   console.log(user)
 
@@ -88,16 +88,16 @@ const  Navbar =( ) => {
 
         {/* Avatar */}
         <div className="flex items-center gap-4">
-        <p className="text-xl font-medium text-white">{user.name}</p>
+        <p className="text-xl font-medium text-white">Andrea</p>
         <div
-          className="w-14 h-14 rounded-full overflow-hidden noSelect"
+          className="w-14 h-14 rounded-full border border-sky-900 overflow-hidden noSelect"
           onClick={handleAvatarClick}
           onBlur={handleAvatarClick}
           ref={wrapperRef}
         >
           <img
             className="w-full h-full object-cover noDrag noSelect"
-            src={avatar1}
+            src={avatar2}
             alt="UserAvatar"
           />
         </div></div>

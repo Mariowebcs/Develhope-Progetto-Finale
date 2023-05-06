@@ -12,113 +12,75 @@ import Navbar from "../shared/Navbar";
 
 export function SearchBar(props) {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchHistory, setSearchHistory] = useState([]);
+  const [key, setKey] = useState("");         //risultati barra
+  const [searchResult, setSearchResult] = useState([]);
+
 
   useEffect(() => {
-    const history = localStorage.getItem("searchHistory");
-    if (history) {
-      setSearchHistory(JSON.parse(history));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-  }, [searchHistory]);
-
-  const inputSearching = (e) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  };
-
-  const SearchEvent = (e) => {
-    e.preventDefault();
-    if (searchTerm.trim() !== "") {
-      if (!searchHistory.includes(searchTerm)) {
-        const newHistory = [searchTerm, ...searchHistory];
-        setSearchHistory(newHistory);
-        localStorage.setItem("searchHistory", JSON.stringify(newHistory));
+    const search = async () => {
+      try {
+        if(!key.trim()) {
+          setSearchResult([])
+          return
+        }
+        const res = await fetch("http://localhost:4500/events", {
+        method: "GET"
+      })
+      const data = await res.json();
+      setSearchResult(data)
+      } catch (error) {
+        console.log(error);
       }
-      props.onSaveTerm(searchTerm);
-      navigate(`/searchTerm/${searchTerm}`);
     }
-  };
-  const removeSearchTerm = (index) => {
-    const newHistory = [...searchHistory];
-    newHistory.splice(index, 1);
-    setSearchHistory(newHistory);
-  };
+    search()
+  }, [key]);
 
-  const backToHomepage = () => {
-    navigate("/events");
+  const goToEvent = (e) => {
+    const id = e.target.value;
+    navigate(`/events/${id}`);
   };
 
   return (
-    <div className="w-full">
-      <form
-        className="flex flex-col w-[350px] relative my-3 ml-3 gap-4 justify-around"
-        onSubmit={SearchEvent}
-      >
-        <div className="relative">
-          {/* back button */}
-          <button className="mr-2" onClick={backToHomepage}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
+    <div className="flex flex-col gap-2">
+      <form className="flex justify-center"
+        // onSubmit={SearchEvent}
+        >
+        <div>
           {/* searchbar */}
-          <label htmlFor="search">
-            <input
-              className="rounded-full w-[250px] pl-8 focus:border-[#ff0066] focus:outline-none"
-              placeholder="Cerca un evento..."
-              onChange={inputSearching}
-            />
-            <button className="absolute left-7 " onClick={SearchEvent}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </label>
+            <input className="rounded-l-full w-[250px] pl-2 border-[#ff0066] focus:outline-none"
+              placeholder="Cerca un evento..." onChange={(e) => setKey(e.target.value)} />
           {/* search button */}
-          <button
-            className="text-[#ff0066] ml-2 active:text-[#0C4A6E] hover:text-[#0C4A6E]"
-            onClick={SearchEvent}
-          >
-            Cerca
+          <button className=" rounded-r-full border border-[#ff0066] px-3 bg-[#ff0066] text-white"
+            // onClick={SearchEvent} 
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </div>
+        </form>
         {/* history events */}
 
-        <div className="flex flex-col">
-          <ul>
-            {searchHistory?.map((term, index) => (
-              <div className="ml-3 mt-4 flex relative" key={term}>
-                <li>
-                  {term && (
-                    <FontAwesomeIcon
-                      className="mr-2 text-[#0C4A6E]"
-                      icon={faClock}
-                    />
-                  )}
-                  {
-                    <Link
-                      to={`/searchTerm/${term}`}
-                      className="hover:text-[#ff0066]"
-                    >
-                      {term}
-                    </Link>
-                  }{" "}
-                  {term && (
-                    <button
-                      className="absolute left-56"
-                      id="addSearch"
-                      type="button"
-                      onClick={() => removeSearchTerm(index)}
-                    >
-                      <FontAwesomeIcon icon={faXmark} />
-                    </button>
-                  )}
-                </li>
-              </div>
-            ))}
-          </ul>
+        <div>
+          {searchResult && setSearchResult.length > 0 && (
+            <div>
+              {searchResult.filter((event) => {
+                return key.toLowerCase() === '' ? event : event.title.toLowerCase().includes(key)
+              })
+              .map(event => (
+                
+                <div className="border-b border-sky-900 pl-2 bg-white text-[#ff0066]"
+                key={event._id}>
+                  <button onClick={goToEvent} value={event._id}>
+                  {event.title}
+                  <div className="text-sky-900">
+                    {event.location} partecipanti: {event.membersNumber}
+                    </div>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      </form>
+        {key === "" && <h2 className="text-xl mt-5">Cosa aspetti cerca il tuo evento</h2>}
     </div>
   );
 }

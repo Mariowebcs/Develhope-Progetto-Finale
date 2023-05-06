@@ -86,7 +86,7 @@ const Step2 = () => {
                 lg:max-w-screen-xl lg:flex-1 relative"
       >
         <div className="absolute top-10 flex flex-col gap-4 w-max-72 items-center justify-center">
-          <h1 className="text-2xl font-bold mb-4">Choose Your Interests</h1>
+          <h1 className="text-2xl font-bold mb-4">Scegli i tuoi interessi</h1>
           <div>
             <input
               onChange={handleInputChange}
@@ -108,7 +108,7 @@ const Step2 = () => {
           </div>
           {/* i miei interessi */}
           <div className="flex flex-col gap-4 items-center justify-center">
-            <h2 className="text-xl">My Interests</h2>
+            <h2 className="text-xl">I tuoi interessi</h2>
             <ul className="flex gap-2 flex-wrap pl-3 pr-3">
               {uniqueItems.map((item, index) => (
                 <li
@@ -135,7 +135,7 @@ const Step2 = () => {
           className="bg-gradient-to-b from-purple-600 to-pink-500
                 rounded-lg p-2 text-white w-8/12 absolute bottom-8"
         >
-          Go
+          Avanti
         </button>
       </div>
     </div>
